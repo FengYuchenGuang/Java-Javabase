@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 /**
  * @author hxz
- * 自己写一个定制排序
+ * 自己写一个定制排序 （匿名内部类+动态绑定+向上转型）
  */
 public class ArraysSortCustom {
     public static void main(String[] args) {

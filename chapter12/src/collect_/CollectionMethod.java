@@ -5,6 +5,15 @@ import java.util.List;
 
 /**
  * @author hxz
+ * add:添加单个元素
+ * remove:删除指定元素
+ * contains:查找元素是否存在
+ * size:获取元素个数
+ * isEmpty:判断是否为空
+ * clear:清空
+ * addAll:添加多个元素
+ * containsAll:查找多个元素是否都存在
+ * removeAll：删除多个元素
  */
 public class CollectionMethod {
     @SuppressWarnings({"all"})
