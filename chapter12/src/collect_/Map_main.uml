@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.util.HashSet</OriginalElement>
+  <nodes>
+    <node x="212.25" y="186.0">java.util.LinkedHashMap</node>
+    <node x="0.0" y="186.0">java.util.Properties</node>
+    <node x="379.5" y="93.0">java.util.TreeMap</node>
+    <node x="282.25" y="0.0">java.util.Map</node>
+    <node x="212.5" y="93.0">java.util.HashMap</node>
+    <node x="7.0" y="93.0">java.util.Hashtable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.util.HashMap" target="java.util.Map">
+      <point x="0.0" y="-21.5" />
+      <point x="285.5" y="73.0" />
+      <point x="316.0" y="73.0" />
+      <point x="-11.25" y="21.5" />
+    </edge>
+    <edge source="java.util.Hashtable" target="java.util.Map">
+      <point x="0.0" y="-21.5" />
+      <point x="94.0" y="63.0" />
+      <point x="293.5" y="63.0" />
+      <point x="-33.75" y="21.5" />
+    </edge>
+    <edge source="java.util.Properties" target="java.util.Hashtable">
+      <point x="0.0" y="-21.5" />
+      <point x="0.0" y="21.5" />
+    </edge>
+    <edge source="java.util.TreeMap" target="java.util.Map">
+      <point x="0.0" y="-21.5" />
+      <point x="452.5" y="63.0" />
+      <point x="361.0" y="63.0" />
+      <point x="33.75" y="21.5" />
+    </edge>
+    <edge source="java.util.LinkedHashMap" target="java.util.HashMap">
+      <point x="-57.5" y="-21.5" />
+      <point x="269.75" y="161.0" />
+      <point x="285.5" y="161.0" />
+      <point x="0.0" y="21.5" />
+    </edge>
+    <edge source="java.util.LinkedHashMap" target="java.util.Map">
+      <point x="57.5" y="-21.5" />
+      <point x="384.75" y="161.0" />
+      <point x="369.0" y="161.0" />
+      <point x="369.0" y="73.0" />
+      <point x="338.5" y="73.0" />
+      <point x="11.25" y="21.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="263.0" y="114.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

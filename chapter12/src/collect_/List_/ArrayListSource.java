@@ -13,6 +13,7 @@ import java.util.List;
  *  源码底层使用 Aarrays.copyof( 原数组 , int 扩多大)
  *     输入数组的内容还是保留
  */
+@SuppressWarnings("all")
 public class ArrayListSource {
     public static void main(String[] args) {
         //使用无参构造器创建ArrayList对象
