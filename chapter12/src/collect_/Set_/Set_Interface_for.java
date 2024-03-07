@@ -13,7 +13,7 @@ import java.util.Set;
  *
  * 下面以 HashSet 演示Set接口的常用方法
  */
-public class Set_Interface {
+public class Set_Interface_for {
     public static void main(String[] args) {
         //老韩解读
         //1. 以 Set 接口的实现类 HashSet 来讲解 Set 接口的方法

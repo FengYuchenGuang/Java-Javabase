@@ -6,6 +6,13 @@ import java.util.HashSet;
  * @author hxz
  * HashSet 的底层结构
  * 通过断点查看源码理解过程
+ *
+ * HashSet扩容看的是一共添加的元素有无超过临界threshold
+ *   size 就是我们每加入一个结点 Node(k,v,h,next), size++
+ *   因此 HashSet 扩容看的是加入数据有没有超过 临界threshold（0.75 *）
+ *   不论是添加在table[] 上还是添加在一个table[i]的链表上都计算一次
+ *   因此，哪怕 HashSet 表只有一个table[i]上添加数据，但table[i]链表
+ *   上的数据超过临界threshold，那么也会进行数组扩容
  */
 @SuppressWarnings("all")
 public class HashSetSource {

@@ -4,6 +4,9 @@ import java.util.HashSet;
 
 /**
  * @author hxz
+ * HashSet
+ * 扩容机制
+ * 红黑树转化
  */
 @SuppressWarnings("all")
 public class HashSetSource02 {
@@ -35,6 +38,7 @@ public class HashSetSource02 {
             hashSet.add(new A(i));//
         }
 
+        //通过断点，查看添加数据超过 临界threshold 后是否扩容
         for(int i = 1; i <= 7; i++) {//在 table 的另外一条链表上添加了 7 个 B 对象
             hashSet.add(new B(i));//
         }
