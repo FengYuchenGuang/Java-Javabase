@@ -4,6 +4,9 @@ import java.util.Properties;
 
 /**
  * @author hxz
+ * Properties 还可以用于 从 xxx.properties 文件中，加载数据到Properties对象，
+ *   并进行读取和修改
+ * 说明：Properties 文件通常作为配置文件，这个知识点在 IO流举例
  */
 @SuppressWarnings("all")
 public class Properties_ {
