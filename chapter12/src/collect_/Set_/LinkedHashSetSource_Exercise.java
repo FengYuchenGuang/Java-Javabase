@@ -13,6 +13,7 @@ import java.util.Objects;
  *
  * 断点查看源码
  */
+@SuppressWarnings("All")
 public class LinkedHashSetSource_Exercise {
     public static void main(String[] args) {
         LinkedHashSet linkedHashSet = new LinkedHashSet();
@@ -21,7 +22,7 @@ public class LinkedHashSetSource_Exercise {
         linkedHashSet.add(new Car("法拉利", 10000000));//OK
         linkedHashSet.add(new Car("奥迪", 300000));//加入不了
         linkedHashSet.add(new Car("保时捷", 70000000));//OK
-        linkedHashSet.add(new Car("奥迪", 300000));//加入不了
+        linkedHashSet.add(new Car("奥迪", 345000));//加入不了
 
         System.out.println("linkedHashSet=" + linkedHashSet);
     }
