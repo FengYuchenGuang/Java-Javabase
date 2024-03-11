@@ -23,7 +23,14 @@ git remote add origin https://github.com/FengYuchenGuang/Java-Javabase.git
 6、开始上传
 git push -u origin master
 
+//取消http代理
 git config --global --unset http.proxy
+//取消https代理
+git config --global --unset https.proxy
+
+//远程仓库拉取到本地仓库
+git pull
+//提取到本地
 git pull origin master
 
 idea
