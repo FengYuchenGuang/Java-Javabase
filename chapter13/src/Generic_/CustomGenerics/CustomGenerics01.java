@@ -4,11 +4,12 @@ import java.util.Arrays;
 
 /**
  * @author hxz
+ * 泛型的使用
  * 1、普通成员可以使用泛型（属性、方法）
  * 2、使用泛型的数组，不能初始化
  * 3、静态方法中不能使用类的泛型
  * 4、泛型类的类型，是在创建对象时确定的，（因为创建对象时，
- *    需要指定确定的类型）
+ *   需要指定确定的类型）
  * 5、如果在创建对象时，没有指定类型，则默认为 Object
  */
 @SuppressWarnings("all")
@@ -26,7 +27,7 @@ public class CustomGenerics01 {
 
         System.out.println("\n==4、泛型类的类型，是在创建对象时确定的，（因为创建对象时，需要指定确定的类型）==");
         //T=Double, R=String, M=Integer
-        Tiger<Double,String,Integer> g = new Tiger<>("john");
+        Tiger<Double, String, Integer> g = new Tiger<>("john");
         g.setT(10.9); //OK
         //g.setT("yy"); //错误，类型不对
         System.out.println(g);
@@ -58,11 +59,13 @@ class Tiger<T, R, M> {
     public Tiger(String name) {
         this.name = name;
     }
+
     public Tiger(R r, M m, T t) {//构造器使用泛型
         this.r = r;
         this.m = m;
         this.t = t;
     }
+
     public Tiger(String name, R r, M m, T t) {//构造器使用泛型
         this.name = name;
         this.r = r;
@@ -80,27 +83,35 @@ class Tiger<T, R, M> {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public R getR() {
         return r;
     }
+
     public void setR(R r) {//方法使用到泛型
         this.r = r;
     }
+
     public M getM() {//返回类型可以使用泛型.
-         return m;
+        return m;
     }
+
     public void setM(M m) {
         this.m = m;
     }
+
     public T getT() {
         return t;
     }
+
     public void setT(T t) {
         this.t = t;
     }
+
     @Override
     public String toString() {
         return "Tiger{" +

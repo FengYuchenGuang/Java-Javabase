@@ -2,6 +2,7 @@ package Generic_.CustomGenerics;
 
 /**
  * @author hxz
+ * 泛型接口的使用
  */
 public class CustomGenericsInterface {
     public static void main(String[] args) {
@@ -20,6 +21,7 @@ public class CustomGenericsInterface {
 //方法默认修饰符 public abstract
 interface IUsb<U, R> {
     int n = 10;
+
     //因为接口中成员默认为 static
     //U name; 不能这样使用
     //普通方法中，可以使用接口泛型
@@ -46,9 +48,11 @@ class AA implements IA {
     public Double get(String s) {
         return null;
     }
+
     @Override
     public void hi(Double aDouble) {
     }
+
     @Override
     public void run(Double r1, Double r2, String u1, String u2) {
     }
@@ -80,9 +84,11 @@ class CC implements IUsb { //等价 class CC implements IUsb<Object,Object> {
     public Object get(Object o) {
         return null;
     }
+
     @Override
     public void hi(Object o) {
     }
+
     @Override
     public void run(Object r1, Object r2, Object u1, Object u2) {
     }
