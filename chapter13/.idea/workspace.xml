@@ -19,19 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter13.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/Generic01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/Generic02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/Generic03.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/GenericDetail01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/GenericExercise01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/GenericExercise02.java" afterDir="false" />
+    <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="2024/3/11">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Generic_/Generic_info/GenericExercise02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/GenericExercise02.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,24 +51,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chapter12" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.GenericDetail01">
-    <configuration name="Generic02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Generic_.Generic_info.Generic02" />
-      <module name="chapter13" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Generic_.Generic_info.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.GenericExercise02">
     <configuration name="Generic03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Generic_.Generic_info.Generic03" />
       <module name="chapter13" />
@@ -131,6 +109,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GenericExercise02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Generic_.Generic_info.GenericExercise02" />
+      <module name="chapter13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Generic_.Generic_info.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -144,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GenericExercise02" />
         <item itemvalue="Application.GenericDetail01" />
         <item itemvalue="Application.GenericDetail" />
         <item itemvalue="Application.GenericExercise" />
         <item itemvalue="Application.Generic03" />
-        <item itemvalue="Application.Generic02" />
       </list>
     </recent_temporary>
   </component>
@@ -160,8 +151,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710143989065</updated>
-      <workItem from="1710143990106" duration="5029000" />
+      <workItem from="1710143990106" duration="7067000" />
     </task>
+    <task id="LOCAL-00001" summary="2024/3/11">
+      <created>1710153723102</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710153723102</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,30 +177,42 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2024/3/11" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/3/11" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="249" y="31" key="#Project_Structure" timestamp="1710144029527">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="249" y="31" key="#Project_Structure/0.0.1536.912@0.0.1536.912" timestamp="1710144029527" />
-    <state width="1493" height="235" key="GridCell.Tab.0.bottom" timestamp="1710149103160">
+    <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser" timestamp="1710154760439">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.bottom/0.0.1536.912@0.0.1536.912" timestamp="1710149103160" />
-    <state width="1493" height="235" key="GridCell.Tab.0.center" timestamp="1710149103160">
+    <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser/0.0.1536.912@0.0.1536.912" timestamp="1710154760439" />
+    <state x="549" y="211" key="FileChooserDialogImpl" timestamp="1710154208779">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.center/0.0.1536.912@0.0.1536.912" timestamp="1710149103160" />
-    <state width="1493" height="235" key="GridCell.Tab.0.left" timestamp="1710149103160">
+    <state x="549" y="211" key="FileChooserDialogImpl/0.0.1536.912@0.0.1536.912" timestamp="1710154208779" />
+    <state width="1493" height="235" key="GridCell.Tab.0.bottom" timestamp="1710155516050">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.left/0.0.1536.912@0.0.1536.912" timestamp="1710149103160" />
-    <state width="1493" height="235" key="GridCell.Tab.0.right" timestamp="1710149103160">
+    <state width="1493" height="235" key="GridCell.Tab.0.bottom/0.0.1536.912@0.0.1536.912" timestamp="1710155516050" />
+    <state width="1493" height="235" key="GridCell.Tab.0.center" timestamp="1710155516050">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.right/0.0.1536.912@0.0.1536.912" timestamp="1710149103160" />
-    <state x="361" y="189" key="Vcs.Push.Dialog.v2" timestamp="1710153692222">
+    <state width="1493" height="235" key="GridCell.Tab.0.center/0.0.1536.912@0.0.1536.912" timestamp="1710155516050" />
+    <state width="1493" height="235" key="GridCell.Tab.0.left" timestamp="1710155516050">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state x="361" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.912@0.0.1536.912" timestamp="1710153692222" />
+    <state width="1493" height="235" key="GridCell.Tab.0.left/0.0.1536.912@0.0.1536.912" timestamp="1710155516050" />
+    <state width="1493" height="235" key="GridCell.Tab.0.right" timestamp="1710155516050">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state width="1493" height="235" key="GridCell.Tab.0.right/0.0.1536.912@0.0.1536.912" timestamp="1710155516050" />
+    <state x="361" y="189" key="Vcs.Push.Dialog.v2" timestamp="1710154507914">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state x="361" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.912@0.0.1536.912" timestamp="1710154507914" />
   </component>
 </project>
