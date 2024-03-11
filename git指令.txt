@@ -1,0 +1,30 @@
+1、创建.git
+git init
+
+
+2、修改.git 中config文件 加上
+[user]
+email=ankskfp237@163.com
+name=FengYuchenGuang
+
+
+3、添加文件 
+git add *    //添加所有文件
+
+
+4、创建提交内容 提交到本地仓库
+git commit -m "first commit"
+
+5、选择上传到github的网址
+git remote add origin 自己的github网址
+
+git remote add origin https://github.com/FengYuchenGuang/Java-Javabase.git
+
+6、开始上传
+git push -u origin master
+
+git config --global --unset http.proxy
+git pull origin master
+
+idea
+git branch --set-upstream-to=origin/master
