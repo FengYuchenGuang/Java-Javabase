@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter13.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/Generic01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/Generic02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/Generic03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/GenericDetail01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/GenericExercise01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generic_/Generic_info/GenericExercise02.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2dXAKkDSnD4hOFcVkLI94E8hbzR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager" selected="Application.GenericDetail01">
+    <configuration name="Generic02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Generic_.Generic_info.Generic02" />
+      <module name="chapter13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Generic_.Generic_info.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Generic03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Generic_.Generic_info.Generic03" />
+      <module name="chapter13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Generic_.Generic_info.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GenericDetail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Generic_.Generic_info.GenericDetail" />
+      <module name="chapter13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Generic_.Generic_info.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GenericDetail01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Generic_.Generic_info.GenericDetail01" />
+      <module name="chapter13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Generic_.Generic_info.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GenericExercise" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Generic_.Generic_info.GenericExercise" />
+      <module name="chapter13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Generic_.Generic_info.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GenericDetail01" />
+        <item itemvalue="Application.GenericDetail" />
+        <item itemvalue="Application.GenericExercise" />
+        <item itemvalue="Application.Generic03" />
+        <item itemvalue="Application.Generic02" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="" />
+      <created>1710143989065</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710143989065</updated>
+      <workItem from="1710143990106" duration="5029000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="249" y="31" key="#Project_Structure" timestamp="1710144029527">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state x="249" y="31" key="#Project_Structure/0.0.1536.912@0.0.1536.912" timestamp="1710144029527" />
+    <state width="1493" height="235" key="GridCell.Tab.0.bottom" timestamp="1710149103160">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state width="1493" height="235" key="GridCell.Tab.0.bottom/0.0.1536.912@0.0.1536.912" timestamp="1710149103160" />
+    <state width="1493" height="235" key="GridCell.Tab.0.center" timestamp="1710149103160">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state width="1493" height="235" key="GridCell.Tab.0.center/0.0.1536.912@0.0.1536.912" timestamp="1710149103160" />
+    <state width="1493" height="235" key="GridCell.Tab.0.left" timestamp="1710149103160">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state width="1493" height="235" key="GridCell.Tab.0.left/0.0.1536.912@0.0.1536.912" timestamp="1710149103160" />
+    <state width="1493" height="235" key="GridCell.Tab.0.right" timestamp="1710149103160">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state width="1493" height="235" key="GridCell.Tab.0.right/0.0.1536.912@0.0.1536.912" timestamp="1710149103160" />
+    <state x="361" y="189" key="Vcs.Push.Dialog.v2" timestamp="1710153692222">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state x="361" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.912@0.0.1536.912" timestamp="1710153692222" />
+  </component>
+</project>
