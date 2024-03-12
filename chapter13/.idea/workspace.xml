@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="2024/3/12" />
+    <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="2024/3/12">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024_3_12_8_12__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024_3_12_8_12__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../git指令.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../git指令.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +56,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chapter11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TankWar" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -67,19 +71,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -242,10 +233,11 @@
       <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser/0.0.1536.912@0.0.1536.912" timestamp="1710213729337" />
-    <state x="549" y="211" key="FileChooserDialogImpl" timestamp="1710214025216">
-      <screen x="0" y="0" width="1536" height="912" />
+    <state x="686" y="241" key="FileChooserDialogImpl" timestamp="1710234225150">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="549" y="211" key="FileChooserDialogImpl/0.0.1536.912@0.0.1536.912" timestamp="1710214025216" />
+    <state x="686" y="241" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1710234225150" />
     <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1710214030936">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
@@ -270,10 +262,11 @@
       <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="485" y="348" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.912@0.0.1536.912" timestamp="1710210032648" />
-    <state x="573" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1710209304773">
-      <screen x="0" y="0" width="1536" height="912" />
+    <state x="716" y="421" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1710234211064">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="573" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.912@0.0.1536.912" timestamp="1710209304773" />
+    <state x="716" y="421" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1710234211064" />
     <state x="311" y="185" width="913" height="640" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1710155865111">
       <screen x="0" y="0" width="1536" height="912" />
     </state>

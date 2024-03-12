@@ -6,6 +6,7 @@ package studay.Draw_.DrawTank;
 public class Tank {
     private int x;//坦克的横坐标
     private int y;//坦克的纵坐标
+
     public Tank(int x, int y) {
         this.x = x;
         this.y = y;

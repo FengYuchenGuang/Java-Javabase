@@ -30,6 +30,8 @@ public class Boom extends GameObject{
 
 	@Override
 	public void paintSelf(Graphics g) {
+		//每次进入，绘制一张爆炸图片，直到爆炸效果结束
+		//子弹移除，坦克移除，不影响爆炸类继续在坦克爆炸位置输出
 		if(explodeCount < 11) {
 			g.drawImage(imgs[explodeCount], X, Y, null);
 			explodeCount++;

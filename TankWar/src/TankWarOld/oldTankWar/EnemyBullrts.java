@@ -87,9 +87,12 @@ public class EnemyBullrts extends Bullets1 {
 		}
 		
 	}
-	
-	
 
+
+	/*
+	 * 坦克子弹的移动、检测是否触发其他方法
+	 *   是在每次绘制坦克子弹后调用
+	 */
 	public void paintSelf(Graphics g) {
 		g.drawImage(img, X, Y, null);
 		//images.img_secelt.paintIcon(this, g, X,Y);
