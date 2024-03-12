@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="2024/3/12">
-      <change beforePath="$PROJECT_DIR$/src/Generic_/HomeWork/HomeWork01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generic_/HomeWork/HomeWork01.java" afterDir="false" />
-    </list>
+    <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="2024/3/12" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710213376617</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2024/3/12">
+      <created>1710213991821</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710213991821</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,34 +238,34 @@
       <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="249" y="31" key="#Project_Structure/0.0.1536.912@0.0.1536.912" timestamp="1710144029527" />
-    <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser" timestamp="1710209330080">
+    <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser" timestamp="1710213729337">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser/0.0.1536.912@0.0.1536.912" timestamp="1710209330080" />
-    <state x="549" y="211" key="FileChooserDialogImpl" timestamp="1710156287513">
+    <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser/0.0.1536.912@0.0.1536.912" timestamp="1710213729337" />
+    <state x="549" y="211" key="FileChooserDialogImpl" timestamp="1710214025216">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state x="549" y="211" key="FileChooserDialogImpl/0.0.1536.912@0.0.1536.912" timestamp="1710156287513" />
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1710210205649">
+    <state x="549" y="211" key="FileChooserDialogImpl/0.0.1536.912@0.0.1536.912" timestamp="1710214025216" />
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1710214030936">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.912@0.0.1536.912" timestamp="1710210205649" />
-    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1710210205649">
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.912@0.0.1536.912" timestamp="1710214030936" />
+    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1710214030936">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.912@0.0.1536.912" timestamp="1710210205649" />
-    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1710210205649">
+    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.912@0.0.1536.912" timestamp="1710214030936" />
+    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1710214030936">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.912@0.0.1536.912" timestamp="1710210205649" />
-    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1710210205649">
+    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.912@0.0.1536.912" timestamp="1710214030936" />
+    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1710214030936">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.912@0.0.1536.912" timestamp="1710210205649" />
-    <state x="361" y="189" key="Vcs.Push.Dialog.v2" timestamp="1710213412648">
+    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.912@0.0.1536.912" timestamp="1710214030936" />
+    <state x="361" y="189" key="Vcs.Push.Dialog.v2" timestamp="1710213996525">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state x="361" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.912@0.0.1536.912" timestamp="1710213412648" />
+    <state x="361" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.912@0.0.1536.912" timestamp="1710213996525" />
     <state x="485" y="348" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1710210032648">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
@@ -273,6 +278,10 @@
       <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="311" y="185" width="913" height="640" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.912@0.0.1536.912" timestamp="1710155865111" />
+    <state x="178" y="66" key="new project wizard" timestamp="1710214026333">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state x="178" y="66" key="new project wizard/0.0.1536.912@0.0.1536.912" timestamp="1710214026333" />
     <state x="425" y="209" key="run.anything.popup" timestamp="1710157625980">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
