@@ -19,12 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="2024/3/11">
-      <change afterPath="$PROJECT_DIR$/src/Generic_/CustomGenerics/CustomGenericMethods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chapter9/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="2024/3/12">
+      <change afterPath="$PROJECT_DIR$/src/Generic_/GenericExtends/GenericExtends.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generic_/HomeWork/HomeWork01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Generic_/Junit_/Junit01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generic_/CustomGenerics/CustomGenerics01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generic_/CustomGenerics/CustomGenerics01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generic_/CustomGenerics/CustomGenericsInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generic_/CustomGenerics/CustomGenericsInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter13.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chapter13.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,23 +50,26 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chapter9" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chapter11" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.CustomGenericMethods">
-    <configuration name="CustomGenericMethods" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Generic_.CustomGenerics.CustomGenericMethods" />
+  <component name="RunManager" selected="Application.Junit01">
+    <configuration name="GenericExtends" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Generic_.GenericExtends.GenericExtends" />
       <module name="chapter13" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Generic_.CustomGenerics.*" />
+          <option name="PATTERN" value="Generic_.GenericExtends.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,51 +77,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomGenerics01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Generic_.CustomGenerics.CustomGenerics01" />
+    <configuration name="Junit01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Generic_.Junit_.Junit01" />
       <module name="chapter13" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Generic_.CustomGenerics.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CustomGenericsInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Generic_.CustomGenerics.CustomGenericsInterface" />
-      <module name="chapter13" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Generic_.CustomGenerics.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GenericDetail01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Generic_.Generic_info.GenericDetail01" />
-      <module name="chapter13" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Generic_.Generic_info.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GenericExercise02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Generic_.Generic_info.GenericExercise02" />
-      <module name="chapter13" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Generic_.Generic_info.*" />
+          <option name="PATTERN" value="Generic_.Junit_.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,13 +103,61 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Junit01.m1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chapter13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Generic_.Junit_.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Generic_.Junit_" />
+      <option name="MAIN_CLASS_NAME" value="Generic_.Junit_.Junit01" />
+      <option name="METHOD_NAME" value="m1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Junit01.m2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chapter13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Generic_.Junit_.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Generic_.Junit_" />
+      <option name="MAIN_CLASS_NAME" value="Generic_.Junit_.Junit01" />
+      <option name="METHOD_NAME" value="m2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Junit01.m3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chapter13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Generic_.Junit_.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Generic_.Junit_" />
+      <option name="MAIN_CLASS_NAME" value="Generic_.Junit_.Junit01" />
+      <option name="METHOD_NAME" value="m3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CustomGenericMethods" />
-        <item itemvalue="Application.CustomGenericsInterface" />
-        <item itemvalue="Application.CustomGenerics01" />
-        <item itemvalue="Application.GenericExercise02" />
-        <item itemvalue="Application.GenericDetail01" />
+        <item itemvalue="Application.Junit01" />
+        <item itemvalue="JUnit.Junit01.m2" />
+        <item itemvalue="JUnit.Junit01.m1" />
+        <item itemvalue="JUnit.Junit01.m3" />
+        <item itemvalue="Application.GenericExtends" />
       </list>
     </recent_temporary>
   </component>
@@ -158,7 +170,6 @@
       <option name="presentableId" value="Default" />
       <updated>1710143989065</updated>
       <workItem from="1710143990106" duration="9220000" />
-      <workItem from="1710167548450" duration="4097000" />
     </task>
     <task id="LOCAL-00001" summary="2024/3/11">
       <created>1710153723102</created>
@@ -174,21 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710155936457</updated>
     </task>
-    <task id="LOCAL-00003" summary="2024/3/11">
-      <created>1710171788713</created>
+    <task id="LOCAL-00003" summary="2024/3/12">
+      <created>1710206420169</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1710171788713</updated>
+      <updated>1710206420169</updated>
     </task>
-    <task id="LOCAL-00004" summary="2024/3/11">
-      <created>1710171818135</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1710171818135</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,55 +212,57 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2024/3/11" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024/3/11" />
+    <MESSAGE value="2024/3/12" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024/3/12" />
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="31" key="#Project_Structure" timestamp="1710144029527">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="249" y="31" key="#Project_Structure/0.0.1536.912@0.0.1536.912" timestamp="1710144029527" />
-    <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser" timestamp="1710156714319">
+    <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser" timestamp="1710209330080">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser/0.0.1536.912@0.0.1536.912" timestamp="1710156714319" />
-    <state x="686" y="241" key="FileChooserDialogImpl" timestamp="1710171952056">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser/0.0.1536.912@0.0.1536.912" timestamp="1710209330080" />
+    <state x="549" y="211" key="FileChooserDialogImpl" timestamp="1710156287513">
+      <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="549" y="211" key="FileChooserDialogImpl/0.0.1536.912@0.0.1536.912" timestamp="1710156287513" />
-    <state x="686" y="241" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1710171952056" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1710172392618">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1710210205649">
+      <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.bottom/0.0.1536.912@0.0.1536.912" timestamp="1710157632060" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1710172392618" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1710172392618">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.912@0.0.1536.912" timestamp="1710210205649" />
+    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1710210205649">
+      <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.center/0.0.1536.912@0.0.1536.912" timestamp="1710157632060" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1710172392618" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1710172392618">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.912@0.0.1536.912" timestamp="1710210205649" />
+    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1710210205649">
+      <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.left/0.0.1536.912@0.0.1536.912" timestamp="1710157632060" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1710172392618" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1710172392618">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.912@0.0.1536.912" timestamp="1710210205649" />
+    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1710210205649">
+      <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.right/0.0.1536.912@0.0.1536.912" timestamp="1710157632060" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1710172392618" />
-    <state x="451" y="216" key="Vcs.Push.Dialog.v2" timestamp="1710171819680">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.912@0.0.1536.912" timestamp="1710210205649" />
+    <state x="361" y="189" key="Vcs.Push.Dialog.v2" timestamp="1710155894388">
+      <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="361" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.912@0.0.1536.912" timestamp="1710155894388" />
-    <state x="451" y="216" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1710171819680" />
+    <state x="485" y="348" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1710210032648">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state x="485" y="348" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.912@0.0.1536.912" timestamp="1710210032648" />
+    <state x="573" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1710209304773">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state x="573" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.912@0.0.1536.912" timestamp="1710209304773" />
     <state x="311" y="185" width="913" height="640" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1710155865111">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="311" y="185" width="913" height="640" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.912@0.0.1536.912" timestamp="1710155865111" />
-    <state x="531" y="238" key="run.anything.popup" timestamp="1710170883830">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="425" y="209" key="run.anything.popup" timestamp="1710157625980">
+      <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="425" y="209" key="run.anything.popup/0.0.1536.912@0.0.1536.912" timestamp="1710157625980" />
-    <state x="531" y="238" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1710170883830" />
   </component>
 </project>
