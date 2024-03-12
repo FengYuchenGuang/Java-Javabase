@@ -6,6 +6,9 @@ import java.awt.*;
 /**
  * @author hxz
  * 基础的画图操作
+ *
+ * 除了字体的设置是在左下角
+ * 其他，画图、设置图片都是按照左上角
  */
 //JFrame 对应窗口,可以理解成是一个画框
 public class DrawCircle extends JFrame{
@@ -87,7 +90,7 @@ class MyPanel01 extends JPanel {
         g.setColor(Color.red);
         g.setFont(new Font("隶书", Font.BOLD, 50));
 
-        //这里设置的 100， 100， 是 "北京你好"左下角
+        //这里设置的 100， 100， 是 "北京你好"  ====左下角======
         g.drawString("北京你好", 100, 100);
 
         //设置画笔的字体 setFont(Font font)
