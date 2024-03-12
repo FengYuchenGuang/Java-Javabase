@@ -6,6 +6,10 @@ import java.util.ArrayList;
  * @author hxz
  * 泛型方法的使用
  * 泛型方法，可以定义在普通类中, 也可以定义在泛型类中
+ *
+ * 泛型往往与重载一起使用
+ * 泛型 形参个数相同，返回类型相同，但不同类型时（避免反复重载）
+ * 重载 不同返回类型、不同个数的形参使用
  */
 @SuppressWarnings("all")
 public class CustomGenericMethods {
