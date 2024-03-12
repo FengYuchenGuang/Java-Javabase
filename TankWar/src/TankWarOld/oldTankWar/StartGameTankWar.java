@@ -481,11 +481,9 @@ public class StartGameTankWar extends JFrame {
                             Player1.keyPressed(e);
                         }
 
-
                 }
 
             }
-
 
         }
 
