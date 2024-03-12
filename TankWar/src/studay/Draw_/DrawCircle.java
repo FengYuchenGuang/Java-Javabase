@@ -78,6 +78,7 @@ class MyPanel01 extends JPanel {
 
         //画图片 drawImage(Image img, int x, int y, ..)
         //1. 获取图片资源, /bg.png 表示在该项目的根目录去获取 bg.png 图片资源
+        // out 里面
         Image image = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/pic/block/基地.png"));
         g.drawImage(image, 900, 500, 50, 50, this);
 
