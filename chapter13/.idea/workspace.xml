@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="2024/3/12">
-      <change afterPath="$PROJECT_DIR$/src/Generic_/GenericExtends/GenericExtends.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generic_/HomeWork/HomeWork01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generic_/Junit_/Junit01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter13.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chapter13.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Generic_/HomeWork/HomeWork01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generic_/HomeWork/HomeWork01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,20 +59,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.Junit01">
-    <configuration name="GenericExtends" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Generic_.GenericExtends.GenericExtends" />
-      <module name="chapter13" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Generic_.GenericExtends.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.HomeWork01.testList">
     <configuration name="Junit01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Generic_.Junit_.Junit01" />
       <module name="chapter13" />
@@ -99,6 +82,22 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomeWork01.testList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chapter13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Generic_.HomeWork.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Generic_.HomeWork" />
+      <option name="MAIN_CLASS_NAME" value="Generic_.HomeWork.HomeWork01" />
+      <option name="METHOD_NAME" value="testList" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HomeWork01.testList" />
         <item itemvalue="Application.Junit01" />
         <item itemvalue="JUnit.Junit01.m2" />
         <item itemvalue="JUnit.Junit01.m1" />
         <item itemvalue="JUnit.Junit01.m3" />
-        <item itemvalue="Application.GenericExtends" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +191,21 @@
       <option name="project" value="LOCAL" />
       <updated>1710206420169</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2024/3/12">
+      <created>1710213349899</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710213349899</updated>
+    </task>
+    <task id="LOCAL-00005" summary="2024/3/12">
+      <created>1710213376617</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710213376617</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,10 +257,10 @@
       <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.912@0.0.1536.912" timestamp="1710210205649" />
-    <state x="361" y="189" key="Vcs.Push.Dialog.v2" timestamp="1710155894388">
+    <state x="361" y="189" key="Vcs.Push.Dialog.v2" timestamp="1710213412648">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state x="361" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.912@0.0.1536.912" timestamp="1710155894388" />
+    <state x="361" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.912@0.0.1536.912" timestamp="1710213412648" />
     <state x="485" y="348" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1710210032648">
       <screen x="0" y="0" width="1536" height="912" />
     </state>

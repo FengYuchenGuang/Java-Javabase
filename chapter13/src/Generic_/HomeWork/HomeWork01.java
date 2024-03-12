@@ -1,5 +1,7 @@
 package Generic_.HomeWork;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.*;
 
 /**
@@ -23,15 +25,36 @@ import java.util.*;
  */
 public class HomeWork01 {
     public static void main(String[] args) {
-        DAO<User> userDAO = new DAO<>();
+
+    }
+
+    @Test
+    public void testList() {
+        DAO<User> dao = new DAO<>();
         User user1 = new User("hxz", 24, 1001);
         User user2 = new User("make", 18, 1002);
         User user3 = new User("hsp", 28, 1003);
 
-        userDAO.save(user1.getName(),user1);
-        userDAO.save(user2.getName(),user2);
-        userDAO.save(user3.getName(),user3);
+        dao.save("001", user1);
+        dao.save("002", user2);
+        dao.save("003", user3);
 
+        List<User> list = dao.list();
+        System.out.println("list = " + list);
+
+        //修改
+        System.out.println("===update===");
+        dao.update("003",new User("milan",99,1010));
+        //重新导入list
+        list = dao.list();
+        System.out.println("list = " + list);
+
+        //删除
+        System.out.println("===delete===");
+        dao.delete("002");
+        //重新导入list
+        list = dao.list();
+        System.out.println("list = " + list);
 
     }
 }
@@ -91,6 +114,15 @@ class User {
         this.name = name;
         this.age = age;
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", id=" + id +
+                '}';
     }
 
     public String getName() {
