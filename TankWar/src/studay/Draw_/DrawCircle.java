@@ -30,6 +30,9 @@ public class DrawCircle extends JFrame{
         //使屏幕居中
         this.setLocationRelativeTo(null);
 
+        //将窗体设置为不可调节大小
+//        setResizable(false);
+
         //当点击窗口的小×，程序完全退出.
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -52,7 +55,7 @@ class MyPanel01 extends JPanel {
 
         System.out.println("paint 方法被调用了~");
         //画出一个圆形.
-        //g.drawOval(10, 10, 100, 100);
+//        g.drawOval(10, 10, 100, 100);
 
         //演示绘制不同的图形..
         //画直线 drawLine(int x1,int y1,int x2,int y2)
@@ -76,7 +79,7 @@ class MyPanel01 extends JPanel {
         //画图片 drawImage(Image img, int x, int y, ..)
         //1. 获取图片资源, /bg.png 表示在该项目的根目录去获取 bg.png 图片资源
         Image image = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/pic/block/基地.png"));
-        g.drawImage(image, 950, 500, 50, 50, this);
+        g.drawImage(image, 900, 500, 50, 50, this);
 
         //画字符串 drawString(String str, int x, int y)//写字
         //给画笔设置颜色和字体
