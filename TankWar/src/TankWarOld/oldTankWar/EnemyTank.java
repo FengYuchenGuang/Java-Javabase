@@ -23,7 +23,7 @@ public class EnemyTank extends Tank {
 	public int attackCoolDownTime = 1000;
 	
 	public EnemyTank(String img, int x, int y, StartGameTankWar GameTankWar, String upImg, String downImg,
-			String rightImg, String leftImg, int EnemyTankWidth, int EnemyTankHeight) {
+					 String rightImg, String leftImg, int EnemyTankWidth, int EnemyTankHeight) {
 		super(img, x, y, GameTankWar, upImg, downImg, rightImg, leftImg);
 		this.EnemyTankWidth = EnemyTankWidth;
 		this.EnemyTankHeight = EnemyTankHeight;

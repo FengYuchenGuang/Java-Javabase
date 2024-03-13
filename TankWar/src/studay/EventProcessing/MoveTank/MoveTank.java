@@ -6,7 +6,7 @@ package studay.EventProcessing.MoveTank;
 public class MoveTank {
     public static void main(String[] args) {
         LoadTankMove loadTankMove = new LoadTankMove();
-
+        loadTankMove.start();
     }
 }
 
