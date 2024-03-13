@@ -39,7 +39,8 @@ public class EnemyTank extends Tank {
 
             moveCD_flag = false;
             //终止线程
-            this.stop();
+//            this.stop();
+            //运行到这里，线程自然终止
         }
     }
 
