@@ -1,20 +1,28 @@
 package studay.EventProcessing.MoveTank;
 
-import TankWarOld.oldTankWar.StartGameTankWar;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.Vector;
 
 /**
  * @author hxz
  */
 public class LoadTankMove extends JFrame {
-    Player1 player1 = new Player1(500, 400);
-    EnemyTank enemyTank = new EnemyTank(200, 200,7);
     int widthframe = 1000;
     int heightframe = 600;
+    Player1 player1;
+    Vector<EnemyTank> enemyTankList = new Vector<EnemyTank>();
+
+    public LoadTankMove() throws HeadlessException {
+        player1 = new Player1(500, 400);
+        enemyTankList.add( new EnemyTank(200, 200,7));
+        enemyTankList.add( new EnemyTank(400, 200,5));
+        enemyTankList.add( new EnemyTank(600, 200,3));
+
+    }
 
     /*
      *双缓存解决屏幕闪烁问题
@@ -39,7 +47,7 @@ public class LoadTankMove extends JFrame {
             //每50毫秒也自动重绘一次，用于更新其他自动改变的值
             repaint();
             try {
-                Thread.sleep(50);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -68,7 +76,10 @@ public class LoadTankMove extends JFrame {
         gImage.fillRect(0, 0, widthframe, heightframe);
 
         player1.PaintSelf(gImage);
-        enemyTank.PaintSelf(gImage);
+
+        for (EnemyTank enemyTank:enemyTankList) {
+            enemyTank.PaintSelf(gImage);
+        }
 
         g.drawImage(offscreenImage, 0, 0, this);
     }
@@ -77,11 +88,13 @@ public class LoadTankMove extends JFrame {
         @Override
         public void keyPressed(KeyEvent e) {
             player1.keyPress(e);
+            repaint();
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
             player1.keyRelease(e);
+            repaint();
         }
     }
 }

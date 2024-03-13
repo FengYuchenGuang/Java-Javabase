@@ -185,6 +185,9 @@ public class StartGameTankWar extends JFrame {
         //获取该图片的画笔
         Graphics gImage = offscreenImage.getGraphics();
 
+        //画之前先清空原有画布
+        super.paint(gImage);
+
         /*
          * 绘制纯色背景
          */

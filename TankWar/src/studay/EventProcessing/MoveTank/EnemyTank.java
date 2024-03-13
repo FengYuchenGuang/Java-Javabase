@@ -10,6 +10,7 @@ import java.util.Random;
 public class EnemyTank extends Tank {
     int EnemyMoveTime = 0;
     int RandomMoveTime = 6;
+    boolean moveCD_flag = false;
 
     public EnemyTank(int px, int py) {
         super(px, py, Direction.DOWN);
@@ -26,6 +27,7 @@ public class EnemyTank extends Tank {
     class moveCD extends Thread {
         @SuppressWarnings("deprecation")
         public void run() {
+            moveCD_flag = true;
             //ÐÝÃß200ms
             try {
                 Thread.sleep(400);
@@ -34,12 +36,21 @@ public class EnemyTank extends Tank {
                 e.printStackTrace();
 
             }
+
+            moveCD_flag = false;
             //ÖÕÖ¹Ïß³Ì
             this.stop();
         }
     }
 
+    class attCD extends Thread {
+
+    }
+
     private void moveEnemyTank() {
+        if (moveCD_flag){
+            return;
+        }
 
         if (EnemyMoveTime > RandomMoveTime) {
             tankDirection = RandomEnemyDirection();
