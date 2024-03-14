@@ -1,31 +1,41 @@
-package studay.EventProcessing.MoveTank;
+package studay.TankWar03;
+
 
 import java.awt.*;
 
 /**
  * @author hxz
  */
-public abstract class Tank {
+public abstract class Tank extends GameObject{
     protected int Px;
     protected int Py;
     protected Direction tankDirection = Direction.UP;
-    protected int speed = 5;
+    protected int speed = 5; //坦克速度
+    protected int BullrtSpeed = 5; //子弹速度
 
-    public Tank(int px, int py, Direction direction) {
+    //坦克大小
+    protected int width = 50;
+    protected int height = 60;
+
+
+
+    public Tank(int px, int py, Direction tankDirection, TankWar03 myPanel) {
         Px = px;
         Py = py;
-        this.tankDirection = direction;
+        this.tankDirection = tankDirection;
+        MyPanel = myPanel;
     }
 
-    public Tank(int px, int py, Direction tankDirection, int speed) {
+    public Tank(int px, int py, Direction tankDirection, int speed, TankWar03 myPanel) {
         Px = px;
         Py = py;
         this.tankDirection = tankDirection;
         this.speed = speed;
+        MyPanel = myPanel;
     }
 
-    //公共方法
-    public abstract void PaintSelf(Graphics g);
+
+
 
     /*
      * 坦克移动的方法
@@ -55,12 +65,13 @@ public abstract class Tank {
 
 
     //编写方法，画出坦克
+
     /**
-     * @param x 坦克的左上角 x 坐标
-     * @param y 坦克的左上角 y 坐标
-     * @param g 画笔
+     * @param x      坦克的左上角 x 坐标
+     * @param y      坦克的左上角 y 坐标
+     * @param g      画笔
      * @param direct 坦克方向（上下左右）
-     * @param type 坦克类型
+     * @param type   坦克类型
      */
     public void drawTank(int x, int y, Graphics g, Direction direct, int type) {
         //根据不同类型坦克，设置不同颜色
@@ -84,27 +95,35 @@ public abstract class Tank {
                 break;
             case RIGHT: //表示向右
                 g.fill3DRect(Px, Py, 60, 10, false);//画出坦克左边轮子
-                g.fill3DRect(Px, Py+30, 60, 10, false);//画出坦克右边轮子
+                g.fill3DRect(Px, Py + 30, 60, 10, false);//画出坦克右边轮子
                 g.fill3DRect(Px + 10, Py + 10, 40, 20, false);//画出坦克盖子
                 g.fillOval(Px + 20, Py + 10, 20, 20);//画出圆形盖子
-                g.drawLine(Px + 30, Py + 20, Px+60, Py+20);//画出炮筒
+                g.drawLine(Px + 30, Py + 20, Px + 60, Py + 20);//画出炮筒
                 break;
             case DOWN: //表示向下
                 g.fill3DRect(Px, Py, 10, 60, false);//画出坦克左边轮子
                 g.fill3DRect(Px + 30, Py, 10, 60, false);//画出坦克右边轮子
                 g.fill3DRect(Px + 10, Py + 10, 20, 40, false);//画出坦克盖子
                 g.fillOval(Px + 10, Py + 20, 20, 20);//画出圆形盖子
-                g.drawLine(Px + 20, Py + 30, Px + 20, Py+60);//画出炮筒
+                g.drawLine(Px + 20, Py + 30, Px + 20, Py + 60);//画出炮筒
                 break;
             case LEFT: //表示向左
                 g.fill3DRect(Px, Py, 60, 10, false);//画出坦克左边轮子
-                g.fill3DRect(Px, Py+30, 60, 10, false);//画出坦克右边轮子
+                g.fill3DRect(Px, Py + 30, 60, 10, false);//画出坦克右边轮子
                 g.fill3DRect(Px + 10, Py + 10, 40, 20, false);//画出坦克盖子
                 g.fillOval(Px + 20, Py + 10, 20, 20);//画出圆形盖子
-                g.drawLine(Px + 30, Py + 20, Px, Py+20);//画出炮筒
+                g.drawLine(Px + 30, Py + 20, Px, Py + 20);//画出炮筒
                 break;
             default:
                 System.out.println("暂时没有处理");
         }
+    }
+
+    public int getPx() {
+        return Px;
+    }
+
+    public int getPy() {
+        return Py;
     }
 }

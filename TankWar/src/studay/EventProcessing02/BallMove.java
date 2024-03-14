@@ -1,4 +1,4 @@
-package studay.EventProcessing;
+package studay.EventProcessing02;
 
 import javax.swing.*;
 import java.awt.*;

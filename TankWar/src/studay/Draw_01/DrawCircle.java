@@ -1,4 +1,4 @@
-package studay.Draw_;
+package studay.Draw_01;
 
 import javax.swing.*;
 import java.awt.*;

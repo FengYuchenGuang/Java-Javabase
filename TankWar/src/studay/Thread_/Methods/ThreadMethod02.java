@@ -2,7 +2,7 @@ package studay.Thread_.Methods;
 
 /**
  * @author hxz
- * 1、yield 线程礼让
+ * 1、yield 线程礼让  根据内存 cpu 情况，可能礼让不成功（电脑认为没有必要，反正都能执行）
  * 2、join   线程插队
  */
 public class ThreadMethod02 {
@@ -39,10 +39,10 @@ class T02 extends Thread {
             }
             //Thread.currentThread().getName() 获取线程名
             System.out.println("线程 " + Thread.currentThread().getName() + " 运行中..." + i);
+            if (i==9){
+                ///线程礼让
+                Thread.yield();
+            }
         }
-
-
-
     }
-
 }

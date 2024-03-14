@@ -54,7 +54,7 @@ public class EnemyTank extends Tank {
 			attackCollDown = true;
 			
 			//÷’÷πœﬂ≥Ã
-			this.stop();
+//			this.stop();
 			
 		}
 		
