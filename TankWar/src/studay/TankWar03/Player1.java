@@ -45,15 +45,27 @@ public class Player1 extends Tank {
     public void movePlayer1() {
         switch (keyCode) {
             case KeyEvent.VK_UP:
+                if (moveToBoundary()){
+                    break;
+                }
                 tankUp();
                 break;
             case KeyEvent.VK_DOWN:
+                if (moveToBoundary()){
+                    break;
+                }
                 tankDown();
                 break;
             case KeyEvent.VK_LEFT:
+                if (moveToBoundary()){
+                    break;
+                }
                 tankLeft();
                 break;
             case KeyEvent.VK_RIGHT:
+                if (moveToBoundary()){
+                    break;
+                }
                 tankRight();
                 break;
             case KeyEvent.VK_SPACE:
@@ -72,6 +84,9 @@ public class Player1 extends Tank {
 
     @Override
     public void PaintSelf(Graphics g) {
+        if (!isAlive){
+            return;
+        }
         drawTank(Px, Py, g, tankDirection, 0);
         movePlayer1();
     }

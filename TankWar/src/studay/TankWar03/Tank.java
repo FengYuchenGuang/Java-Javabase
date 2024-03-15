@@ -63,6 +63,18 @@ public abstract class Tank extends GameObject{
         Px += speed;
     }
 
+    //公共方法，检测是否到边界
+    public boolean moveToBoundary(){
+        if (Px < 0 || Py <0 ){
+            return true;
+        }else if (tankDirection == Direction.DOWN && Py>MyPanel.heightframe-70){
+            return true;
+        }else if (tankDirection == Direction.RIGHT && Px>MyPanel.widthframe-70){
+            return true;
+        }
+        return false;
+    }
+
 
     //编写方法，画出坦克
 

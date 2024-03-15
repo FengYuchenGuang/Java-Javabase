@@ -68,7 +68,7 @@ public class EnemyTank extends Tank {
 
         if (EnemyMoveTime > RandomMoveTime) {
             tankDirection = RandomEnemyDirection();
-            RandomMoveTime = new Random().nextInt(5) + 5;
+            RandomMoveTime = new Random().nextInt(10) + 5;
             EnemyMoveTime = 0;
         } else {
             EnemyMoveTime++;
@@ -76,15 +76,27 @@ public class EnemyTank extends Tank {
 
         switch (tankDirection) {
             case UP:
+                if (moveToBoundary()){
+                    break;
+                }
                 tankUp();
                 break;
             case DOWN:
+                if (moveToBoundary()){
+                    break;
+                }
                 tankDown();
                 break;
             case RIGHT:
+                if (moveToBoundary()){
+                    break;
+                }
                 tankRight();
                 break;
             case LEFT:
+                if (moveToBoundary()){
+                    break;
+                }
                 tankLeft();
                 break;
         }

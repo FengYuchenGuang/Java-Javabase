@@ -124,6 +124,7 @@ public class StartGameTankWar extends JFrame {
 
         //重绘
         while (true) {
+            System.out.println(boomList.size());
 
 //			//当敌方坦克数量为零且生成坦克数至少为4时，游戏才胜利（即至少击败5辆坦克才能获胜）
 //			if(EnemyCount == 0 && bornTank >= 4) {
@@ -296,6 +297,7 @@ public class StartGameTankWar extends JFrame {
                 boom.paintSelf(gImage);
 
             }
+
 
             bulletsList.removeAll(removeList);
 

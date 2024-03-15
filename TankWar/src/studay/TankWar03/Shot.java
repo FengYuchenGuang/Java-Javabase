@@ -58,6 +58,7 @@ public class Shot extends Bullrt implements Runnable {
             //×²»÷
             if (MyPanel.player1.GetBoundary().intersects(this.GetBoundary())) {
                 System.out.println("ÓÎÏ·½áÊø");
+                MyPanel.player1.isAlive = false;
 //                MyPanel.player1 = null;
                 MyPanel.booms.add(new Boom(MyPanel.player1.getPx(),MyPanel.player1.getPy(),MyPanel));
                 return true;

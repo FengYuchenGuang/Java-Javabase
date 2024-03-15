@@ -9,7 +9,8 @@ public class Boom extends GameObject{
 	
 	//ÇÐ»»µ½ÄÇÕÅÍ¼Æ¬
 	int explodeCount = 0;
-	
+
+	boolean isAlive = true;
 
 	
 	int Width = 127;
@@ -35,6 +36,8 @@ public class Boom extends GameObject{
 		if(explodeCount < 11) {
 			g.drawImage(imgs[explodeCount], X, Y, null);
 			explodeCount++;
+		}else if (isAlive){
+			isAlive =false;
 		}
 		
 	}

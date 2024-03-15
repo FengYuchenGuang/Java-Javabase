@@ -38,13 +38,23 @@ import java.util.Vector;
  *   3、/是根目录
  *
  * 7、第一颗子弹打到后，没有爆炸（不论是先达到自己，还是达到敌人）
+ *    在爆炸特效结束后删除自身每次会报异常
+ *    7.1 第一次爆炸特效绘制时，图片没有加载完成，因为程序运行太快，而没有显示
+ *        因此将图片设置为静态，程序加载时就 调用，进行图片加载
+ *        初始化时，添加一个boom，作为图片加载
  *
+ *    7.2 在遍历 Vector 列表时，删除自身会导致表变化，从而出现异常，因此我选择遍历时，
+ *        将爆炸完的boom添加进临时的移除列表，遍历结束后移除
+ *
+ * 8、添加坦克不能越界
+ *   8.1 玩家坦克移动到边界后无法在移动
  */
 
 class TankWar03 extends JFrame implements Runnable{
     public int widthframe = 1000;
     public int heightframe = 600;
     Player1 player1;
+
     Vector<EnemyTank> enemyTankList = new Vector<>();
     //子弹列表
     Vector<Shot> shots =  new Vector<>();
@@ -53,10 +63,13 @@ class TankWar03 extends JFrame implements Runnable{
 
 
     public TankWar03() throws HeadlessException {
+        //加载爆炸图片
+        Boom.BoomStart();
+        booms.add(new Boom(0,0,this));
         player1 = new Player1(500, 400,this);
-        enemyTankList.add( new EnemyTank(200, 200,7,this));
-        enemyTankList.add( new EnemyTank(400, 200,5,this));
-        enemyTankList.add( new EnemyTank(600, 200,3,this));
+        enemyTankList.add( new EnemyTank(200, 530,7,this));
+        enemyTankList.add( new EnemyTank(400, 520,5,this));
+        enemyTankList.add( new EnemyTank(600, 520,3,this));
 
     }
 
@@ -121,18 +134,55 @@ class TankWar03 extends JFrame implements Runnable{
 
         //绘制爆炸特效
         if (!booms.isEmpty()){
-            for (Boom boom:booms){
-                boom.PaintSelf(gImage);
+            Vector<Boom> removeBooms = new Vector<>();
+            for (Boom boom: this.booms){
+                if (boom.isAlive){
+                    boom.PaintSelf(gImage);
+                }else {
+                    removeBooms.add(boom);
+                }
+
             }
+            //删除已经爆炸完的boom
+            booms.removeAll(removeBooms);
         }
 
 
         g.drawImage(offscreenImage, 0, 0, this);
     }
 
+    class newPlayer extends Thread{
+        private TankWar03 MyPanel;
+
+        public newPlayer(TankWar03 myPanel) {
+            MyPanel = myPanel;
+        }
+
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            if (!player1.isAlive){
+                player1 = new Player1(500, 400,MyPanel);
+            }
+        }
+    }
+
+
     @Override
     public void run() {
         while (true) {
+            //判断玩家是否阵亡
+            if (!player1.isAlive){
+                //定义一个新线程，在新线程中过一秒后再重新添加 player1
+                new newPlayer(this).start();
+            }
+
+
             //每50毫秒也自动重绘一次，用于更新其他自动改变的值
             repaint();
             try {
@@ -141,7 +191,7 @@ class TankWar03 extends JFrame implements Runnable{
                 e.printStackTrace();
             }
 //            System.out.println(shots.isEmpty());
-            System.out.println(booms.isEmpty() + "数量为："+booms.size());
+//            System.out.println(booms.isEmpty() + "数量为："+booms.size());
         }
     }
 
