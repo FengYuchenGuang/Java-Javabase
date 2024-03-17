@@ -7,6 +7,8 @@ import java.io.IOException;
 
 /**
  * @author hxz
+ * FileOutputStream
+ * 字节输出流
  */
 public class FileOutputStream01 {
     public static void main(String[] args) {
@@ -37,7 +39,7 @@ public class FileOutputStream01 {
             /*
                 write(byte[] b, int off, int len) 将 len 字节从位于偏移量 off 的指定字节数组写入此文件输出流
             */
-            fileOutputStream.write(str.getBytes(), 0, 3);
+            fileOutputStream.write(str.getBytes(), 4, 5);
             System.out.println("文件 " + filePath + " 已写入~");
 
         } catch (IOException e) {

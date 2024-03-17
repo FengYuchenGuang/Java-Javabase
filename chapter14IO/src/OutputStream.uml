@@ -11,11 +11,11 @@
   </nodes>
   <notes />
   <edges>
-    <edge source="java.io.Closeable" target="java.lang.AutoCloseable">
+    <edge source="java.io.FileOutputStream" target="java.io.OutputStream">
       <point x="0.0" y="-18.0" />
       <point x="0.0" y="18.0" />
     </edge>
-    <edge source="java.io.FileOutputStream" target="java.io.OutputStream">
+    <edge source="java.io.Closeable" target="java.lang.AutoCloseable">
       <point x="0.0" y="-18.0" />
       <point x="0.0" y="18.0" />
     </edge>
@@ -32,7 +32,7 @@
       <point x="0.0" y="18.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="170.5" y="147.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="188.5" y="150.5" />
   <SelectedNodes>
     <node>java.io.FileOutputStream</node>
   </SelectedNodes>
