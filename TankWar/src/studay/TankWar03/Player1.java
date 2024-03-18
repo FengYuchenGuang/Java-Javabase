@@ -17,7 +17,7 @@ public class Player1 extends Tank {
     public void attack() {
         if (!attackCollDown){
             MyPanel.shots.add(new Shot(Px, Py,tankDirection,BullrtSpeed,1,MyPanel));
-            //冷却
+            //鍐峰嵈
             new attackCD().start();
         }
     }
@@ -25,7 +25,7 @@ public class Player1 extends Tank {
     class  attackCD extends  Thread{
         @Override
         public void run() {
-            //将攻击状态设置为冷却时间
+            //灏嗘敾鍑荤姸鎬佽缃负鍐峰嵈鏃堕棿
             attackCollDown = true;
 
             try {
@@ -34,7 +34,7 @@ public class Player1 extends Tank {
                 e.printStackTrace();
             }
 
-            //将攻击状态设置为冷却时间
+            //灏嗘敾鍑荤姸鎬佽缃负鍐峰嵈鏃堕棿
             attackCollDown = false;
         }
 
@@ -45,27 +45,15 @@ public class Player1 extends Tank {
     public void movePlayer1() {
         switch (keyCode) {
             case KeyEvent.VK_UP:
-                if (moveToBoundary()){
-                    break;
-                }
                 tankUp();
                 break;
             case KeyEvent.VK_DOWN:
-                if (moveToBoundary()){
-                    break;
-                }
                 tankDown();
                 break;
             case KeyEvent.VK_LEFT:
-                if (moveToBoundary()){
-                    break;
-                }
                 tankLeft();
                 break;
             case KeyEvent.VK_RIGHT:
-                if (moveToBoundary()){
-                    break;
-                }
                 tankRight();
                 break;
             case KeyEvent.VK_SPACE:

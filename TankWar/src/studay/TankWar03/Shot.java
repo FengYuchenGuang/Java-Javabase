@@ -6,7 +6,7 @@ import java.awt.*;
  * @author hxz
  */
 public class Shot extends Bullrt implements Runnable {
-    private boolean loop; //Ïß³ÌÖÕÖ¹·û
+    private boolean loop; //çº¿ç¨‹ç»ˆæ­¢ç¬¦
 
     public Shot(int x, int y, Direction direction, int speed, int type, TankWar03 panel) {
         super(x, y, direction, speed, type, panel);
@@ -14,7 +14,7 @@ public class Shot extends Bullrt implements Runnable {
         new Thread(this).start();
     }
 
-    //µ÷Õû×Óµ¯³õÊ¼Î»ÖÃ
+    //è°ƒæ•´å­å¼¹åˆå§‹ä½ç½®
     private void adjustPosition() {
         if (direction == Direction.UP) {
             x += 15;
@@ -31,7 +31,7 @@ public class Shot extends Bullrt implements Runnable {
         }
     }
 
-    //¼ì²â×Óµ¯ÊÇ·ñ³ö½ç
+    //æ£€æµ‹å­å¼¹æ˜¯å¦å‡ºç•Œ
     public boolean moveToBoundary() {
         if (x > MyPanel.widthframe || x < 0 || y < 0 || y > MyPanel.heightframe) {
             return true;
@@ -39,12 +39,12 @@ public class Shot extends Bullrt implements Runnable {
         return false;
     }
 
-    //×Óµ¯ÊÇ·ñ×²»÷µ½Ì¹¿Ë£¨¸ù¾İtype ¿ÉÒÔÅĞ¶Ï×Óµ¯ÀàĞÍ£©
-    //Ìí¼Ó±¬Õ¨ÌØĞ§
+    //å­å¼¹æ˜¯å¦æ’å‡»åˆ°å¦å…‹ï¼ˆæ ¹æ®type å¯ä»¥åˆ¤æ–­å­å¼¹ç±»å‹ï¼‰
+    //æ·»åŠ çˆ†ç‚¸ç‰¹æ•ˆ
     public synchronized boolean hitTank() {
         if (type == 1) {
             for (EnemyTank enemyTank : MyPanel.enemyTankList) {
-                //×²»÷
+                //æ’å‡»
                 if (enemyTank.GetBoundary().intersects(this.GetBoundary())) {
                     MyPanel.enemyTankList.remove(enemyTank);
                     MyPanel.booms.add(new Boom(enemyTank.getPx(),enemyTank.getPy(),MyPanel));
@@ -55,9 +55,9 @@ public class Shot extends Bullrt implements Runnable {
             if (MyPanel.player1 == null){
                 return false;
             }
-            //×²»÷
-            if (MyPanel.player1.GetBoundary().intersects(this.GetBoundary())) {
-                System.out.println("ÓÎÏ·½áÊø");
+            //æ’å‡»
+            if (MyPanel.player1.isAlive && MyPanel.player1.GetBoundary().intersects(this.GetBoundary())) {
+                System.out.println("æ¸¸æˆç»“æŸ");
                 MyPanel.player1.isAlive = false;
 //                MyPanel.player1 = null;
                 MyPanel.booms.add(new Boom(MyPanel.player1.getPx(),MyPanel.player1.getPy(),MyPanel));
@@ -80,8 +80,8 @@ public class Shot extends Bullrt implements Runnable {
 
     @Override
     public void run() {
-        //Ïß³ÌÆô¶¯£¬Ã¿¹ı50ms ¼ì²â×Óµ¯ÊÇ·ñ´¥·¢ÊÂ¼ş£¨³¬³ö±ß¿ò£©£¬
-        // ²»ÊÇ£¬ÔòÒÆ¶¯×Óµ¯
+        //çº¿ç¨‹å¯åŠ¨ï¼Œæ¯è¿‡50ms æ£€æµ‹å­å¼¹æ˜¯å¦è§¦å‘äº‹ä»¶ï¼ˆè¶…å‡ºè¾¹æ¡†ï¼‰ï¼Œ
+        // ä¸æ˜¯ï¼Œåˆ™ç§»åŠ¨å­å¼¹
         while (true) {
             try {
                 Thread.sleep(50);
@@ -89,14 +89,14 @@ public class Shot extends Bullrt implements Runnable {
                 e.printStackTrace();
             }
 
-            //¼ì²â×Óµ¯ÊÇ·ñÓ¦¸ÃÏú»Ù
+            //æ£€æµ‹å­å¼¹æ˜¯å¦åº”è¯¥é”€æ¯
             if (moveToBoundary() || hitTank()) {
                 MyPanel.shots.remove(this);
                 break;
             }
 
 
-            //ÒÆ¶¯×Óµ¯
+            //ç§»åŠ¨å­å¼¹
             switch (direction) {
                 case UP:
                     y -= speed;

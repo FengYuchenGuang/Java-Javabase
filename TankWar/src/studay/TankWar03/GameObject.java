@@ -6,11 +6,11 @@ import java.awt.*;
  * @author hxz
  */
 public abstract class GameObject {
-    //界面
+    //鐣岄潰
     protected TankWar03 MyPanel;
     boolean isAlive = true;
 
-    //公共方法
+    //鍏叡鏂规硶
     public abstract void PaintSelf(Graphics g);
 
     public abstract Rectangle GetBoundary();

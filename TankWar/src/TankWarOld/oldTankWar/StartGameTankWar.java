@@ -13,35 +13,35 @@ public class StartGameTankWar extends JFrame {
      *
      */
     private static final long serialVersionUID = 1L;
-    //private Image photo = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/TankWarOld.Images/±³¾°.jpg"));
+    //private Image photo = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/TankWarOld.Images/èƒŒæ™¯.jpg"));
 
     /*
-     *Ë«»º´æ½â¾öÆÁÄ»ÉÁË¸ÎÊÌâ
+     *åŒç¼“å­˜è§£å†³å±å¹•é—ªçƒé—®é¢˜
      */
-    //¶¨ÒåË«»º´æÍ¼Æ¬
+    //å®šä¹‰åŒç¼“å­˜å›¾ç‰‡
     Image offscreenImage = null;
 
 
-    //¶¨Òå´°ÌåµÄ³¤¿í
+    //å®šä¹‰çª—ä½“çš„é•¿å®½
     static public int widthframe = 1000, heightframe = 600;
 
-    //Ö¸ÕëÍ¼Æ¬
+    //æŒ‡é’ˆå›¾ç‰‡
     Image start_select = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/TankWarOld/Images/tank2.jpg"));
 
-    //Ö¸Õë³õÊ¼×ø±ê
+    //æŒ‡é’ˆåˆå§‹åæ ‡
     int selectX = 250;
     int selectY = 160;
 
-    //ÓÎÏ·×´Ì¬£º 0 ÓÎÏ·Î´¿ªÊ¼ 1 ÓÎÏ·¿ªÊ¼ 2 ÓÎÏ·ÔİÍ£ 3 ÓÎÏ·½áÊø
+    //æ¸¸æˆçŠ¶æ€ï¼š 0 æ¸¸æˆæœªå¼€å§‹ 1 æ¸¸æˆå¼€å§‹ 2 æ¸¸æˆæš‚åœ 3 æ¸¸æˆç»“æŸ
     int game_flag = 0;
 
-    //ÓÎÏ·Ä£Ê½£º 0 ÓÎÏ·Î´¿ªÊ¼ 1 µ¥ÈËÄ£Ê½ 2 Ë«ÈËÄ£Ê½
-    int game_secelt = 0; //Í¼±íÏÔÊ¾½çÃæ
-    int enter = 0;     //ÓÎÏ·Ä£Ê½È·¶¨
+    //æ¸¸æˆæ¨¡å¼ï¼š 0 æ¸¸æˆæœªå¼€å§‹ 1 å•äººæ¨¡å¼ 2 åŒäººæ¨¡å¼
+    int game_secelt = 0; //å›¾è¡¨æ˜¾ç¤ºç•Œé¢
+    int enter = 0;     //æ¸¸æˆæ¨¡å¼ç¡®å®š
 
 
     /*
-     * ¶¨ÒåÍæ¼Ò1ÓëÍæ¼Ò2
+     * å®šä¹‰ç©å®¶1ä¸ç©å®¶2
      */
     Player1 Player1 = new Player1("/TankWarOld/Player1/tank1_up.gif", 100, 500, this, "/TankWarOld/Player1/tank1_up.gif",
             "/TankWarOld/Player1/tank1_down.gif", "/TankWarOld/Player1/tank1_right.gif", "/TankWarOld/Player1/tank1_left.gif");
@@ -50,29 +50,29 @@ public class StartGameTankWar extends JFrame {
             "/TankWarOld/Player2/tank2_down.gif", "/TankWarOld/Player2/tank2_right.gif", "/TankWarOld/Player2/tank2_left.gif");
 
     /*
-     * Ì¹¿Ë1ÓëÌ¹¿Ë2·¢ÉäµÄ×Óµ¯ÁĞ±í
+     * å¦å…‹1ä¸å¦å…‹2å‘å°„çš„å­å¼¹åˆ—è¡¨
      */
     ArrayList<Bullets1> bulletsList = new ArrayList<Bullets1>();
-    //ÎÒ·½×Óµ¯»÷ÖĞºóµÄÏû³ıÁĞ±í
+    //æˆ‘æ–¹å­å¼¹å‡»ä¸­åçš„æ¶ˆé™¤åˆ—è¡¨
     ArrayList<Bullets1> removeList = new ArrayList<Bullets1>();
-    //	//µĞ·½Ì¹¿Ë×Óµ¯ÁĞ±í
+    //	//æ•Œæ–¹å¦å…‹å­å¼¹åˆ—è¡¨
 //	ArrayList<EnemyBullrts> enemyBullrtsList = new ArrayList<EnemyBullrts>();
-    //Ìí¼ÓÍæ¼ÒÁĞ±í
+    //æ·»åŠ ç©å®¶åˆ—è¡¨
     ArrayList<Tank> playerList = new ArrayList<Tank>();
 
-    //Ìí¼ÓÒ»¸öÎ§Ç½ÁĞ±í
+    //æ·»åŠ ä¸€ä¸ªå›´å¢™åˆ—è¡¨
     ArrayList<Wall> wallList = new ArrayList<Wall>();
-    //´´½¨µĞ·½Ì¹¿ËµÄÁĞ±í
+    //åˆ›å»ºæ•Œæ–¹å¦å…‹çš„åˆ—è¡¨
     ArrayList<EnemyTank> EnemyTankList = new ArrayList<EnemyTank>();
-    //Ìí¼ÓÒ»¸ö»ùµØÁĞ±í
+    //æ·»åŠ ä¸€ä¸ªåŸºåœ°åˆ—è¡¨
     ArrayList<Base> baseList = new ArrayList<Base>();
-    //Ìí¼ÓÒ»¸ö±¬Õ¨ÁĞ±í
+    //æ·»åŠ ä¸€ä¸ªçˆ†ç‚¸åˆ—è¡¨
     ArrayList<Boom> boomList = new ArrayList<Boom>();
 
     /*
-     * ¶¨ÒåµĞ·½Ì¹¿ËµÄ±äÁ¿
+     * å®šä¹‰æ•Œæ–¹å¦å…‹çš„å˜é‡
      */
-    //Ì¹¿Ë´Ó´óµ½Ğ¡·ÖÈıÖÖ
+    //å¦å…‹ä»å¤§åˆ°å°åˆ†ä¸‰ç§
     EnemyTank EnemyTank1 = new EnemyTank("/TankWarOld/otherTanks/tank3_up.png", 500, 110, this, "/TankWarOld/otherTanks/tank3_up.png",
             "/TankWarOld/otherTanks/tank3_down.png", "/TankWarOld/otherTanks/tank3_left.png", "/TankWarOld/otherTanks/tank3_right.png", 58, 58);
 
@@ -84,73 +84,73 @@ public class StartGameTankWar extends JFrame {
 
 
     /*
-     * ¿ØÖÆµĞ·½Ì¹¿ËµÄËÙ¶È
+     * æ§åˆ¶æ•Œæ–¹å¦å…‹çš„é€Ÿåº¦
      */
-    //ÖØ»æ´ÎÊı
+    //é‡ç»˜æ¬¡æ•°
     int count = 0;
-    //¿ØÖÆµĞÈËÊıÁ¿
+    //æ§åˆ¶æ•Œäººæ•°é‡
     int EnemyCount = 1;
     int bornTank = 0;
 
-    //»ñµÃ±ÈÈüÊ¤Àû»òÊ§°Ü
+    //è·å¾—æ¯”èµ›èƒœåˆ©æˆ–å¤±è´¥
     static boolean Win = false;
     static boolean Defeat = false;
     static boolean Base = true;
 
 
-    //´°¿ÚÆô¶¯·½·¨
+    //çª—å£å¯åŠ¨æ–¹æ³•
     public void windowsStart() {
-        //¸ø´°Ìå¼ÓÒ»¸ö±êÌâ
-        setTitle("Ì¹¿Ë´óÕ½     by:hxz 2021/9/18");
+        //ç»™çª—ä½“åŠ ä¸€ä¸ªæ ‡é¢˜
+        setTitle("å¦å…‹å¤§æˆ˜     by:hxz 2021/9/18");
 
-        //´°Ìå³õÊ¼´óĞ¡
+        //çª—ä½“åˆå§‹å¤§å°
         setSize(widthframe, heightframe);
 
-        //Ê¹ÆÁÄ»¾ÓÖĞ
+        //ä½¿å±å¹•å±…ä¸­
         setLocationRelativeTo(null);
 
-        //´°¿Ú¹Ø±ÕÊ±³ÌĞòËæÖ®¹Ø±Õ
+        //çª—å£å…³é—­æ—¶ç¨‹åºéšä¹‹å…³é—­
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //½«´°ÌåÉèÖÃÎª²»¿Éµ÷½Ú´óĞ¡
+        //å°†çª—ä½“è®¾ç½®ä¸ºä¸å¯è°ƒèŠ‚å¤§å°
         setResizable(false);
 
-        //Ä¬ÈÏÇé¿öÏÂÕâ¸ö´°ÌåÊÇÒş²ØµÄ£¬±ØĞëÒª½«´°ÌåÏÔÏÖ³öÀ´
+        //é»˜è®¤æƒ…å†µä¸‹è¿™ä¸ªçª—ä½“æ˜¯éšè—çš„ï¼Œå¿…é¡»è¦å°†çª—ä½“æ˜¾ç°å‡ºæ¥
         setVisible(true);
 
-        //¸ø´°¿ÚÌí¼Ó¼üÅÌ¼àÊÓÆ÷
+        //ç»™çª—å£æ·»åŠ é”®ç›˜ç›‘è§†å™¨
         this.addKeyListener(new StartGameTankWar.KeyMonitor());
 
 
-        //ÖØ»æ
+        //é‡ç»˜
         while (true) {
             System.out.println(boomList.size());
 
-//			//µ±µĞ·½Ì¹¿ËÊıÁ¿ÎªÁãÇÒÉú³ÉÌ¹¿ËÊıÖÁÉÙÎª4Ê±£¬ÓÎÏ·²ÅÊ¤Àû£¨¼´ÖÁÉÙ»÷°Ü5Á¾Ì¹¿Ë²ÅÄÜ»ñÊ¤£©
+//			//å½“æ•Œæ–¹å¦å…‹æ•°é‡ä¸ºé›¶ä¸”ç”Ÿæˆå¦å…‹æ•°è‡³å°‘ä¸º4æ—¶ï¼Œæ¸¸æˆæ‰èƒœåˆ©ï¼ˆå³è‡³å°‘å‡»è´¥5è¾†å¦å…‹æ‰èƒ½è·èƒœï¼‰
 //			if(EnemyCount == 0 && bornTank >= 4) {
 //				Win= true;
 //			}else {
 //				Win= false;
 //			}
 
-            //µ±µĞ·½Ì¹¿ËÊıÁ¿ÎªÁãÊ±£¬ÓÎÏ·Ê¤Àû
+            //å½“æ•Œæ–¹å¦å…‹æ•°é‡ä¸ºé›¶æ—¶ï¼Œæ¸¸æˆèƒœåˆ©
             if (EnemyCount == 0) {
                 Win = true;
             } else {
                 Win = false;
             }
 
-            //»­²¼Ã¿ÖØ»æ100´Î¾ÍÌí¼ÓÒ»Á¾µĞ·½Ì¹¿Ë²¢ÇÒµĞ·½Ì¹¿ËÊıÁ¿²»ÄÜ´óÓÚ10
+            //ç”»å¸ƒæ¯é‡ç»˜100æ¬¡å°±æ·»åŠ ä¸€è¾†æ•Œæ–¹å¦å…‹å¹¶ä¸”æ•Œæ–¹å¦å…‹æ•°é‡ä¸èƒ½å¤§äº10
             if (count % 100 == 1 && count != 1 && EnemyCount < 10 && !Win && !Defeat) {
-                //Ëæ»úÉú³ÉµĞ·½Ì¹¿ËÎ»ÖÃ
+                //éšæœºç”Ÿæˆæ•Œæ–¹å¦å…‹ä½ç½®
                 Random random = new Random();
 
                 int rnum = random.nextInt(950);
 
-                //½«µĞ·½Ì¹¿ËÌí¼Ó½øµĞ·½Ì¹¿ËÁĞ±íÖĞ
+                //å°†æ•Œæ–¹å¦å…‹æ·»åŠ è¿›æ•Œæ–¹å¦å…‹åˆ—è¡¨ä¸­
                 AddEnemyTank(rnum, 80);
 
-                //¼ÆËãµĞ·½Ì¹¿ËÔö¼ÓÊıÁ¿
+                //è®¡ç®—æ•Œæ–¹å¦å…‹å¢åŠ æ•°é‡
                 bornTank++;
 
 
@@ -169,130 +169,130 @@ public class StartGameTankWar extends JFrame {
     }
 
     /*
-     * ¸øÃæ°åÉÏÉ«
+     * ç»™é¢æ¿ä¸Šè‰²
      */
     public void paint(Graphics g) {
-        //ÕâÒ»¾äÊÇµ÷ÓÃ¸¸ÀàµÄ paint·½·¨
-        //»áÏÈ»­°×²¼£¬ÔÙÈ¥»­»º´æ²¼£¬µ¼ÖÂ»­ÃæÉÁË¸
+        //è¿™ä¸€å¥æ˜¯è°ƒç”¨çˆ¶ç±»çš„ paintæ–¹æ³•
+        //ä¼šå…ˆç”»ç™½å¸ƒï¼Œå†å»ç”»ç¼“å­˜å¸ƒï¼Œå¯¼è‡´ç”»é¢é—ªçƒ
 //		super.paint(g);
         //System.out.println(bulletsList.size());
         //System.out.println(EnemyTankList.size());
-        //´´½¨ºÍ´°¿ÚÒ»Ñù´óĞ¡µÄÍ¼Æ¬
+        //åˆ›å»ºå’Œçª—å£ä¸€æ ·å¤§å°çš„å›¾ç‰‡
         if (offscreenImage == null) {
             offscreenImage = this.createImage(widthframe, heightframe);
 
         }
 
-        //»ñÈ¡¸ÃÍ¼Æ¬µÄ»­±Ê
+        //è·å–è¯¥å›¾ç‰‡çš„ç”»ç¬”
         Graphics gImage = offscreenImage.getGraphics();
 
-        //»­Ö®Ç°ÏÈÇå¿ÕÔ­ÓĞ»­²¼
+        //ç”»ä¹‹å‰å…ˆæ¸…ç©ºåŸæœ‰ç”»å¸ƒ
         super.paint(gImage);
 
         /*
-         * »æÖÆ´¿É«±³¾°
+         * ç»˜åˆ¶çº¯è‰²èƒŒæ™¯
          */
-        //ÉèÖÃ»­±ÊÑÕÉ«
+        //è®¾ç½®ç”»ç¬”é¢œè‰²
         gImage.setColor(Color.gray);
 
-        //»æÖÆÊµĞÄ¾ØĞÎ
+        //ç»˜åˆ¶å®å¿ƒçŸ©å½¢
         gImage.fillRect(0, 0, widthframe, heightframe);
 
         //images.img_backgrund.paintIcon(this, gImage, 0,0);
 
         /*
-         * ¸ø´°¿ÚÒ³Æô¶¯Ìí¼ÓÎÄ×Ö
+         * ç»™çª—å£é¡µå¯åŠ¨æ·»åŠ æ–‡å­—
          */
-        //¸Ä±ä»­±ÊÑÕÉ«
+        //æ”¹å˜ç”»ç¬”é¢œè‰²
         gImage.setColor(Color.blue);
 
-        //ÉèÖÃ×ÖÌåÑùÊ½£ºÈıÖÖĞ§¹û£º×ÖÌåÑùÊ½£¬¼Ó´ÖĞ§¹û£¬×ÖÌå´óĞ¡
-        gImage.setFont(new Font("·ÂËÎ", Font.BOLD, 50));
+        //è®¾ç½®å­—ä½“æ ·å¼ï¼šä¸‰ç§æ•ˆæœï¼šå­—ä½“æ ·å¼ï¼ŒåŠ ç²—æ•ˆæœï¼Œå­—ä½“å¤§å°
+        gImage.setFont(new Font("ä»¿å®‹", Font.BOLD, 50));
 
-        //Ğ´ÈëµÄÎÄ×Ö
+        //å†™å…¥çš„æ–‡å­—
         if (enter == 0) {
-            gImage.drawString("Ñ¡ÔñÓÎÏ·Ä£Ê½", 290, 200);
-            gImage.drawString("µ¥ÈËÄ£Ê½", 330, 300);
-            gImage.drawString("Ë«ÈËÄ£Ê½", 330, 400);
+            gImage.drawString("é€‰æ‹©æ¸¸æˆæ¨¡å¼", 290, 200);
+            gImage.drawString("å•äººæ¨¡å¼", 330, 300);
+            gImage.drawString("åŒäººæ¨¡å¼", 330, 400);
 
-            //»æÖÆÖ¸Õë
+            //ç»˜åˆ¶æŒ‡é’ˆ
             gImage.drawImage(start_select, selectX, selectY, null);
             //images.img_secelt.paintIcon(this, gImage, selectX,selectY);
         } else if (enter == 1 || enter == 2) {
-            //ÖØĞÂ¼ÆÊıµĞ·½Ì¹¿ËÊıÁ¿
+            //é‡æ–°è®¡æ•°æ•Œæ–¹å¦å…‹æ•°é‡
             EnemyCount = EnemyTankList.size();
             /*
-             * Ö¸Ê¾ÓÎÏ·½øÈëÊ²Ã´Ä£Ê½
+             * æŒ‡ç¤ºæ¸¸æˆè¿›å…¥ä»€ä¹ˆæ¨¡å¼
              */
-//			gImage.drawString("ÓÎÏ·¿ªÊ¼",330,200);
+//			gImage.drawString("æ¸¸æˆå¼€å§‹",330,200);
 //			if(enter == 1) {
-//				gImage.drawString("µ¥ÈËÄ£Ê½",330,300);
+//				gImage.drawString("å•äººæ¨¡å¼",330,300);
 //				
 //			}else if(enter == 2) {
-//				gImage.drawString("Ë«ÈËÄ£Ê½",330,300);
+//				gImage.drawString("åŒäººæ¨¡å¼",330,300);
 //				
 //				
 //				/*
-//				 * ÒòÎªÓÃµ½ÁËÍæ¼ÒÁĞ±í£¬ËùÒÔ¿ÉÒÔ²»ÓÃ
+//				 * å› ä¸ºç”¨åˆ°äº†ç©å®¶åˆ—è¡¨ï¼Œæ‰€ä»¥å¯ä»¥ä¸ç”¨
 //				 */
-//				//ÔÚË«ÈËÄ£Ê½ÖĞ½«Íæ¼Ò2Ì¹¿Ë»æÖÆ³öÀ´
+//				//åœ¨åŒäººæ¨¡å¼ä¸­å°†ç©å®¶2å¦å…‹ç»˜åˆ¶å‡ºæ¥
 //				//TankWarOld.Player2.paintSelf(gImage);
 //				
 //			}
 
-            //»æÖÆÎ§Ç½ÔªËØ
+            //ç»˜åˆ¶å›´å¢™å…ƒç´ 
             for (Wall walls : wallList) {
                 walls.paintSelf(gImage);
 
 
             }
 
-            //»æÖÆÎ§Ç½ÔªËØ
+            //ç»˜åˆ¶å›´å¢™å…ƒç´ 
             for (Base base : baseList) {
                 base.paintSelf(gImage);
 
 
             }
 
-            //»­²¼ÖØ»æÒ»´Î
+            //ç”»å¸ƒé‡ç»˜ä¸€æ¬¡
             count++;
 
-            //½«Íæ¼ÒÁĞ±íÖĞµÄÌ¹¿Ë»æÖÆ³öÀ´
+            //å°†ç©å®¶åˆ—è¡¨ä¸­çš„å¦å…‹ç»˜åˆ¶å‡ºæ¥
             for (Tank tank : playerList) {
                 tank.paintSelf(gImage);
 
             }
 
-            //Èç¹û»ùµØ±»´ò±¬£¬ÓÎÏ·Ê§°Ü
+            //å¦‚æœåŸºåœ°è¢«æ‰“çˆ†ï¼Œæ¸¸æˆå¤±è´¥
             if (baseList.size() == 0) {
                 Defeat = true;
             }
 
-            //Èç¹ûÍæ¼ÒÈ«±»´òËÀ£¬ÓÎÏ·Ê§°Ü
+            //å¦‚æœç©å®¶å…¨è¢«æ‰“æ­»ï¼Œæ¸¸æˆå¤±è´¥
             if (playerList.size() == 0) {
                 Defeat = true;
             }
 
 
-            //»æÖÆµĞ·½Ì¹¿Ë
+            //ç»˜åˆ¶æ•Œæ–¹å¦å…‹
 //			EnemyTank1.paintSelf(gImage);
 //			EnemyTank2.paintSelf(gImage);
 //			EnemyTank3.paintSelf(gImage);
 
-            //Ñ­»·Ì¹¿ËÁĞ±í,»æÖÆµĞ·½Ì¹¿Ë
+            //å¾ªç¯å¦å…‹åˆ—è¡¨,ç»˜åˆ¶æ•Œæ–¹å¦å…‹
             for (EnemyTank enemyTank : EnemyTankList) {
                 enemyTank.paintSelf(gImage);
 
 
             }
 
-            //Ñ­»·Íæ¼Ò×Óµ¯ÁĞ±í£¬»æÖÆ×Óµ¯
+            //å¾ªç¯ç©å®¶å­å¼¹åˆ—è¡¨ï¼Œç»˜åˆ¶å­å¼¹
             for (Bullets1 bullets1 : bulletsList) {
                 bullets1.paintSelf(gImage);
 
             }
 
-            //»æÖÆ±¬Õ¨ÁĞ±í
+            //ç»˜åˆ¶çˆ†ç‚¸åˆ—è¡¨
             for (Boom boom : boomList) {
                 boom.paintSelf(gImage);
 
@@ -301,47 +301,47 @@ public class StartGameTankWar extends JFrame {
 
             bulletsList.removeAll(removeList);
 
-            //Ñ­»·µĞ·½Ì¹¿Ë×Óµ¯ÁĞ±í£¬»æÖÆ×Óµ¯
+            //å¾ªç¯æ•Œæ–¹å¦å…‹å­å¼¹åˆ—è¡¨ï¼Œç»˜åˆ¶å­å¼¹
 //			for(EnemyBullrts enemyBullrts : enemyBullrtsList) {
 //				enemyBullrts.paintSelf(gImage);
 //				
 //			}
 
             /*
-             * ÓÎÏ·½áËã½çÃæ
+             * æ¸¸æˆç»“ç®—ç•Œé¢
              */
             if (Win) {
-                gImage.drawString("ÓÎÏ·Ê¤Àû!!!", 330, 200);
+                gImage.drawString("æ¸¸æˆèƒœåˆ©!!!", 330, 200);
             } else if (Defeat) {
-                gImage.drawString("ÓÎÏ·Ê§°Ü!!!", 330, 200);
+                gImage.drawString("æ¸¸æˆå¤±è´¥!!!", 330, 200);
             }
 
 
         }
 
         /*
-         * ½«»º´æÇø»æÖÆºÃµÄÍ¼ĞÎÒ»´ÎĞÔ»æÖÆµ½´°ÌåÖĞ
+         * å°†ç¼“å­˜åŒºç»˜åˆ¶å¥½çš„å›¾å½¢ä¸€æ¬¡æ€§ç»˜åˆ¶åˆ°çª—ä½“ä¸­
          */
         g.drawImage(offscreenImage, 0, 0, this);
     }
 
     /*
-     * Ìí¼Ó¼üÅÌ¼àÌı
+     * æ·»åŠ é”®ç›˜ç›‘å¬
      */
     class KeyMonitor extends KeyAdapter {
-        //°´ÏÂ¼üÅÌ
+        //æŒ‰ä¸‹é”®ç›˜
         public void keyPressed(KeyEvent e) {
             super.keyPressed(e);
 
-            //»ñÈ¡°´ÏÂµÄ°´¼üÖµ
+            //è·å–æŒ‰ä¸‹çš„æŒ‰é”®å€¼
             int KeyCode = e.getKeyCode();
-            //»ñÈ¡°´ÏÂµÄ°´¼ü
+            //è·å–æŒ‰ä¸‹çš„æŒ‰é”®
 //			char KeyChar = e.getKeyChar();
-            //·µ»Ø¼üÖµ
+            //è¿”å›é”®å€¼
 //			System.out.println(KeyCode);
 //			System.out.println(KeyChar);
 
-            //Èç¹û»¹ÔÚÄ£Ê½Ñ¡Ôñ½çÃæ
+            //å¦‚æœè¿˜åœ¨æ¨¡å¼é€‰æ‹©ç•Œé¢
             if (enter == 0) {
 
                 switch (KeyCode) {
@@ -419,12 +419,12 @@ public class StartGameTankWar extends JFrame {
                 }
             }
 
-            //Èç¹ûÔÚµ¥ÈËÄ£Ê½
+            //å¦‚æœåœ¨å•äººæ¨¡å¼
             if (enter == 1) {
 
                 switch (KeyCode) {
                     case 27:
-                        //ÍË³ö
+                        //é€€å‡º
                         enter = 0;
                         game_secelt = 0;
                         selectX = 240;
@@ -432,13 +432,13 @@ public class StartGameTankWar extends JFrame {
                         Defeat = false;
                         Win = false;
                         Base = true;
-                        count = 0;//ÖØ»æ´ÎÊıÇåÁã
-                        //ÍË³öÊ±Ó¦¸ÃÇå³ıÌ¹¿Ë
+                        count = 0;//é‡ç»˜æ¬¡æ•°æ¸…é›¶
+                        //é€€å‡ºæ—¶åº”è¯¥æ¸…é™¤å¦å…‹
                         Player1.X = 100;
                         Player1.Y = 500;
                         playerList.clear();
                         EnemyTankList.clear();
-                        //ÍË³öÊ±Çå³ıµØÍ¼
+                        //é€€å‡ºæ—¶æ¸…é™¤åœ°å›¾
                         wallList.clear();
                         baseList.clear();
                         break;
@@ -453,12 +453,12 @@ public class StartGameTankWar extends JFrame {
             }
 
 
-            //Èç¹ûÔÚË«ÈËÄ£Ê½
+            //å¦‚æœåœ¨åŒäººæ¨¡å¼
             if (enter == 2) {
 
                 switch (KeyCode) {
                     case 27:
-                        //ÍË³ö
+                        //é€€å‡º
                         enter = 0;
                         game_secelt = 0;
                         selectX = 240;
@@ -466,15 +466,15 @@ public class StartGameTankWar extends JFrame {
                         Defeat = false;
                         Win = false;
                         Base = true;
-                        count = 0;//ÖØ»æ´ÎÊıÇåÁã
-                        //ÍË³öÊ±Ó¦¸ÃÇå³şÍæ¼ÒÁĞ±í
+                        count = 0;//é‡ç»˜æ¬¡æ•°æ¸…é›¶
+                        //é€€å‡ºæ—¶åº”è¯¥æ¸…æ¥šç©å®¶åˆ—è¡¨
                         Player1.X = 100;
                         Player1.Y = 500;
                         Player2.X = 850;
                         Player2.Y = 500;
                         playerList.clear();
                         EnemyTankList.clear();
-                        //ÍË³öÊ±Çå³ıµØÍ¼
+                        //é€€å‡ºæ—¶æ¸…é™¤åœ°å›¾
                         wallList.clear();
                         baseList.clear();
                         break;
@@ -491,7 +491,7 @@ public class StartGameTankWar extends JFrame {
         }
 
 
-        //ËÉ¿ª¼üÅÌ
+        //æ¾å¼€é”®ç›˜
         public void keyReleased(KeyEvent e) {
             super.keyReleased(e);
 
@@ -505,7 +505,7 @@ public class StartGameTankWar extends JFrame {
 
 
     public static void main(String[] args) {
-        //¹¹½¨Ò»¸ö´°Ìå
+        //æ„å»ºä¸€ä¸ªçª—ä½“
         StartGameTankWar Start_frame = new StartGameTankWar();
 
         Start_frame.windowsStart();
@@ -515,7 +515,7 @@ public class StartGameTankWar extends JFrame {
 
 
     /*
-     * Éú³ÉÒ»¸öËæ»úÌ¹¿Ë
+     * ç”Ÿæˆä¸€ä¸ªéšæœºå¦å…‹
      */
     public void AddEnemyTank(int placeX, int placeY) {
 
@@ -527,56 +527,56 @@ public class StartGameTankWar extends JFrame {
 
 
     /*
-     * »æÖÆµØÍ¼(LevelÎª¹Ø¿¨Êı£¬¶ÔÓ¦²»Í¬µØÍ¼)
+     * ç»˜åˆ¶åœ°å›¾(Levelä¸ºå…³å¡æ•°ï¼Œå¯¹åº”ä¸åŒåœ°å›¾)
      */
     public void PaintMap(int Level) {
 
         switch (Level) {
             case 1:
-                //Ìí¼ÓÎ§Ç½
+                //æ·»åŠ å›´å¢™
                 for (int i = 0; i < 20; i++) {
-                    wallList.add(new Wall("/TankWarOld/Ground/¸ÖÌú.png", 50 * i, 150, this, 2));
+                    wallList.add(new Wall("/TankWarOld/Ground/é’¢é“.png", 50 * i, 150, this, 2));
 
                 }
                 for (int i = 0; i < 4; i++) {
-                    wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 300, 200 + i * 50, this, 1));
+                    wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 300, 200 + i * 50, this, 1));
 
                 }
                 for (int i = 0; i < 4; i++) {
-                    wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 600, 200 + i * 50, this, 1));
+                    wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 600, 200 + i * 50, this, 1));
 
                 }
 
-                wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 400, 550, this, 1));
-                wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 400, 500, this, 1));
-                wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 450, 500, this, 1));
-                wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 500, 550, this, 1));
-                wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 500, 500, this, 1));
+                wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 400, 550, this, 1));
+                wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 400, 500, this, 1));
+                wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 450, 500, this, 1));
+                wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 500, 550, this, 1));
+                wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 500, 500, this, 1));
 
-                baseList.add(new Base("/TankWarOld/Ground/»ùµØ.png", 450, 550, this, 1));
+                baseList.add(new Base("/TankWarOld/Ground/åŸºåœ°.png", 450, 550, this, 1));
                 break;
             case 2:
-                //Ìí¼ÓÎ§Ç½
+                //æ·»åŠ å›´å¢™
                 for (int i = 0; i < 20; i++) {
-                    wallList.add(new Wall("/TankWarOld/Ground/¸ÖÌú.png", 50 * i, 150, this, 2));
+                    wallList.add(new Wall("/TankWarOld/Ground/é’¢é“.png", 50 * i, 150, this, 2));
 
                 }
                 for (int i = 0; i < 4; i++) {
-                    wallList.add(new Wall("/TankWarOld/Ground/²İÔ­.png", 300, 200 + i * 50, this, 1));
+                    wallList.add(new Wall("/TankWarOld/Ground/è‰åŸ.png", 300, 200 + i * 50, this, 1));
 
                 }
                 for (int i = 0; i < 4; i++) {
-                    wallList.add(new Wall("/TankWarOld/Ground/²İÔ­.png", 600, 200 + i * 50, this, 1));
+                    wallList.add(new Wall("/TankWarOld/Ground/è‰åŸ.png", 600, 200 + i * 50, this, 1));
 
                 }
 
-                wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 400, 550, this, 1));
-                wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 400, 500, this, 1));
-                wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 450, 500, this, 1));
-                wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 500, 550, this, 1));
-                wallList.add(new Wall("/TankWarOld/Ground/×©¿é.png", 500, 500, this, 1));
+                wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 400, 550, this, 1));
+                wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 400, 500, this, 1));
+                wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 450, 500, this, 1));
+                wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 500, 550, this, 1));
+                wallList.add(new Wall("/TankWarOld/Ground/ç –å—.png", 500, 500, this, 1));
 
-                baseList.add(new Base("/TankWarOld/Ground/»ùµØ.png", 450, 550, this, 1));
+                baseList.add(new Base("/TankWarOld/Ground/åŸºåœ°.png", 450, 550, this, 1));
                 break;
 
 

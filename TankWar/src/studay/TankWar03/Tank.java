@@ -6,17 +6,16 @@ import java.awt.*;
 /**
  * @author hxz
  */
-public abstract class Tank extends GameObject{
+public abstract class Tank extends GameObject {
     protected int Px;
     protected int Py;
     protected Direction tankDirection = Direction.UP;
-    protected int speed = 5; //Ì¹¿ËËÙ¶È
-    protected int BullrtSpeed = 5; //×Óµ¯ËÙ¶È
+    protected int speed = 5; //å¦å…‹é€Ÿåº¦
+    protected int BullrtSpeed = 5; //å­å¼¹é€Ÿåº¦
 
-    //Ì¹¿Ë´óĞ¡
+    //å¦å…‹å¤§å°
     protected int width = 50;
     protected int height = 60;
-
 
 
     public Tank(int px, int py, Direction tankDirection, TankWar03 myPanel) {
@@ -35,99 +34,104 @@ public abstract class Tank extends GameObject{
     }
 
 
-
-
     /*
-     * Ì¹¿ËÒÆ¶¯µÄ·½·¨
+     * å¦å…‹ç§»åŠ¨çš„æ–¹æ³•
      */
     public void tankUp() {
         tankDirection = Direction.UP;
-        Py -= speed;
-//        if(!hitWall(X,Y-speed) && !moveToBorder(X,Y-speed)) {
-//            this.Y -= speed;
-//        }
+        if (!moveToBorder(Px, Py - speed)) {
+            Py -= speed;
+        }
     }
 
     public void tankDown() {
         tankDirection = Direction.DOWN;
-        Py += speed;
+        if (!moveToBorder(Px, Py + speed)) {
+            Py += speed;
+        }
     }
 
     public void tankLeft() {
         tankDirection = Direction.LEFT;
-        Px -= speed;
+        if (!moveToBorder(Px - speed, Py)) {
+            Px -= speed;
+        }
     }
 
     public void tankRight() {
         tankDirection = Direction.RIGHT;
-        Px += speed;
+        if (!moveToBorder(Px + speed, Py)) {
+            Px += speed;
+        }
     }
 
-    //¹«¹²·½·¨£¬¼ì²âÊÇ·ñµ½±ß½ç
-    public boolean moveToBoundary(){
-        if (Px < 0 || Py <0 ){
+    //å¦å…‹æ˜¯å¦å‡ºç•Œæ£€æµ‹ï¼ˆç”¨ä¸‹ä¸€æ¬¡çš„å¦å…‹åæ ‡è¿›è¡Œæ£€æµ‹ï¼‰
+    public boolean moveToBorder(int x, int y) {
+        if (x < speed) {
             return true;
-        }else if (tankDirection == Direction.DOWN && Py>MyPanel.heightframe-70){
+        } else if (x + 60> MyPanel.getWidth()) {
             return true;
-        }else if (tankDirection == Direction.RIGHT && Px>MyPanel.widthframe-70){
+        } else if (y < 30) {
+            return true;
+        } else if (y +60> MyPanel.getHeight()) {
             return true;
         }
         return false;
     }
 
 
-    //±àĞ´·½·¨£¬»­³öÌ¹¿Ë
+    //ç¼–å†™æ–¹æ³•ï¼Œç”»å‡ºå¦å…‹
 
     /**
-     * @param x      Ì¹¿ËµÄ×óÉÏ½Ç x ×ø±ê
-     * @param y      Ì¹¿ËµÄ×óÉÏ½Ç y ×ø±ê
-     * @param g      »­±Ê
-     * @param direct Ì¹¿Ë·½Ïò£¨ÉÏÏÂ×óÓÒ£©
-     * @param type   Ì¹¿ËÀàĞÍ
+     * @param x      å¦å…‹çš„å·¦ä¸Šè§’ x åæ ‡
+     * @param y      å¦å…‹çš„å·¦ä¸Šè§’ y åæ ‡
+     * @param g      ç”»ç¬”
+     * @param direct å¦å…‹æ–¹å‘ï¼ˆä¸Šä¸‹å·¦å³ï¼‰
+     * @param type   å¦å…‹ç±»å‹
      */
     public void drawTank(int x, int y, Graphics g, Direction direct, int type) {
-        //¸ù¾İ²»Í¬ÀàĞÍÌ¹¿Ë£¬ÉèÖÃ²»Í¬ÑÕÉ«
+        //æ ¹æ®ä¸åŒç±»å‹å¦å…‹ï¼Œè®¾ç½®ä¸åŒé¢œè‰²
         switch (type) {
-            case 0: //ÎÒÃÇµÄÌ¹¿Ë
+            case 0: //æˆ‘ä»¬çš„å¦å…‹
                 g.setColor(Color.cyan);
                 break;
-            case 1: //µĞÈËµÄÌ¹¿Ë
+            case 1: //æ•Œäººçš„å¦å…‹
                 g.setColor(Color.yellow);
                 break;
         }
 
-        //¸ù¾İÌ¹¿Ë·½Ïò£¬À´»æÖÆÌ¹¿Ë
+        //æ ¹æ®å¦å…‹æ–¹å‘ï¼Œæ¥ç»˜åˆ¶å¦å…‹
         switch (direct) {
-            case UP: //±íÊ¾ÏòÉÏ
-                g.fill3DRect(Px, Py, 10, 60, false);//»­³öÌ¹¿Ë×ó±ßÂÖ×Ó
-                g.fill3DRect(Px + 30, Py, 10, 60, false);//»­³öÌ¹¿ËÓÒ±ßÂÖ×Ó
-                g.fill3DRect(Px + 10, Py + 10, 20, 40, false);//»­³öÌ¹¿Ë¸Ç×Ó
-                g.fillOval(Px + 10, Py + 20, 20, 20);//»­³öÔ²ĞÎ¸Ç×Ó
-                g.drawLine(Px + 20, Py + 30, Px + 20, Py);//»­³öÅÚÍ²
+            case UP: //è¡¨ç¤ºå‘ä¸Š
+                g.fill3DRect(Px, Py, 10, 60, false);//ç”»å‡ºå¦å…‹å·¦è¾¹è½®å­
+                g.fill3DRect(Px + 30, Py, 10, 60, false);//ç”»å‡ºå¦å…‹å³è¾¹è½®å­
+                g.fill3DRect(Px + 10, Py + 10, 20, 40, false);//ç”»å‡ºå¦å…‹ç›–å­
+                g.fillOval(Px + 10, Py + 20, 20, 20);//ç”»å‡ºåœ†å½¢ç›–å­
+                g.drawLine(Px + 20, Py + 30, Px + 20, Py);//ç”»å‡ºç‚®ç­’
                 break;
-            case RIGHT: //±íÊ¾ÏòÓÒ
-                g.fill3DRect(Px, Py, 60, 10, false);//»­³öÌ¹¿Ë×ó±ßÂÖ×Ó
-                g.fill3DRect(Px, Py + 30, 60, 10, false);//»­³öÌ¹¿ËÓÒ±ßÂÖ×Ó
-                g.fill3DRect(Px + 10, Py + 10, 40, 20, false);//»­³öÌ¹¿Ë¸Ç×Ó
-                g.fillOval(Px + 20, Py + 10, 20, 20);//»­³öÔ²ĞÎ¸Ç×Ó
-                g.drawLine(Px + 30, Py + 20, Px + 60, Py + 20);//»­³öÅÚÍ²
+            case RIGHT: //è¡¨ç¤ºå‘å³
+                g.fill3DRect(Px, Py, 60, 10, false);//ç”»å‡ºå¦å…‹å·¦è¾¹è½®å­
+                g.fill3DRect(Px, Py + 30, 60, 10, false);//ç”»å‡ºå¦å…‹å³è¾¹è½®å­
+                g.fill3DRect(Px + 10, Py + 10, 40, 20, false);//ç”»å‡ºå¦å…‹ç›–å­
+                g.fillOval(Px + 20, Py + 10, 20, 20);//ç”»å‡ºåœ†å½¢ç›–å­
+                g.drawLine(Px + 30, Py + 20, Px + 60, Py + 20);//ç”»å‡ºç‚®ç­’
                 break;
-            case DOWN: //±íÊ¾ÏòÏÂ
-                g.fill3DRect(Px, Py, 10, 60, false);//»­³öÌ¹¿Ë×ó±ßÂÖ×Ó
-                g.fill3DRect(Px + 30, Py, 10, 60, false);//»­³öÌ¹¿ËÓÒ±ßÂÖ×Ó
-                g.fill3DRect(Px + 10, Py + 10, 20, 40, false);//»­³öÌ¹¿Ë¸Ç×Ó
-                g.fillOval(Px + 10, Py + 20, 20, 20);//»­³öÔ²ĞÎ¸Ç×Ó
-                g.drawLine(Px + 20, Py + 30, Px + 20, Py + 60);//»­³öÅÚÍ²
+            case DOWN: //è¡¨ç¤ºå‘ä¸‹
+                g.fill3DRect(Px, Py, 10, 60, false);//ç”»å‡ºå¦å…‹å·¦è¾¹è½®å­
+                g.fill3DRect(Px + 30, Py, 10, 60, false);//ç”»å‡ºå¦å…‹å³è¾¹è½®å­
+                g.fill3DRect(Px + 10, Py + 10, 20, 40, false);//ç”»å‡ºå¦å…‹ç›–å­
+                g.fillOval(Px + 10, Py + 20, 20, 20);//ç”»å‡ºåœ†å½¢ç›–å­
+                g.drawLine(Px + 20, Py + 30, Px + 20, Py + 60);//ç”»å‡ºç‚®ç­’
                 break;
-            case LEFT: //±íÊ¾Ïò×ó
-                g.fill3DRect(Px, Py, 60, 10, false);//»­³öÌ¹¿Ë×ó±ßÂÖ×Ó
-                g.fill3DRect(Px, Py + 30, 60, 10, false);//»­³öÌ¹¿ËÓÒ±ßÂÖ×Ó
-                g.fill3DRect(Px + 10, Py + 10, 40, 20, false);//»­³öÌ¹¿Ë¸Ç×Ó
-                g.fillOval(Px + 20, Py + 10, 20, 20);//»­³öÔ²ĞÎ¸Ç×Ó
-                g.drawLine(Px + 30, Py + 20, Px, Py + 20);//»­³öÅÚÍ²
+            case LEFT: //è¡¨ç¤ºå‘å·¦
+                g.fill3DRect(Px, Py, 60, 10, false);//ç”»å‡ºå¦å…‹å·¦è¾¹è½®å­
+                g.fill3DRect(Px, Py + 30, 60, 10, false);//ç”»å‡ºå¦å…‹å³è¾¹è½®å­
+                g.fill3DRect(Px + 10, Py + 10, 40, 20, false);//ç”»å‡ºå¦å…‹ç›–å­
+                g.fillOval(Px + 20, Py + 10, 20, 20);//ç”»å‡ºåœ†å½¢ç›–å­
+                g.drawLine(Px + 30, Py + 20, Px, Py + 20);//ç”»å‡ºç‚®ç­’
                 break;
             default:
-                System.out.println("ÔİÊ±Ã»ÓĞ´¦Àí");
+                System.out.println("æš‚æ—¶æ²¡æœ‰å¤„ç†");
         }
     }
 

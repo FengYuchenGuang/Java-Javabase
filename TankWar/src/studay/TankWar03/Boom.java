@@ -8,10 +8,10 @@ import java.awt.*;
 public class Boom extends GameObject{
     int x;
     int y;
-    //±¬Õ¨Í¼¼¯
+    //çˆ†ç‚¸å›¾é›†
     public static Image[] imgs = new Image[11];
 
-    //ÇĞ»»µ½ÄÇÕÅÍ¼Æ¬
+    //åˆ‡æ¢åˆ°é‚£å¼ å›¾ç‰‡
     int explodeCount = 0;
     boolean isAlive = true;
 
@@ -30,8 +30,8 @@ public class Boom extends GameObject{
 
     @Override
     public void PaintSelf(Graphics g) {
-        //Ã¿´Î½øÈë£¬»æÖÆÒ»ÕÅ±¬Õ¨Í¼Æ¬£¬Ö±µ½±¬Õ¨Ğ§¹û½áÊø
-        //×Óµ¯ÒÆ³ı£¬Ì¹¿ËÒÆ³ı£¬²»Ó°Ïì±¬Õ¨Àà¼ÌĞøÔÚÌ¹¿Ë±¬Õ¨Î»ÖÃÊä³ö
+        //æ¯æ¬¡è¿›å…¥ï¼Œç»˜åˆ¶ä¸€å¼ çˆ†ç‚¸å›¾ç‰‡ï¼Œç›´åˆ°çˆ†ç‚¸æ•ˆæœç»“æŸ
+        //å­å¼¹ç§»é™¤ï¼Œå¦å…‹ç§»é™¤ï¼Œä¸å½±å“çˆ†ç‚¸ç±»ç»§ç»­åœ¨å¦å…‹çˆ†ç‚¸ä½ç½®è¾“å‡º
         if(explodeCount < 11 ) {
             g.drawImage(imgs[explodeCount], x, y, 50,50,null);
             explodeCount++;

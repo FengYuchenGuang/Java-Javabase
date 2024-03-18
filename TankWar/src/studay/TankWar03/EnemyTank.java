@@ -21,14 +21,14 @@ public class EnemyTank extends Tank {
     }
 
     /*
-     *Ìí¼ÓĞÂÏß³ÌÊµÏÖÌ¹¿ËÒÆ¶¯CD
-     *ÀäÈ´Ê±¼äÎ´µ½ÎŞ·¨¼ÌĞøÒÆ¶¯
+     *æ·»åŠ æ–°çº¿ç¨‹å®ç°å¦å…‹ç§»åŠ¨CD
+     *å†·å´æ—¶é—´æœªåˆ°æ— æ³•ç»§ç»­ç§»åŠ¨
      */
     class moveCD extends Thread {
         @SuppressWarnings("deprecation")
         public void run() {
             moveCD_flag = true;
-            //ĞİÃß200ms
+            //ä¼‘çœ 200ms
             try {
                 Thread.sleep(400);
 
@@ -38,9 +38,9 @@ public class EnemyTank extends Tank {
             }
 
             moveCD_flag = false;
-            //ÖÕÖ¹Ïß³Ì
+            //ç»ˆæ­¢çº¿ç¨‹
 //            this.stop();
-            //ÔËĞĞµ½ÕâÀï£¬Ïß³Ì×ÔÈ»ÖÕÖ¹
+            //è¿è¡Œåˆ°è¿™é‡Œï¼Œçº¿ç¨‹è‡ªç„¶ç»ˆæ­¢
         }
     }
 
@@ -48,7 +48,7 @@ public class EnemyTank extends Tank {
         @Override
         public void run() {
             attackCD_flag = true;
-            //ĞİÃß200ms
+            //ä¼‘çœ 200ms
             try {
                 Thread.sleep(1000);
 
@@ -76,32 +76,20 @@ public class EnemyTank extends Tank {
 
         switch (tankDirection) {
             case UP:
-                if (moveToBoundary()){
-                    break;
-                }
                 tankUp();
                 break;
             case DOWN:
-                if (moveToBoundary()){
-                    break;
-                }
                 tankDown();
                 break;
             case RIGHT:
-                if (moveToBoundary()){
-                    break;
-                }
                 tankRight();
                 break;
             case LEFT:
-                if (moveToBoundary()){
-                    break;
-                }
                 tankLeft();
                 break;
         }
 
-        //¿ªÊ¼Ïß³Ì
+        //å¼€å§‹çº¿ç¨‹
         new moveCD().start();
     }
 
@@ -112,7 +100,7 @@ public class EnemyTank extends Tank {
         }
     }
 
-    //»ñÈ¡Ëæ»ú±äÁ¿
+    //è·å–éšæœºå˜é‡
     public Direction RandomEnemyDirection() {
         Random random = new Random();
         int rnum = random.nextInt(4);

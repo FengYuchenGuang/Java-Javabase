@@ -6,16 +6,16 @@ import java.awt.*;
  * @author hxz
  */
 public abstract class Bullrt extends GameObject{
-    //子弹坐标
+    //瀛愬脊鍧愭爣
     protected int x;
     protected int y;
-    //子弹方向
+    //瀛愬脊鏂瑰悜
     protected Direction direction;
-    //子弹速度
+    //瀛愬脊閫熷害
     protected int speed;
-    //子弹类型
+    //瀛愬脊绫诲瀷
     protected int type;
-    //子弹大小
+    //瀛愬脊澶у皬
     protected int size=10;
 
 

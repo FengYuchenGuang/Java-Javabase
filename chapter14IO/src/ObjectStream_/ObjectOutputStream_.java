@@ -13,7 +13,7 @@ public class ObjectOutputStream_ {
         //序列化后，保存的文件格式，不是存文本，而是按照他的格式来保存
         String filePath = "d:\\data.dat";
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath));
-        //序列化数据到 e:\data.dat
+        //序列化数据到 d:\data.dat
         oos.writeInt(100);// int -> Integer (实现了 Serializable)
         oos.writeBoolean(true);// boolean -> Boolean (实现了 Serializable)
         oos.writeChar('a');// char -> Character (实现了 Serializable)
