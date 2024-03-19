@@ -6,6 +6,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
@@ -51,7 +52,11 @@ class TankWar05 extends JFrame implements Runnable {
         Boom.BoomStart();
         booms.add(new Boom(0, 0, this));
 
-
+        //先判断文件是否存在
+        if (!(new File(Recorder.getRecordFile()).exists()) && key == 2){
+            System.out.println("历史记录不存在，只能开始新游戏~~~");
+            key = 1;
+        }
         switch (key){
             case 1:
                 player1 = new Player1(500, 400, this);

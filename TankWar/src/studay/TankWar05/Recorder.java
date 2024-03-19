@@ -14,7 +14,7 @@ public class Recorder {
     //定义IO对象
     private static BufferedWriter bw = null;
     private static BufferedReader rw = null;
-    private static String recordFile = "src\\studay\\TankWar04\\myRecord.txt";
+    private static String recordFile = "src\\studay\\TankWar05\\myRecord.txt";
 
     private static Vector<SaveTank> nodes = new Vector<>();
 
@@ -59,12 +59,18 @@ public class Recorder {
             bw.write(info);
             bw.newLine();
         }
-        info = myPanel.player1.getPx() + " " + myPanel.player1.getPy()
-                + " " + myPanel.player1.getTankDirection() + " "
-                + myPanel.player1.getSpeed() + " 0";
-        bw.write(info);
+        if (myPanel.player1 != null){
+            info = myPanel.player1.getPx() + " " + myPanel.player1.getPy()
+                    + " " + myPanel.player1.getTankDirection() + " "
+                    + myPanel.player1.getSpeed() + " 0";
+            bw.write(info);
+        }
 
         bw.close();
+    }
+
+    public static String getRecordFile() {
+        return recordFile;
     }
 
     public static Vector<SaveTank> getNodes() {
