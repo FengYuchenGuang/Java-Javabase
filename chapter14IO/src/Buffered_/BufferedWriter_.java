@@ -25,6 +25,10 @@ public class BufferedWriter_ {
         bufferedWriter.write("hello3, 韩顺平教育!");
 
         bufferedWriter.newLine();
+        bufferedWriter.write(1);
+
+
+        bufferedWriter.newLine();
 
         //说明：关闭外层流即可 ， 传入的 new FileWriter(filePath) ,会在底层关闭
         bufferedWriter.close();

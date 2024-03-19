@@ -12,11 +12,11 @@ public class EnemyTank extends Tank {
     boolean moveCD_flag = false;
     boolean attackCD_flag = false;
 
-    public EnemyTank(int px, int py,TankWar03 myPanel) {
+    public EnemyTank(int px, int py, TankWar03 myPanel) {
         super(px, py, Direction.DOWN,myPanel);
     }
 
-    public EnemyTank(int px, int py,int speed,TankWar03 myPanel) {
+    public EnemyTank(int px, int py, int speed, TankWar03 myPanel) {
         super(px, py, Direction.DOWN,speed,myPanel);
     }
 

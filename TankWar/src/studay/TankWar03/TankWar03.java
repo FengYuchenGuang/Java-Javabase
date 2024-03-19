@@ -67,9 +67,9 @@ class TankWar03 extends JFrame implements Runnable{
         Boom.BoomStart();
         booms.add(new Boom(0,0,this));
         player1 = new Player1(500, 400,this);
-        enemyTankList.add( new EnemyTank(200, 530,7,this));
-        enemyTankList.add( new EnemyTank(400, 520,5,this));
-        enemyTankList.add( new EnemyTank(600, 520,3,this));
+        enemyTankList.add( new EnemyTank(200, 100,7,this));
+        enemyTankList.add( new EnemyTank(400, 100,5,this));
+        enemyTankList.add( new EnemyTank(600, 100,3,this));
 
     }
 

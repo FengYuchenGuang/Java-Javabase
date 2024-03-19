@@ -1,11 +1,12 @@
-package studay.TankWar03;
+package studay.TankWar04;
 
 import java.awt.*;
+import java.io.Serializable;
 
 /**
  * @author hxz
  */
-public class Boom extends GameObject{
+public class Boom extends GameObject implements Serializable {
     int x;
     int y;
     //爆炸图集
@@ -15,7 +16,7 @@ public class Boom extends GameObject{
     int explodeCount = 0;
     boolean isAlive = true;
 
-    public Boom(int x, int y, TankWar03 panel) {
+    public Boom(int x, int y,TankWar04 panel) {
         this.x = x;
         this.y = y;
         MyPanel = panel;

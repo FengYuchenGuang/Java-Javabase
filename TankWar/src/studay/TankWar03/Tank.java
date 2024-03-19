@@ -69,11 +69,11 @@ public abstract class Tank extends GameObject {
     public boolean moveToBorder(int x, int y) {
         if (x < speed) {
             return true;
-        } else if (x + 60> MyPanel.getWidth()) {
+        } else if (x + 65 > MyPanel.getWidth()) {
             return true;
-        } else if (y < 30) {
+        } else if (y < 35) {
             return true;
-        } else if (y +60> MyPanel.getHeight()) {
+        } else if (y + 65 > MyPanel.getHeight()) {
             return true;
         }
         return false;
