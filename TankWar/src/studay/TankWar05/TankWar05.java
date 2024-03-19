@@ -1,56 +1,37 @@
-package studay.TankWar04;
+package studay.TankWar05;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
 
 /**
- * @author hxz
- * <p>
- * ======不管怎样先把 坦克方向先调整======
- * 1、添加防止坦克重叠代码，出现重叠后无法移动
- * 1.1 要将下次移动后的位置与其他坦克进行检测，不是当前位置
- * <p>
- * 2、转变方向时，产生重叠，出现无法继续移动问题
- * 2.1 转变方向时也要判断是否会重叠
- * <p>
- * 3、出现无法左右移动 (左右代码判断是否重叠时 取非了)
- * 4、坦克转向时出现重叠
- * 4.1 转向前也要判断是否重叠（对下一次转向后是否重叠进行判断）
- * <p>
- * 5、还是出现了重叠是因为在设置随机方向时直接设置成功了，没有判断是否会重叠
- * <p>
- * <p>
- * 5、玩家死亡后，刷新后马上再次死亡会立刻刷新，
- * <p>
- * <p>
- * ======IO流应用到其中========
- * 6、记录玩家总成绩，存盘退出， 新建一个记录类 Recorder
- * 6.1 子弹超出游戏界面后，还是会在成绩界面显示
- * 原因是没有将子弹边界检测的界面设置为游戏界面
- * <p>
- * <p>
- * 7、记录当时敌人坦克坐标，存盘退出 还有记录方向
- *  7.1 依旧在 Recorder 中记录,无法重新加载位置
- *  原因： 字符串比较是否相等使用 .equals()
+ * @author hxz、
+ * 1、添加音乐
+ * 在构造器，初始化时播放
  *
- * <p>
- * ====
- * 8、玩游戏时，可以选择开新游戏还是继续上局游戏
- *  开局时进行键盘输入选择，注意，导入信息时，将保存的坦克信息导入到 SaveTank 类中
- *  思想：大量信息的保存都要使用新类，集合进行保存
+ * 2、思考解决为何连续被击毁时，没有冷却时间
+ * 即，玩家死亡后，刷新后马上再次死亡会立刻刷新。
+ * 原因：只要玩家死亡，就开一个新线程进行玩家的重新初始化
+ * 方法：只有当上一个 newPlayer 线程消亡后才重新初始化
+ *
+ *
+ *
  */
 
-class TankWar04 extends JFrame implements Runnable {
+class TankWar05 extends JFrame implements Runnable {
     public int widthframe = 1300;
     public int GameWidthframe = 1000;
     public int heightframe = 600;
     Player1 player1 = null;
     int enemyNum = 6;
-    TankWar04 myJFrame = this;
+    TankWar05 myJFrame = this;
+    newPlayer newplayer = null;
 
     Vector<EnemyTank> enemyTankList = new Vector<>();
     Vector<SaveTank> nodes = new Vector<>();
@@ -62,7 +43,7 @@ class TankWar04 extends JFrame implements Runnable {
     private int key;
     Scanner myScanner = new Scanner(System.in);
 
-    public TankWar04() throws Exception {
+    public TankWar05() throws Exception {
         System.out.println("输入选择：1、新游戏。2、重新上局游戏。");
         key = myScanner.nextInt();
 
@@ -70,8 +51,6 @@ class TankWar04 extends JFrame implements Runnable {
         Boom.BoomStart();
         booms.add(new Boom(0, 0, this));
 
-        Recorder.loadRecordInfo(this);
-        nodes = Recorder.getNodes();
 
         switch (key){
             case 1:
@@ -82,6 +61,8 @@ class TankWar04 extends JFrame implements Runnable {
                 }
                 break;
             case 2:
+                Recorder.loadRecordInfo(this);
+                nodes = Recorder.getNodes();
                 for (int i = 0; i < nodes.size(); i++) {
                     SaveTank node = nodes.get(i);
                     int x = node.getX();
@@ -97,6 +78,10 @@ class TankWar04 extends JFrame implements Runnable {
                 }
                 break;
         }
+
+        //播放指定音乐
+//        AePlayWave p = new AePlayWave("src/hua.wav");
+//        p.start();
 
     }
 
@@ -265,9 +250,9 @@ class TankWar04 extends JFrame implements Runnable {
     }
 
     class newPlayer extends Thread {
-        private TankWar04 MyPanel;
+        private TankWar05 MyPanel;
 
-        public newPlayer(TankWar04 myPanel) {
+        public newPlayer(TankWar05 myPanel) {
             MyPanel = myPanel;
         }
 
@@ -292,7 +277,16 @@ class TankWar04 extends JFrame implements Runnable {
             //判断玩家是否阵亡
             if (!player1.isAlive) {
                 //定义一个新线程，在新线程中过一秒后再重新添加 player1
-                new newPlayer(this).start();
+                if (newplayer == null){
+                    newplayer = new newPlayer(this);
+                    newplayer.start();
+                }else {
+                    if (newplayer.getState() == Thread.State.TERMINATED){
+                        newplayer = new newPlayer(this);
+                        newplayer.start();
+                    }
+                }
+
             }
 
 
@@ -323,7 +317,7 @@ class TankWar04 extends JFrame implements Runnable {
     }
 
     public static void main(String[] args) throws Exception {
-        TankWar04 tankWar04 = new TankWar04();
+        TankWar05 tankWar04 = new TankWar05();
         tankWar04.start();
 
     }
