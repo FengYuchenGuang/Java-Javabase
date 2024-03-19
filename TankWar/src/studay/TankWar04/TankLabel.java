@@ -5,6 +5,6 @@ import java.io.Serializable;
 /**
  * @author hxz
  */
-public enum TankLabel implements Serializable {
+public enum TankLabel{
     EnemyTank,Player;
 }

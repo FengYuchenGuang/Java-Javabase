@@ -1,12 +1,11 @@
 package studay.TankWar04;
 
 import java.awt.*;
-import java.io.Serializable;
 
 /**
  * @author hxz
  */
-public abstract class Bullrt extends GameObject implements Serializable {
+public abstract class Bullrt extends GameObject {
     //子弹坐标
     protected int x;
     protected int y;

@@ -8,13 +8,17 @@ import java.util.Vector;
 /**
  * @author hxz
  */
-public class Player1 extends Tank implements Serializable {
+public class Player1 extends Tank {
     int keyCode;
     boolean attackCollDown = false;
     Vector<Shot> shots = new Vector<>();
 
     public Player1(int px, int py, TankWar04 myPanel) {
         super(px, py, Direction.UP, myPanel);
+    }
+
+    public Player1(int px, int py, Direction tankDirection, TankWar04 myPanel) {
+        super(px, py, tankDirection, myPanel);
     }
 
     public void attack() {

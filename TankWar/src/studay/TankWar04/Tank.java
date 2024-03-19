@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * @author hxz
  */
-public abstract class Tank extends GameObject implements Serializable {
+public abstract class Tank extends GameObject {
     protected int Px;
     protected int Py;
     protected Direction tankDirection = Direction.UP;
@@ -220,6 +220,18 @@ public abstract class Tank extends GameObject implements Serializable {
 
     public int getSpeed() {
         return speed;
+    }
+
+    public int getTankDirection() {
+        if (tankDirection == Direction.UP){
+            return 0;
+        }else if (tankDirection ==Direction.DOWN){
+            return 1;
+        }else if (tankDirection ==Direction.LEFT){
+            return 2;
+        }else {
+            return 3;
+        }
     }
 
     public Rectangle GetNextBoundary(int x, int y, Direction direction) {

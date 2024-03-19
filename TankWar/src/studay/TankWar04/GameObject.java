@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * @author hxz
  */
-public abstract class GameObject implements Serializable {
+public abstract class GameObject {
     //界面
     protected TankWar04 MyPanel;
     boolean isAlive = true;

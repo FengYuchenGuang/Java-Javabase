@@ -1,13 +1,12 @@
 package studay.TankWar04;
 
 import java.awt.*;
-import java.io.IOException;
-import java.io.Serializable;
+
 
 /**
  * @author hxz
  */
-public class Shot extends Bullrt implements Runnable ,Serializable{
+public class Shot extends Bullrt implements Runnable {
     private boolean loop; //线程终止符
     private boolean isAlive = true;
 

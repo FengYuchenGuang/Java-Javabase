@@ -16,27 +16,31 @@ public class Recorder {
     private static BufferedReader rw = null;
     private static String recordFile = "src\\studay\\TankWar04\\myRecord.txt";
 
+    private static Vector<SaveTank> nodes = new Vector<>();
+
     public static void loadRecordInfo(TankWar04 myPanel) throws IOException {
         //判断文件是否存在
         if (!(new File(recordFile).exists())) {
-           return;
+            return;
         }
         rw = new BufferedReader(new FileReader(recordFile));
-        num = Integer.valueOf(rw.readLine());
-        life = Integer.valueOf(rw.readLine());
+        num = Integer.parseInt(rw.readLine());
+        life = Integer.parseInt(rw.readLine());
         String info;
         while ((info = rw.readLine()) != null) {
 //            System.out.println(info);
-            //x=y=speed=label
-            String[] split = info.split("=");
-            int x = Integer.valueOf(split[0]);
-            int y = Integer.valueOf(split[1]);
-            int speed = Integer.valueOf(split[2]);
-            if (split[3].equals("0")) {//0我方
-                myPanel.player1 = new Player1(x, y, myPanel);
-            } else if (split[3].equals("1")) {//1敌方
-                myPanel.enemyTankList.add(new EnemyTank(x, y, speed, myPanel));
-            }
+            //x=y=speed=direction=label
+            String[] split = info.split(" ");
+            int x = Integer.parseInt(split[0]);
+            int y = Integer.parseInt(split[1]);
+            int d = Integer.parseInt(split[2]);//0123上下左右
+            Direction direction = getTankDirection(d);
+            int speed = Integer.parseInt(split[3]);
+            int label = Integer.parseInt(split[4]);
+
+            SaveTank node = new SaveTank(x, y, direction, speed, label);
+            nodes.add(node);
+
         }
         rw.close();
     }
@@ -49,16 +53,34 @@ public class Recorder {
         bw.write(life + "");
         bw.newLine();
         for (EnemyTank enemyTank : myPanel.enemyTankList) {
-            info = enemyTank.getPx() + "=" + enemyTank.getPy()
-                    + "=" + enemyTank.getSpeed() + "=1";
+            info = enemyTank.getPx() + " " + enemyTank.getPy()
+                    + " " + enemyTank.getTankDirection()
+                    + " " + enemyTank.getSpeed() + " 1";
             bw.write(info);
             bw.newLine();
         }
-        info = myPanel.player1.getPx() + "=" + myPanel.player1.getPy()
-                + "=" + myPanel.player1.getSpeed() +"=0";
+        info = myPanel.player1.getPx() + " " + myPanel.player1.getPy()
+                + " " + myPanel.player1.getTankDirection() + " "
+                + myPanel.player1.getSpeed() + " 0";
         bw.write(info);
 
         bw.close();
+    }
+
+    public static Vector<SaveTank> getNodes() {
+        return nodes;
+    }
+
+    public static Direction getTankDirection(int d) {
+        if (d == 0) {
+            return Direction.UP;
+        } else if (d == 1) {
+            return Direction.DOWN;
+        } else if (d == 2) {
+            return Direction.LEFT;
+        } else {
+            return Direction.RIGHT;
+        }
     }
 
 

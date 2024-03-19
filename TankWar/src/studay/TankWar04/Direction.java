@@ -1,10 +1,9 @@
 package studay.TankWar04;
 
-import java.io.Serializable;
 
 /**
  * @author hxz
  */
-public enum Direction implements Serializable {
+public enum Direction  {
     UP,DOWN,LEFT,RIGHT;
 }

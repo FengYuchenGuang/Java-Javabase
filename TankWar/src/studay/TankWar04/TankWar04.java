@@ -2,11 +2,9 @@ package studay.TankWar04;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.Vector;
 
 /**
@@ -35,9 +33,10 @@ import java.util.Vector;
  * 原因是没有将子弹边界检测的界面设置为游戏界面
  * <p>
  * <p>
- * 7、记录当时敌人坦克坐标，存盘退出
- *  7.1 依旧在 Recorder 中记录 myRecorder.dat
- * <p>
+ * 7、记录当时敌人坦克坐标，存盘退出 还有记录方向
+ *  7.1 依旧在 Recorder 中记录,无法重新加载位置
+ *  原因： 字符串比较是否相等使用 .equals()
+ *
  * <p>
  * ====
  * 8、玩游戏时，可以选择开新游戏还是继续上局游戏
@@ -52,25 +51,51 @@ class TankWar04 extends JFrame implements Runnable {
     TankWar04 myJFrame = this;
 
     Vector<EnemyTank> enemyTankList = new Vector<>();
+    Vector<SaveTank> nodes = new Vector<>();
 
     //爆炸列表
     Vector<Boom> booms = new Vector<>();
 
+    //选择模式
+    private int key;
+    Scanner myScanner = new Scanner(System.in);
 
     public TankWar04() throws Exception {
+        System.out.println("输入选择：1、新游戏。2、重新上局游戏。");
+        key = myScanner.nextInt();
+
         //加载爆炸图片
         Boom.BoomStart();
         booms.add(new Boom(0, 0, this));
+
         Recorder.loadRecordInfo(this);
-        if (player1 == null){
-            player1 = new Player1(500, 400, this);
+        nodes = Recorder.getNodes();
+
+        switch (key){
+            case 1:
+                player1 = new Player1(500, 400, this);
+
+                for (int i = 0; i < enemyNum; i++) {
+                    enemyTankList.add(new EnemyTank(100+i*100, 100, 7, this));
+                }
+                break;
+            case 2:
+                for (int i = 0; i < nodes.size(); i++) {
+                    SaveTank node = nodes.get(i);
+                    int x = node.getX();
+                    int y = node.getY();
+                    Direction direction = node.getDirection();
+                    int speed = node.getSpeed();
+                    int label = node.getLabel();
+                    if (label == 0){//0我方
+                        player1 = new Player1(x,y,direction,this);
+                    }else if (label ==1){//1敌方
+                        enemyTankList.add(new EnemyTank(x,y,direction,speed,this));
+                    }
+                }
+                break;
         }
 
-        if (enemyTankList.isEmpty()){
-            for (int i = 0; i < enemyNum; i++) {
-                enemyTankList.add(new EnemyTank(100+i*100, 100, 7, this));
-            }
-        }
     }
 
     /*
@@ -298,8 +323,7 @@ class TankWar04 extends JFrame implements Runnable {
     public static void main(String[] args) throws Exception {
         TankWar04 tankWar04 = new TankWar04();
         tankWar04.start();
-        //游戏结束后
-//        Recorder.writeRecordInfo();
+
     }
 }
 

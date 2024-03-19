@@ -9,7 +9,7 @@ import java.util.Vector;
 /**
  * @author hxz
  */
-public class EnemyTank extends Tank implements Serializable {
+public class EnemyTank extends Tank{
     int EnemyMoveTime = 0;
     int RandomMoveTime = 6;
     boolean moveCD_flag = false;
@@ -25,6 +25,10 @@ public class EnemyTank extends Tank implements Serializable {
 
     public EnemyTank(int px, int py, int speed, TankWar04 myPanel) {
         super(px, py, Direction.DOWN, speed, myPanel);
+    }
+
+    public EnemyTank(int px, int py, Direction tankDirection, int speed, TankWar04 myPanel) {
+        super(px, py, tankDirection, speed, myPanel);
     }
 
     /*

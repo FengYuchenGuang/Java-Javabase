@@ -1,12 +1,12 @@
 package studay.TankWar04;
 
 import java.awt.*;
-import java.io.Serializable;
+
 
 /**
  * @author hxz
  */
-public class Boom extends GameObject implements Serializable {
+public class Boom extends GameObject{
     int x;
     int y;
     //爆炸图集
