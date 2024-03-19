@@ -2,73 +2,73 @@ package studay.Thread_;
 
 /**
  * @author hxz
- * Ê¹ÓÃ¶àÏß³Ì£¬Ä£ÄâÈı¸ö´°¿ÚÍ¬Ê±ÊÛÆ± 100 ÕÅ
- * »á³öÏÖ³¬ÂôÏÖÏó
- * ===Òò´ËĞèÒªÔÚÏß³ÌÖĞÖ÷¶¯ÖÕÖ¹Ïß³Ì===
+ * ä½¿ç”¨å¤šçº¿ç¨‹ï¼Œæ¨¡æ‹Ÿä¸‰ä¸ªçª—å£åŒæ—¶å”®ç¥¨ 100 å¼ 
+ * ä¼šå‡ºç°è¶…å–ç°è±¡
+ * ===å› æ­¤éœ€è¦åœ¨çº¿ç¨‹ä¸­ä¸»åŠ¨ç»ˆæ­¢çº¿ç¨‹===
  *
  */
 public class ThreadExercise01 {
     public static void main(String[] args) {
-        //²âÊÔ
+        //æµ‹è¯•
 //        SellTicket01 sellTicket01 = new SellTicket01();
 //        SellTicket01 sellTicket02 = new SellTicket01();
 //        SellTicket01 sellTicket03 = new SellTicket01();
         //
-        // //ÕâÀïÎÒÃÇ»á³öÏÖ³¬Âô.. //
-//        sellTicket01.start();//Æô¶¯ÊÛÆ±Ïß³Ì
-//        sellTicket02.start();//Æô¶¯ÊÛÆ±Ïß³Ì
-//        sellTicket03.start();//Æô¶¯ÊÛÆ±Ïß³Ì
+        // //è¿™é‡Œæˆ‘ä»¬ä¼šå‡ºç°è¶…å–.. //
+//        sellTicket01.start();//å¯åŠ¨å”®ç¥¨çº¿ç¨‹
+//        sellTicket02.start();//å¯åŠ¨å”®ç¥¨çº¿ç¨‹
+//        sellTicket03.start();//å¯åŠ¨å”®ç¥¨çº¿ç¨‹
 
-        System.out.println("===Ê¹ÓÃÊµÏÖ½Ó¿Ú·½Ê½À´ÊÛÆ±=====");
+        System.out.println("===ä½¿ç”¨å®ç°æ¥å£æ–¹å¼æ¥å”®ç¥¨=====");
         SellTicket02 sellTicket04 = new SellTicket02();
-        new Thread(sellTicket04).start();//µÚ 1 ¸öÏß³Ì-´°¿Ú
-        new Thread(sellTicket04).start();//µÚ 2 ¸öÏß³Ì-´°¿Ú
-        new Thread(sellTicket04).start();//µÚ 3 ¸öÏß³Ì-´°¿Ú
+        new Thread(sellTicket04).start();//ç¬¬ 1 ä¸ªçº¿ç¨‹-çª—å£
+        new Thread(sellTicket04).start();//ç¬¬ 2 ä¸ªçº¿ç¨‹-çª—å£
+        new Thread(sellTicket04).start();//ç¬¬ 3 ä¸ªçº¿ç¨‹-çª—å£
     }
 }
 
-//Ê¹ÓÃ Thread ·½Ê½
+//ä½¿ç”¨ Thread æ–¹å¼
 class SellTicket01 extends Thread {
-    private static int ticketNum = 100;//ÈÃ¶à¸öÏß³Ì¹²Ïí ticketNum
+    private static int ticketNum = 100;//è®©å¤šä¸ªçº¿ç¨‹å…±äº« ticketNum
 
     @Override
     public void run() {
         while (true) {
             if (ticketNum <= 0) {
-                System.out.println("ÊÛÆ±½áÊø...");
+                System.out.println("å”®ç¥¨ç»“æŸ...");
                 this.stop();
             }
 
-            //ĞİÃß 50 ºÁÃë, Ä£Äâ
+            //ä¼‘çœ  50 æ¯«ç§’, æ¨¡æ‹Ÿ
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("´°¿Ú " + Thread.currentThread().getName() + " ÊÛ³öÒ»ÕÅÆ±" + " Ê£ÓàÆ±Êı=" + (--ticketNum));
+            System.out.println("çª—å£ " + Thread.currentThread().getName() + " å”®å‡ºä¸€å¼ ç¥¨" + " å‰©ä½™ç¥¨æ•°=" + (--ticketNum));
         }
     }
 }
 
-//ÊµÏÖ½Ó¿Ú·½Ê½
+//å®ç°æ¥å£æ–¹å¼
 class SellTicket02 implements Runnable {
-    private int ticketNum = 100;//ÈÃ¶à¸öÏß³Ì¹²Ïí ticketNum
+    private int ticketNum = 100;//è®©å¤šä¸ªçº¿ç¨‹å…±äº« ticketNum
 
     @Override
     public void run() {
         while (true) {
             if (ticketNum <= 0) {
-                System.out.println("ÊÛÆ±½áÊø...");
+                System.out.println("å”®ç¥¨ç»“æŸ...");
                 break;
             }
 
-            //ĞİÃß 50 ºÁÃë, Ä£Äâ
+            //ä¼‘çœ  50 æ¯«ç§’, æ¨¡æ‹Ÿ
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("´°¿Ú " + Thread.currentThread().getName() + " ÊÛ³öÒ»ÕÅÆ±" + " Ê£ÓàÆ±Êı=" + (--ticketNum));//1 - 0 - -1 - -2
+            System.out.println("çª—å£ " + Thread.currentThread().getName() + " å”®å‡ºä¸€å¼ ç¥¨" + " å‰©ä½™ç¥¨æ•°=" + (--ticketNum));//1 - 0 - -1 - -2
         }
     }
 }

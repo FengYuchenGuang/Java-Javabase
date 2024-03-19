@@ -2,17 +2,23 @@ package studay.Thread_;
 
 /**
  * @author hxz
- * Í¨¹ıÊµÏÖ½Ó¿Ú Runnable À´¿ª·¢Ïß³Ì
+ * é€šè¿‡å®ç°æ¥å£ Runnable æ¥å¼€å‘çº¿ç¨‹
+ *
+ * 1ã€é€šè¿‡ç»§æ‰¿ Thread æˆ–è€…å®ç° Runnable æ¥å£æ¥åˆ›å»ºçº¿ç¨‹æœ¬è´¨ä¸Šæ²¡æœ‰ä»»ä½•åŒºåˆ«
+ * Thread å°±æ˜¯å®ç°äº† Runnable æ¥å£
+ *
+ * 2ã€å®ç° Runnable æ¥å£æ–¹å¼æ›´é€‚åˆå¤šä¸ªçº¿ç¨‹å…±äº«ä¸€ä¸ªèµ„æºçš„æƒ…å†µï¼Œå¹¶ä¸”é¿å…äº†å•ç»§æ‰¿çš„é™åˆ¶ï¼Œå»ºè®®ä½¿ç”¨ Runnable æ¥å£
+ *
  */
 public class ThreadUse02 {
     public static void main(String[] args) {
         Dog02 dog = new Dog02();
-//        dog.start(); //ÕâÀï²»ÄÜµ÷ÓÃ start
-        //´´½¨ Thread ¶ÔÏó£¬°Ñ dog ¶ÔÏó(ÊµÏÖ Runnable),·ÅÈë Thread
+//        dog.start(); //è¿™é‡Œä¸èƒ½è°ƒç”¨ start
+        //åˆ›å»º Thread å¯¹è±¡ï¼ŒæŠŠ dog å¯¹è±¡(å®ç° Runnable),æ”¾å…¥ Thread
         Thread thread = new Thread(dog);
         thread.start();
 
-        Tiger tiger = new Tiger();//ÊµÏÖÁË Runnable
+        Tiger tiger = new Tiger();//å®ç°äº† Runnable
         ThreadProxy threadProxy = new ThreadProxy(tiger);
         threadProxy.start();
 
@@ -28,9 +34,9 @@ class Tiger extends Animal implements Runnable {
     @Override
     public void run() {
         while (true) {
-            System.out.println("ÀÏ»¢à»à»½Ğ...." + " Ïß³ÌÃû= " + Thread.currentThread().getName());
+            System.out.println("è€è™å—·å—·å«...." + " çº¿ç¨‹å= " + Thread.currentThread().getName());
 
-            //ĞİÃß 1 Ãë
+            //ä¼‘çœ  1 ç§’
             try {
                 Thread.sleep(600);
             } catch (InterruptedException e) {
@@ -43,16 +49,16 @@ class Tiger extends Animal implements Runnable {
     }
 }
 
-//Ïß³Ì´úÀíÀà , Ä£ÄâÁËÒ»¸ö¼«¼òµÄ Thread Àà
-// ·½±ãÎÒÃÇÀí½â ÎªºÎÒª new Thread(dog); ½«dog·ÅÈë
-// Òò´ËÕâÀïµÄÏß³Ì»¹ÊÇÖ÷Ïß³Ì
-class ThreadProxy implements Runnable {//Äã¿ÉÒÔ°Ñ Proxy Ààµ±×ö ThreadProxy
-    private Runnable target = null;//ÊôĞÔ£¬ÀàĞÍÊÇ Runnable
+//çº¿ç¨‹ä»£ç†ç±» , æ¨¡æ‹Ÿäº†ä¸€ä¸ªæç®€çš„ Thread ç±»
+// æ–¹ä¾¿æˆ‘ä»¬ç†è§£ ä¸ºä½•è¦ new Thread(dog); å°†dogæ”¾å…¥
+// å› æ­¤è¿™é‡Œçš„çº¿ç¨‹è¿˜æ˜¯ä¸»çº¿ç¨‹
+class ThreadProxy implements Runnable {//ä½ å¯ä»¥æŠŠ Proxy ç±»å½“åš ThreadProxy
+    private Runnable target = null;//å±æ€§ï¼Œç±»å‹æ˜¯ Runnable
 
     @Override
     public void run() {
         if (target != null) {
-            target.run();//¶¯Ì¬°ó¶¨£¨ÔËĞĞÀàĞÍ Tiger£©
+            target.run();//åŠ¨æ€ç»‘å®šï¼ˆè¿è¡Œç±»å‹ Tigerï¼‰
         }
     }
 
@@ -62,7 +68,7 @@ class ThreadProxy implements Runnable {//Äã¿ÉÒÔ°Ñ Proxy Ààµ±×ö ThreadProxy
 
 
     public void start() {
-        start0();//Õâ¸ö·½·¨Ê±ÕæÕıÊµÏÖ¶àÏß³Ì·½·¨
+        start0();//è¿™ä¸ªæ–¹æ³•æ—¶çœŸæ­£å®ç°å¤šçº¿ç¨‹æ–¹æ³•
     }
 
     public void start0() {
@@ -70,14 +76,14 @@ class ThreadProxy implements Runnable {//Äã¿ÉÒÔ°Ñ Proxy Ààµ±×ö ThreadProxy
     }
 }
 
-class Dog02 implements Runnable { //Í¨¹ıÊµÏÖ Runnable ½Ó¿Ú£¬¿ª·¢Ïß³Ì
+class Dog02 implements Runnable { //é€šè¿‡å®ç° Runnable æ¥å£ï¼Œå¼€å‘çº¿ç¨‹
     int count = 0;
 
     @Override
-    public void run() { //ÆÕÍ¨·½·¨
+    public void run() { //æ™®é€šæ–¹æ³•
         while (true) {
-            System.out.println("Ğ¡¹·ÍôÍô½Ğ..hi " + (++count) + " " + Thread.currentThread().getName());
-            //ĞİÃß 1 Ãë
+            System.out.println("å°ç‹—æ±ªæ±ªå«..hi " + (++count) + " " + Thread.currentThread().getName());
+            //ä¼‘çœ  1 ç§’
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

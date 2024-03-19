@@ -4,19 +4,19 @@ import java.util.Scanner;
 
 /**
  * @author hxz
- * 1¡¢ÓĞÁ½¸öÓÃ»§·Ö±ğ´ÓÍ¬Ò»¸ö¿¨ÉÏÈ¡Ç®£¨×Ü¶î£º10,000£©
- * 2¡¢Ã¿´ÎÈ¡1,000 µ±Óà¶î²»×ãÊ±£¬²»ÄÜÈ¡¿î
- * 3¡¢²»ÄÜ³öÏÖ³¬È¡ÏÖÏó -> Ïß³ÌÍ¬²½ÎÊÌâ
+ * 1ã€æœ‰ä¸¤ä¸ªç”¨æˆ·åˆ†åˆ«ä»åŒä¸€ä¸ªå¡ä¸Šå–é’±ï¼ˆæ€»é¢ï¼š10,000ï¼‰
+ * 2ã€æ¯æ¬¡å–1,000 å½“ä½™é¢ä¸è¶³æ—¶ï¼Œä¸èƒ½å–æ¬¾
+ * 3ã€ä¸èƒ½å‡ºç°è¶…å–ç°è±¡ -> çº¿ç¨‹åŒæ­¥é—®é¢˜
  * <p>
- * Èç¹ûÁ½¸öÈËÈ¡Ç®²»Í¬ÄØ£¿ £¨³õÊ¼»¯Ê±´«Èë²ÎÊı£©
+ * å¦‚æœä¸¤ä¸ªäººå–é’±ä¸åŒå‘¢ï¼Ÿ ï¼ˆåˆå§‹åŒ–æ—¶ä¼ å…¥å‚æ•°ï¼‰
  */
 public class ThreadExercise03 {
     public static void main(String[] args) {
         Thread05 man1 = new Thread05(400);
         Thread05 man2 = new Thread05(800);
 
-        man1.setName("ÕÅÈı");
-        man2.setName("ÀîËÄ");
+        man1.setName("å¼ ä¸‰");
+        man2.setName("æå››");
 
         man1.start();
         man2.start();
@@ -36,13 +36,13 @@ class Thread05 extends Thread {
     }
 
     public void getMoney() {
-        //ÕâÀïµÄ obj ¶ÔÏóÊÇÒ»¸ö·Ç¹«Æ½Ëø
-        synchronized (obj) { ///´ËÊ± this ²»ÊÇÒ»¸ö¶ÔÏó
+        //è¿™é‡Œçš„ obj å¯¹è±¡æ˜¯ä¸€ä¸ªéå…¬å¹³é”
+        synchronized (obj) { ///æ­¤æ—¶ this ä¸æ˜¯ä¸€ä¸ªå¯¹è±¡
             if (price < get) {
                 return;
             }
             price -= get;
-            System.out.println(currentThread().getName() + " È¡³ö " + get + " »¹Ê£ " + price);
+            System.out.println(currentThread().getName() + " å–å‡º " + get + " è¿˜å‰© " + price);
         }
     }
 
@@ -57,6 +57,6 @@ class Thread05 extends Thread {
                 e.printStackTrace();
             }
         }
-        System.out.println("Ïß³Ì " + currentThread().getName() + " ½áÊø...");
+        System.out.println("çº¿ç¨‹ " + currentThread().getName() + " ç»“æŸ...");
     }
 }

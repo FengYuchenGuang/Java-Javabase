@@ -5,96 +5,96 @@ import java.awt.*;
 
 /**
  * @author hxz
- * »ù´¡µÄ»­Í¼²Ù×÷
+ * åŸºç¡€çš„ç”»å›¾æ“ä½œ
  *
- * ³ıÁË×ÖÌåµÄÉèÖÃÊÇÔÚ×óÏÂ½Ç
- * ÆäËû£¬»­Í¼¡¢ÉèÖÃÍ¼Æ¬¶¼ÊÇ°´ÕÕ×óÉÏ½Ç
+ * é™¤äº†å­—ä½“çš„è®¾ç½®æ˜¯åœ¨å·¦ä¸‹è§’
+ * å…¶ä»–ï¼Œç”»å›¾ã€è®¾ç½®å›¾ç‰‡éƒ½æ˜¯æŒ‰ç…§å·¦ä¸Šè§’
  */
-//JFrame ¶ÔÓ¦´°¿Ú,¿ÉÒÔÀí½â³ÉÊÇÒ»¸ö»­¿ò
+//JFrame å¯¹åº”çª—å£,å¯ä»¥ç†è§£æˆæ˜¯ä¸€ä¸ªç”»æ¡†
 public class DrawCircle extends JFrame{
-    //¶¨ÒåÒ»¸öÃæ°å
+    //å®šä¹‰ä¸€ä¸ªé¢æ¿
     private MyPanel01  mp = null;
 
     public static void main(String[] args) {
         new DrawCircle();
-        System.out.println("ÍË³ö³ÌĞò~");
+        System.out.println("é€€å‡ºç¨‹åº~");
     }
 
-    public DrawCircle() {//¹¹ÔìÆ÷
-        //³õÊ¼»¯Ãæ°å
+    public DrawCircle() {//æ„é€ å™¨
+        //åˆå§‹åŒ–é¢æ¿
         mp = new MyPanel01();
 
-        //°ÑÃæ°å·ÅÈëµ½´°¿Ú(»­¿ò)
+        //æŠŠé¢æ¿æ”¾å…¥åˆ°çª—å£(ç”»æ¡†)
         this.add(mp);
 
-        //ÉèÖÃ´°¿ÚµÄ´óĞ¡
+        //è®¾ç½®çª—å£çš„å¤§å°
         this.setSize(1000, 600);
 
-        //Ê¹ÆÁÄ»¾ÓÖĞ
+        //ä½¿å±å¹•å±…ä¸­
         this.setLocationRelativeTo(null);
 
-        //½«´°ÌåÉèÖÃÎª²»¿Éµ÷½Ú´óĞ¡
+        //å°†çª—ä½“è®¾ç½®ä¸ºä¸å¯è°ƒèŠ‚å¤§å°
 //        setResizable(false);
 
-        //µ±µã»÷´°¿ÚµÄĞ¡¡Á£¬³ÌĞòÍêÈ«ÍË³ö.
+        //å½“ç‚¹å‡»çª—å£çš„å°Ã—ï¼Œç¨‹åºå®Œå…¨é€€å‡º.
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //¿ÉÒÔÏÔÊ¾£¬Ä¬ÈÏÊÇ²»ÏÔÊ¾
+        //å¯ä»¥æ˜¾ç¤ºï¼Œé»˜è®¤æ˜¯ä¸æ˜¾ç¤º
         this.setVisible(true);
     }
 
 }
 
-//¶¨ÒåÒ»¸öÃæ°å Panel£¬¼Ì³Ğ JPanelÀà£¬»­Í¼ĞÎ£¬¾ÍÔÚ»­°åÉÏ»­
+//å®šä¹‰ä¸€ä¸ªé¢æ¿ Panelï¼Œç»§æ‰¿ JPanelç±»ï¼Œç”»å›¾å½¢ï¼Œå°±åœ¨ç”»æ¿ä¸Šç”»
 class MyPanel01 extends JPanel {
-    //ËµÃ÷:
-    //1. MyPanel ¶ÔÏó¾ÍÊÇÒ»¸ö»­°å
-    //2. Graphics g °Ñ g Àí½â³ÉÒ»Ö§»­±Ê
-    //3. Graphics Ìá¹©ÁËºÜ¶à»æÍ¼µÄ·½·¨
+    //è¯´æ˜:
+    //1. MyPanel å¯¹è±¡å°±æ˜¯ä¸€ä¸ªç”»æ¿
+    //2. Graphics g æŠŠ g ç†è§£æˆä¸€æ”¯ç”»ç¬”
+    //3. Graphics æä¾›äº†å¾ˆå¤šç»˜å›¾çš„æ–¹æ³•
     //Graphics g
     @Override
     public void paint(Graphics g) {
-        super.paint(g);//µ÷ÓÃ¸¸ÀàÍê³É³õÊ¼»¯
+        super.paint(g);//è°ƒç”¨çˆ¶ç±»å®Œæˆåˆå§‹åŒ–
 
-        System.out.println("paint ·½·¨±»µ÷ÓÃÁË~");
-        //»­³öÒ»¸öÔ²ĞÎ.
+        System.out.println("paint æ–¹æ³•è¢«è°ƒç”¨äº†~");
+        //ç”»å‡ºä¸€ä¸ªåœ†å½¢.
 //        g.drawOval(10, 10, 100, 100);
 
-        //ÑİÊ¾»æÖÆ²»Í¬µÄÍ¼ĞÎ..
-        //»­Ö±Ïß drawLine(int x1,int y1,int x2,int y2)
+        //æ¼”ç¤ºç»˜åˆ¶ä¸åŒçš„å›¾å½¢..
+        //ç”»ç›´çº¿ drawLine(int x1,int y1,int x2,int y2)
         //g.drawLine(10, 10, 100, 100);
 
-        //»­¾ØĞÎ±ß¿ò drawRect(int x, int y, int width, int height)
+        //ç”»çŸ©å½¢è¾¹æ¡† drawRect(int x, int y, int width, int height)
         //g.drawRect(10, 10, 100, 100);
 
-        //»­ÍÖÔ²±ß¿ò drawOval(int x, int y, int width, int height)
+        //ç”»æ¤­åœ†è¾¹æ¡† drawOval(int x, int y, int width, int height)
 
-        //Ìî³ä¾ØĞÎ fillRect(int x, int y, int width, int height)
+        //å¡«å……çŸ©å½¢ fillRect(int x, int y, int width, int height)
 
-        //ÉèÖÃ»­±ÊµÄÑÕÉ«
+        //è®¾ç½®ç”»ç¬”çš„é¢œè‰²
 //        g.setColor(Color.blue);
 //        g.fillRect(10, 10, 100, 100);
 
-        //Ìî³äÍÖÔ² fillOval(int x, int y, int width, int height)
+        //å¡«å……æ¤­åœ† fillOval(int x, int y, int width, int height)
 //        g.setColor(Color.red);
 //        g.fillOval(10, 10, 100, 100);
 
-        //»­Í¼Æ¬ drawImage(Image img, int x, int y, ..)
-        //1. »ñÈ¡Í¼Æ¬×ÊÔ´, /bg.png ±íÊ¾ÔÚ¸ÃÏîÄ¿µÄ¸ùÄ¿Â¼È¥»ñÈ¡ bg.png Í¼Æ¬×ÊÔ´
-        // out ÀïÃæ
-        Image image = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/pic/block/»ùµØ.png"));
+        //ç”»å›¾ç‰‡ drawImage(Image img, int x, int y, ..)
+        //1. è·å–å›¾ç‰‡èµ„æº, /bg.png è¡¨ç¤ºåœ¨è¯¥é¡¹ç›®çš„æ ¹ç›®å½•å»è·å– bg.png å›¾ç‰‡èµ„æº
+        // out é‡Œé¢
+        Image image = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/pic/block/åŸºåœ°.png"));
         g.drawImage(image, 900, 500, 50, 50, this);
 
-        //»­×Ö·û´® drawString(String str, int x, int y)//Ğ´×Ö
-        //¸ø»­±ÊÉèÖÃÑÕÉ«ºÍ×ÖÌå
+        //ç”»å­—ç¬¦ä¸² drawString(String str, int x, int y)//å†™å­—
+        //ç»™ç”»ç¬”è®¾ç½®é¢œè‰²å’Œå­—ä½“
         g.setColor(Color.red);
-        g.setFont(new Font("Á¥Êé", Font.BOLD, 50));
+        g.setFont(new Font("éš¶ä¹¦", Font.BOLD, 50));
 
-        //ÕâÀïÉèÖÃµÄ 100£¬ 100£¬ ÊÇ "±±¾©ÄãºÃ"  ====×óÏÂ½Ç======
-        g.drawString("±±¾©ÄãºÃ", 100, 100);
+        //è¿™é‡Œè®¾ç½®çš„ 100ï¼Œ 100ï¼Œ æ˜¯ "åŒ—äº¬ä½ å¥½"  ====å·¦ä¸‹è§’======
+        g.drawString("åŒ—äº¬ä½ å¥½", 100, 100);
 
-        //ÉèÖÃ»­±ÊµÄ×ÖÌå setFont(Font font)
+        //è®¾ç½®ç”»ç¬”çš„å­—ä½“ setFont(Font font)
 
-        //ÉèÖÃ»­±ÊµÄÑÕÉ« setColor(Color c)
+        //è®¾ç½®ç”»ç¬”çš„é¢œè‰² setColor(Color c)
     }
 }

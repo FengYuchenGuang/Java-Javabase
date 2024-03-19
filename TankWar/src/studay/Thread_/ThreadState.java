@@ -2,32 +2,32 @@ package studay.Thread_;
 
 /**
  * @author hxz
- * Ïß³ÌµÄÉúÃüÖÜÆÚ
- * Ïß³ÌµÄ¼¸ÖÖ×´Ì¬
- * 1¡¢NEW   ÉĞÎ´Æô¶¯µÄÏß³Ì´¦ÓÚ´Ë×´Ì¬
- * 2¡¢RUUNNABLE   ÔÚjavaĞéÄâ»úÖĞÖ´ĞĞµÄÏß³Ì´¦ÓÚ´Ë×´Ì¬
- * 3¡¢BLOCKED    ±»×èÈûµÈ´ı¼àÊÓÆ÷Ëø¶¨µÄÏß³Ì´¦ÓÚ´Ë×´Ì¬
- * 4¡¢WAITING  //µÈ´ı£¨²»ÖªµÀµÈ´ıÊ±¼ä£©
- * ÕıÔÚµÈ´ıÁíÒ»¸öÏß³ÌÖ´ĞĞ´ı¶¨¶¯×÷µÄÏß³Ì´¦ÓÚ´Ë×´Ì¬  join
- * 5¡¢TIMED_WAITING  //³¬Ê±µÈ´ı£¨ÖªµÀµÈ´ıÊ±¼ä£©  sleep
- * ÕıÔÚµÈ´ıÁíÒ»¸öÏß³ÌÖ´ĞĞ¶¯×÷ ´ïµ½ Ö¸¶¨µÈ´ıÊ±¼äµÄÏß³Ì´¦ÓÚ´Ë×´Ì¬
- * 6¡¢TERMINATED    ÒÑÍË³öµÄÏß³Ì´¦ÓÚ´Ë×´Ì¬
+ * çº¿ç¨‹çš„ç”Ÿå‘½å‘¨æœŸ
+ * çº¿ç¨‹çš„å‡ ç§çŠ¶æ€
+ * 1ã€NEW   å°šæœªå¯åŠ¨çš„çº¿ç¨‹å¤„äºæ­¤çŠ¶æ€
+ * 2ã€RUUNNABLE   åœ¨javaè™šæ‹Ÿæœºä¸­æ‰§è¡Œçš„çº¿ç¨‹å¤„äºæ­¤çŠ¶æ€
+ * 3ã€BLOCKED    è¢«é˜»å¡ç­‰å¾…ç›‘è§†å™¨é”å®šçš„çº¿ç¨‹å¤„äºæ­¤çŠ¶æ€
+ * 4ã€WAITING  //ç­‰å¾…ï¼ˆä¸çŸ¥é“ç­‰å¾…æ—¶é—´ï¼‰
+ * æ­£åœ¨ç­‰å¾…å¦ä¸€ä¸ªçº¿ç¨‹æ‰§è¡Œå¾…å®šåŠ¨ä½œçš„çº¿ç¨‹å¤„äºæ­¤çŠ¶æ€  join
+ * 5ã€TIMED_WAITING  //è¶…æ—¶ç­‰å¾…ï¼ˆçŸ¥é“ç­‰å¾…æ—¶é—´ï¼‰  sleep
+ * æ­£åœ¨ç­‰å¾…å¦ä¸€ä¸ªçº¿ç¨‹æ‰§è¡ŒåŠ¨ä½œ è¾¾åˆ° æŒ‡å®šç­‰å¾…æ—¶é—´çš„çº¿ç¨‹å¤„äºæ­¤çŠ¶æ€
+ * 6ã€TERMINATED    å·²é€€å‡ºçš„çº¿ç¨‹å¤„äºæ­¤çŠ¶æ€
  */
 public class ThreadState {
     public static void main(String[] args) throws InterruptedException {
         T06 t06 = new T06();
         t06.setName("t06");
-        System.out.println("Ïß³Ì " + Thread.currentThread().getName() + " ×´Ì¬ " + Thread.currentThread().getState());
-        System.out.println("Ïß³Ì " + t06.getName() + " ×´Ì¬ " + t06.getState());
+        System.out.println("çº¿ç¨‹ " + Thread.currentThread().getName() + " çŠ¶æ€ " + Thread.currentThread().getState());
+        System.out.println("çº¿ç¨‹ " + t06.getName() + " çŠ¶æ€ " + t06.getState());
 
         t06.start();
 
         while (Thread.State.TERMINATED != t06.getState() ){
-            System.out.println("Ïß³Ì " + t06.getName() + " ×´Ì¬ " + t06.getState());
+            System.out.println("çº¿ç¨‹ " + t06.getName() + " çŠ¶æ€ " + t06.getState());
             Thread.sleep(100);
         }
 
-        System.out.println("Ïß³Ì " + t06.getName() + " ×´Ì¬ " + t06.getState());
+        System.out.println("çº¿ç¨‹ " + t06.getName() + " çŠ¶æ€ " + t06.getState());
     }
 }
 
@@ -43,10 +43,10 @@ class T06 extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            //Thread.currentThread().getName() »ñÈ¡Ïß³ÌÃû
-            System.out.println("Ïß³Ì " + Thread.currentThread().getName() + " " + i);
+            //Thread.currentThread().getName() è·å–çº¿ç¨‹å
+            System.out.println("çº¿ç¨‹ " + Thread.currentThread().getName() + " " + i);
             if (i == 9) {
-                ///Ïß³ÌÀñÈÃ
+                ///çº¿ç¨‹ç¤¼è®©
                 Thread.yield();
             }
         }

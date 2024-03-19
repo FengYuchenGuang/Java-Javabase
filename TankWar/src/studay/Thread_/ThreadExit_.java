@@ -2,15 +2,15 @@ package studay.Thread_;
 
 /**
  * @author hxz
- * Ïß³ÌÖÕÖ¹µÄ·½·¨
- * 1¡¢Õı³£ÔËĞĞ½áÊø
- * 2¡¢Ê¹ÓÃÍË³ö±êÖ¾ÍË³öÏß³Ì
- * 3¡¢Interrupt ·½·¨½áÊøÏß³Ì  Ò»°ã Interrupt ÊÇÖĞ¶ÏÏß³Ì£¬²»ÊÇ½áÊø
- *   µ«ÊÇ¿ÉÒÔÍ¨¹ı²¶»ñÒì³£ºó break Ìø³öÑ­»·×´Ì¬£¬´Ó¶øÈÃÎÒÃÇÓĞ»ú»á½áÊøÕâ¸öÏß³ÌµÄÖ´ĞĞ¡£
- *   ¾ßÌå ThreadMethod01.java
- *    3.1 Ïß³Ì´¦ÓÚ×èÈû×´Ì¬
- *    3.2 Ïß³ÌÎ´´¦ÓÚ×èÈû×´Ì¬
- * 4¡¢stop ·½·¨ÖÕÖ¹Ïß³Ì£¨Ïß³Ì²»°²È«£©
+ * çº¿ç¨‹ç»ˆæ­¢çš„æ–¹æ³•
+ * 1ã€æ­£å¸¸è¿è¡Œç»“æŸ
+ * 2ã€ä½¿ç”¨é€€å‡ºæ ‡å¿—é€€å‡ºçº¿ç¨‹
+ * 3ã€Interrupt æ–¹æ³•ç»“æŸçº¿ç¨‹  ä¸€èˆ¬ Interrupt æ˜¯ä¸­æ–­çº¿ç¨‹ï¼Œä¸æ˜¯ç»“æŸ
+ *   ä½†æ˜¯å¯ä»¥é€šè¿‡æ•è·å¼‚å¸¸å break è·³å‡ºå¾ªç¯çŠ¶æ€ï¼Œä»è€Œè®©æˆ‘ä»¬æœ‰æœºä¼šç»“æŸè¿™ä¸ªçº¿ç¨‹çš„æ‰§è¡Œã€‚
+ *   å…·ä½“ ThreadMethod01.java
+ *    3.1 çº¿ç¨‹å¤„äºé˜»å¡çŠ¶æ€
+ *    3.2 çº¿ç¨‹æœªå¤„äºé˜»å¡çŠ¶æ€
+ * 4ã€stop æ–¹æ³•ç»ˆæ­¢çº¿ç¨‹ï¼ˆçº¿ç¨‹ä¸å®‰å…¨ï¼‰
  */
 public class ThreadExit_ {
     public static void main(String[] args) {
@@ -27,17 +27,17 @@ class T05 extends Thread {
     public void run() {
         while (loop) {
             if (ticketNum > 100) {
-                System.out.println("ÊÛÆ±½áÊø...");
+                System.out.println("å”®ç¥¨ç»“æŸ...");
                 this.stop();
             }
 
-            //ĞİÃß 50 ºÁÃë, Ä£Äâ
+            //ä¼‘çœ  50 æ¯«ç§’, æ¨¡æ‹Ÿ
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("´°¿Ú T  run...." + ticketNum++);
+            System.out.println("çª—å£ T  run...." + ticketNum++);
         }
     }
 

@@ -2,8 +2,8 @@ package studay.Thread_;
 
 /**
  * @author hxz
- * ¶àÏß³Ì
- * main Ïß³ÌÆô¶¯Á½¸ö×ÓÏß³Ì
+ * å¤šçº¿ç¨‹
+ * main çº¿ç¨‹å¯åŠ¨ä¸¤ä¸ªå­çº¿ç¨‹
  */
 public class Thread03 {
     public static void main(String[] args) {
@@ -11,8 +11,8 @@ public class Thread03 {
         T2 t2 = new T2();
         Thread thread1 = new Thread(t1);
         Thread thread2 = new Thread(t2);
-        thread1.start();//Æô¶¯µÚ 1 ¸öÏß³Ì
-        thread2.start();//Æô¶¯µÚ 2 ¸öÏß³Ì
+        thread1.start();//å¯åŠ¨ç¬¬ 1 ä¸ªçº¿ç¨‹
+        thread2.start();//å¯åŠ¨ç¬¬ 2 ä¸ªçº¿ç¨‹
         //...
     }
 }
@@ -22,7 +22,7 @@ class T1 implements Runnable {
     @Override
     public void run() {
         while (true) {
-            //Ã¿¸ô 1 ÃëÊä³ö ¡°hello,world¡±,Êä³ö 10 ´Î
+            //æ¯éš” 1 ç§’è¾“å‡º â€œhello,worldâ€,è¾“å‡º 10 æ¬¡
             System.out.println("hello,world " + (++count));
             try {
                 Thread.sleep(1000);
@@ -40,7 +40,7 @@ class T2 implements Runnable {
     int count = 0;
     @Override
     public void run() {
-        //Ã¿¸ô 1 ÃëÊä³ö ¡°hi¡±,Êä³ö 5 ´Î
+        //æ¯éš” 1 ç§’è¾“å‡º â€œhiâ€,è¾“å‡º 5 æ¬¡
         while (true) {
             System.out.println("hi " + (++count));
             try {

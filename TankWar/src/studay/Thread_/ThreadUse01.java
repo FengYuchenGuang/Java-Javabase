@@ -1,10 +1,10 @@
 package studay.Thread_;
 
 
-//ÀÏº«ËµÃ÷
-//1. µ±Ò»¸öÀà¼Ì³ĞÁË Thread Àà£¬ ¸ÃÀà¾Í¿ÉÒÔµ±×öÏß³ÌÊ¹ÓÃ
-//2. ÎÒÃÇ»áÖØĞ´ run ·½·¨£¬Ğ´ÉÏ×Ô¼ºµÄÒµÎñ´úÂë
-//3. run Thread Àà ÊµÏÖÁË Runnable ½Ó¿ÚµÄ run ·½·¨
+//è€éŸ©è¯´æ˜
+//1. å½“ä¸€ä¸ªç±»ç»§æ‰¿äº† Thread ç±»ï¼Œ è¯¥ç±»å°±å¯ä»¥å½“åšçº¿ç¨‹ä½¿ç”¨
+//2. æˆ‘ä»¬ä¼šé‡å†™ run æ–¹æ³•ï¼Œå†™ä¸Šè‡ªå·±çš„ä¸šåŠ¡ä»£ç 
+//3. run Thread ç±» å®ç°äº† Runnable æ¥å£çš„ run æ–¹æ³•
 /*
     @Override
     public void run() {
@@ -15,33 +15,33 @@ package studay.Thread_;
 */
 /**
  * @author hxz
- * ÑİÊ¾Í¨¹ı¼Ì³Ğ Thread Àà´´½¨Ïß³Ì
+ * æ¼”ç¤ºé€šè¿‡ç»§æ‰¿ Thread ç±»åˆ›å»ºçº¿ç¨‹
  */
 public class ThreadUse01 {
     public static void main(String[] args) {
-        //´´½¨ Cat ¶ÔÏó£¬¿ÉÒÔµ±×öÏß³ÌÊ¹ÓÃ
+        //åˆ›å»º Cat å¯¹è±¡ï¼Œå¯ä»¥å½“åšçº¿ç¨‹ä½¿ç”¨
         Cat01 cat = new Cat01();
-        //ÀÏº«¶ÁÔ´Âë
+        //è€éŸ©è¯»æºç 
         /*
         (1)
             public synchronized void start() {
                 start0();
             }
         (2)
-            //start0() ÊÇ±¾µØ·½·¨£¬ÊÇ JVM µ÷ÓÃ, µ×²ãÊÇ c/c++ÊµÏÖ
-            //ÕæÕıÊµÏÖ¶àÏß³ÌµÄĞ§¹û£¬ ÊÇ start0(), ¶ø²»ÊÇ run
+            //start0() æ˜¯æœ¬åœ°æ–¹æ³•ï¼Œæ˜¯ JVM è°ƒç”¨, åº•å±‚æ˜¯ c/c++å®ç°
+            //çœŸæ­£å®ç°å¤šçº¿ç¨‹çš„æ•ˆæœï¼Œ æ˜¯ start0(), è€Œä¸æ˜¯ run
             private native void start0();
         */
-        cat.start();//Æô¶¯Ïß³Ì-> ×îÖÕ»áÖ´ĞĞ cat µÄ run ·½·¨
+        cat.start();//å¯åŠ¨çº¿ç¨‹-> æœ€ç»ˆä¼šæ‰§è¡Œ cat çš„ run æ–¹æ³•
 
-        //cat.run();//run ·½·¨¾ÍÊÇÒ»¸öÆÕÍ¨µÄ·½·¨, Ã»ÓĞÕæÕıµÄÆô¶¯Ò»¸öÏß³Ì£¬¾Í»á°Ñ run ·½·¨Ö´ĞĞÍê±Ï£¬²ÅÏòÏÂÖ´ĞĞ
+        //cat.run();//run æ–¹æ³•å°±æ˜¯ä¸€ä¸ªæ™®é€šçš„æ–¹æ³•, æ²¡æœ‰çœŸæ­£çš„å¯åŠ¨ä¸€ä¸ªçº¿ç¨‹ï¼Œå°±ä¼šæŠŠ run æ–¹æ³•æ‰§è¡Œå®Œæ¯•ï¼Œæ‰å‘ä¸‹æ‰§è¡Œ
 
-        //ËµÃ÷: µ± main Ïß³ÌÆô¶¯Ò»¸ö×ÓÏß³Ì Thread-0, Ö÷Ïß³Ì²»»á×èÈû, »á¼ÌĞøÖ´ĞĞ
-        //ÕâÊ± Ö÷Ïß³ÌºÍ×ÓÏß³ÌÊÇ½»ÌæÖ´ĞĞ..
-        System.out.println("Ö÷Ïß³Ì¼ÌĞøÖ´ĞĞ currentThread = " + Thread.currentThread().getName());//Ãû×Ö main
+        //è¯´æ˜: å½“ main çº¿ç¨‹å¯åŠ¨ä¸€ä¸ªå­çº¿ç¨‹ Thread-0, ä¸»çº¿ç¨‹ä¸ä¼šé˜»å¡, ä¼šç»§ç»­æ‰§è¡Œ
+        //è¿™æ—¶ ä¸»çº¿ç¨‹å’Œå­çº¿ç¨‹æ˜¯äº¤æ›¿æ‰§è¡Œ..
+        System.out.println("ä¸»çº¿ç¨‹ç»§ç»­æ‰§è¡Œ currentThread = " + Thread.currentThread().getName());//åå­— main
         for(int i = 0; i < 160; i++) {
-            System.out.println("Ö÷Ïß³Ì i=" + i);
-            //ÈÃÖ÷Ïß³ÌĞİÃß
+            System.out.println("ä¸»çº¿ç¨‹ i=" + i);
+            //è®©ä¸»çº¿ç¨‹ä¼‘çœ 
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -54,21 +54,21 @@ public class ThreadUse01 {
 class Cat01 extends Thread{
     int times = 0;
 
-    //ÖØĞ´run·½·¨£¬ÊµÏÖ×Ô¼ºµÄÒµÎñÂß¼­
+    //é‡å†™runæ–¹æ³•ï¼Œå®ç°è‡ªå·±çš„ä¸šåŠ¡é€»è¾‘
     @Override
     public void run() {
         while (true) {
-            //¸ÃÏß³ÌÃ¿¸ô 1 Ãë¡£ÔÚ¿ØÖÆÌ¨Êä³ö ¡°ß÷ß÷, ÎÒÊÇĞ¡Ã¨ßä¡±
-            System.out.println("ß÷ß÷, ÎÒÊÇĞ¡Ã¨ßä" + (++times) + " Ïß³ÌÃû=" + Thread.currentThread().getName());
+            //è¯¥çº¿ç¨‹æ¯éš” 1 ç§’ã€‚åœ¨æ§åˆ¶å°è¾“å‡º â€œå–µå–µ, æˆ‘æ˜¯å°çŒ«å’ªâ€
+            System.out.println("å–µå–µ, æˆ‘æ˜¯å°çŒ«å’ª" + (++times) + " çº¿ç¨‹å=" + Thread.currentThread().getName());
 
-            //ÈÃ¸ÃÏß³ÌĞİÃß 1 Ãë ctrl+alt+t
+            //è®©è¯¥çº¿ç¨‹ä¼‘çœ  1 ç§’ ctrl+alt+t
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             if (times == 100) {
-                break;//µ± times µ½ 10, ÍË³ö while, ÕâÊ±Ïß³ÌÒ²¾ÍÍË³ö.. }
+                break;//å½“ times åˆ° 10, é€€å‡º while, è¿™æ—¶çº¿ç¨‹ä¹Ÿå°±é€€å‡º.. }
             }
         }
     }

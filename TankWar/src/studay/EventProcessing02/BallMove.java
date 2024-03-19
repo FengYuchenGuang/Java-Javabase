@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
 
 /**
  * @author hxz
- * ÑİÊ¾Ğ¡ÇòÍ¨¹ı¼üÅÌ¿ØÖÆÉÏÏÂ×óÓÒµÄÒÆ¶¯-> ½²½â Java µÄÊÂ¼ş¿ØÖÆ
+ * æ¼”ç¤ºå°çƒé€šè¿‡é”®ç›˜æ§åˆ¶ä¸Šä¸‹å·¦å³çš„ç§»åŠ¨-> è®²è§£ Java çš„äº‹ä»¶æ§åˆ¶
  */
 public class BallMove extends JFrame {
     MyPanel02 mp = null;
@@ -16,14 +16,14 @@ public class BallMove extends JFrame {
         BallMove ballMove = new BallMove();
     }
 
-    //¹¹ÔìÆ÷
+    //æ„é€ å™¨
     public BallMove() {
         mp = new MyPanel02();
         this.add(mp);
         this.setSize(400, 300);
 
-        //´°¿Ú JFrame ¶ÔÏó¿ÉÒÔ¼àÌı¼üÅÌÊÂ¼ş, ¼´¿ÉÒÔ¼àÌıµ½Ãæ°å·¢ÉúµÄ¼üÅÌÊÂ¼ş
-        //ÊÂ¼şÔ´£¬¿ÉÒÔÊÇ°´Å¥£¬´°¿Ú¡£ ¼àÌı·¢ÉúµÄ¼üÅÌÊÂ¼ş
+        //çª—å£ JFrame å¯¹è±¡å¯ä»¥ç›‘å¬é”®ç›˜äº‹ä»¶, å³å¯ä»¥ç›‘å¬åˆ°é¢æ¿å‘ç”Ÿçš„é”®ç›˜äº‹ä»¶
+        //äº‹ä»¶æºï¼Œå¯ä»¥æ˜¯æŒ‰é’®ï¼Œçª—å£ã€‚ ç›‘å¬å‘ç”Ÿçš„é”®ç›˜äº‹ä»¶
         this.addKeyListener(mp);
 
         this.setLocationRelativeTo(null);
@@ -33,33 +33,33 @@ public class BallMove extends JFrame {
     }
 }
 
-//¶¨ÒåÒ»¸öÃæ°å Panel£¬¼Ì³Ğ JPanelÀà£¬»­Í¼ĞÎ£¬¾ÍÔÚ»­°åÉÏ»­
-//Ãæ°å, ¿ÉÒÔ»­³öĞ¡Çò
-//KeyListener ÊÇ¼àÌıÆ÷, ¿ÉÒÔ¼àÌı¼üÅÌÊÂ¼ş
+//å®šä¹‰ä¸€ä¸ªé¢æ¿ Panelï¼Œç»§æ‰¿ JPanelç±»ï¼Œç”»å›¾å½¢ï¼Œå°±åœ¨ç”»æ¿ä¸Šç”»
+//é¢æ¿, å¯ä»¥ç”»å‡ºå°çƒ
+//KeyListener æ˜¯ç›‘å¬å™¨, å¯ä»¥ç›‘å¬é”®ç›˜äº‹ä»¶
 class MyPanel02 extends JPanel implements KeyListener {
-    //ÎªÁËÈÃĞ¡Çò¿ÉÒÔÒÆ¶¯, °ÑËûµÄ×óÉÏ½ÇµÄ×ø±ê(x,y)ÉèÖÃ±äÁ¿
+    //ä¸ºäº†è®©å°çƒå¯ä»¥ç§»åŠ¨, æŠŠä»–çš„å·¦ä¸Šè§’çš„åæ ‡(x,y)è®¾ç½®å˜é‡
     int x = 10;
     int y = 10;
 
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        g.fillOval(x, y, 20, 20); //Ä¬ÈÏºÚÉ«
+        g.fillOval(x, y, 20, 20); //é»˜è®¤é»‘è‰²
     }
 
-    //ÓĞ×Ö·ûÊä³öÊ±£¬¸Ã·½·¨¾Í»á´¥·¢
+    //æœ‰å­—ç¬¦è¾“å‡ºæ—¶ï¼Œè¯¥æ–¹æ³•å°±ä¼šè§¦å‘
     @Override
     public void keyTyped(KeyEvent e) {
 
     }
 
-    //µ±Ä³¸ö¼ü°´ÏÂ£¬¸Ã·½·¨»á´¥·¢
+    //å½“æŸä¸ªé”®æŒ‰ä¸‹ï¼Œè¯¥æ–¹æ³•ä¼šè§¦å‘
     @Override
     public void keyPressed(KeyEvent e) {
-        //System.out.println((char)e.getKeyCode() + "±»°´ÏÂ..");
-        //¸ù¾İÓÃ»§°´ÏÂµÄ²»Í¬¼ü£¬À´´¦ÀíĞ¡ÇòµÄÒÆ¶¯ (ÉÏÏÂ×óÓÒµÄ¼ü)
-        //ÔÚ java ÖĞ£¬»á¸øÃ¿Ò»¸ö¼ü£¬·ÖÅäÒ»¸öÖµ(int)
-        if (e.getKeyCode() == KeyEvent.VK_DOWN) {//KeyEvent.VK_DOWN ¾ÍÊÇÏòÏÂµÄ¼ıÍ·¶ÔÓ¦µÄ code
+        //System.out.println((char)e.getKeyCode() + "è¢«æŒ‰ä¸‹..");
+        //æ ¹æ®ç”¨æˆ·æŒ‰ä¸‹çš„ä¸åŒé”®ï¼Œæ¥å¤„ç†å°çƒçš„ç§»åŠ¨ (ä¸Šä¸‹å·¦å³çš„é”®)
+        //åœ¨ java ä¸­ï¼Œä¼šç»™æ¯ä¸€ä¸ªé”®ï¼Œåˆ†é…ä¸€ä¸ªå€¼(int)
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {//KeyEvent.VK_DOWN å°±æ˜¯å‘ä¸‹çš„ç®­å¤´å¯¹åº”çš„ code
             y += 5;
         } else if (e.getKeyCode() == KeyEvent.VK_UP) {
             y -= 5;
@@ -68,11 +68,11 @@ class MyPanel02 extends JPanel implements KeyListener {
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             x += 5;
         }
-        //ÈÃÃæ°åÖØ»æ
+        //è®©é¢æ¿é‡ç»˜
         this.repaint();
     }
 
-    //µ±Ä³¸ö¼üÊÍ·Å(ËÉ¿ª)£¬¸Ã·½·¨»á´¥·¢
+    //å½“æŸä¸ªé”®é‡Šæ”¾(æ¾å¼€)ï¼Œè¯¥æ–¹æ³•ä¼šè§¦å‘
     @Override
     public void keyReleased(KeyEvent e) {
 

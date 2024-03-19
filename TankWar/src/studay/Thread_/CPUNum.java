@@ -8,6 +8,6 @@ public class CPUNum {
         Runtime runtime = Runtime.getRuntime();
         int cpuNum = runtime.availableProcessors();
 
-        System.out.println("µçÄÔCPU¸öÊý£º" + cpuNum);
+        System.out.println("ç”µè„‘CPUä¸ªæ•°ï¼š" + cpuNum);
     }
 }

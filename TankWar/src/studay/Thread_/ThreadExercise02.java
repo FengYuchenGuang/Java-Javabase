@@ -7,13 +7,13 @@ import java.util.Scanner;
 
 /**
  * @author hxz
- * 1¡¢ÔÚ main·½·¨ÖĞÆô¶¯Á½¸öÏß³Ì
- * 2¡¢Ïß³ÌÒ» Ñ­»·Ëæ»ú´òÓ¡100ÒÔÄÚµÄÕûÊı
- * 3¡¢µ±Ïß³Ì¶ş´Ó¼üÅÌ¶ÁÈ¡ÁË"Q"Ö¸Áî£¬½áÊøÏß³ÌÒ»
+ * 1ã€åœ¨ mainæ–¹æ³•ä¸­å¯åŠ¨ä¸¤ä¸ªçº¿ç¨‹
+ * 2ã€çº¿ç¨‹ä¸€ å¾ªç¯éšæœºæ‰“å°100ä»¥å†…çš„æ•´æ•°
+ * 3ã€å½“çº¿ç¨‹äºŒä»é”®ç›˜è¯»å–äº†"Q"æŒ‡ä»¤ï¼Œç»“æŸçº¿ç¨‹ä¸€
  *
- * µ÷ÓÃstart()·½·¨ºó»áÏÈÅĞ¶ÏÏß³ÌµÄ×´Ì¬ÊÇ·ñÎªNEW£¬ËùÒÔÏß³ÌÖ»ÄÜÆô¶¯Ò»´Î¡£
+ * è°ƒç”¨start()æ–¹æ³•åä¼šå…ˆåˆ¤æ–­çº¿ç¨‹çš„çŠ¶æ€æ˜¯å¦ä¸ºNEWï¼Œæ‰€ä»¥çº¿ç¨‹åªèƒ½å¯åŠ¨ä¸€æ¬¡ã€‚
  *
- * Ë¼Â·Èı£º½«Ïß³ÌÒ»ÉèÖÃÎªÊØ»¤Ïß³Ì
+ * æ€è·¯ä¸‰ï¼šå°†çº¿ç¨‹ä¸€è®¾ç½®ä¸ºå®ˆæŠ¤çº¿ç¨‹
  */
 public class ThreadExercise02 {
     public static void main(String[] args) throws InterruptedException {
@@ -26,8 +26,8 @@ public class ThreadExercise02 {
         thread01.start();
         thread02.start();
 
-        //·½·¨Ò» µÚÒ»±éÎÒĞ´µÄ¿ØÖÆ·½·¨
-        //Í¨¹ı¼ì²â thread02 ×´Ì¬ÊµÏÖ¶ÔÆäËûÏß³ÌµÄ¿ØÖÆ
+        //æ–¹æ³•ä¸€ ç¬¬ä¸€éæˆ‘å†™çš„æ§åˆ¶æ–¹æ³•
+        //é€šè¿‡æ£€æµ‹ thread02 çŠ¶æ€å®ç°å¯¹å…¶ä»–çº¿ç¨‹çš„æ§åˆ¶
         while (true){
             if (thread02.getState() == Thread.State.TERMINATED){
                 thread01.setLoop(false);
@@ -35,8 +35,8 @@ public class ThreadExercise02 {
             }
         }
 
-        //·½·¨¶ş ÈÃ thread04 ³ÖÓĞ thread03 ¶ÔÏó
-        System.out.println("Ö÷³ÌĞò·½·¨Ò»¼ì²â½áÊø...");
+        //æ–¹æ³•äºŒ è®© thread04 æŒæœ‰ thread03 å¯¹è±¡
+        System.out.println("ä¸»ç¨‹åºæ–¹æ³•ä¸€æ£€æµ‹ç»“æŸ...");
         Thread.sleep(1000);
 
 
@@ -49,7 +49,7 @@ public class ThreadExercise02 {
         thread03.start();
         thread04.start();
 
-        System.out.println("Ö÷³ÌĞò½áÊø...");
+        System.out.println("ä¸»ç¨‹åºç»“æŸ...");
     }
 }
 
@@ -61,14 +61,14 @@ class Thread01 extends Thread {
     public void run() {
         while (loop) {
             randomInt = (new Random()).nextInt(101);
-            System.out.println("Ëæ»ú£º" + randomInt);
+            System.out.println("éšæœºï¼š" + randomInt);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
 
             }
         }
-        System.out.println("Ïß³Ì "+currentThread().getName()+" ½áÊø...");
+        System.out.println("çº¿ç¨‹ "+currentThread().getName()+" ç»“æŸ...");
     }
 
     public boolean isLoop() {
@@ -91,9 +91,9 @@ class Thread02 extends Thread{
             if (next == 'Q'){
                 break;
             }
-            System.out.println("ÖØĞÂÊäÈë¡£¡£¡£");
+            System.out.println("é‡æ–°è¾“å…¥ã€‚ã€‚ã€‚");
         }
-        System.out.println("Ïß³Ì "+currentThread().getName()+" ½áÊø...");
+        System.out.println("çº¿ç¨‹ "+currentThread().getName()+" ç»“æŸ...");
 
     }
 }
@@ -118,9 +118,9 @@ class Thread04 extends Thread{
                 A.setLoop(false);
                 break;
             }
-            System.out.println("ÖØĞÂÊäÈë¡£¡£¡£");
+            System.out.println("é‡æ–°è¾“å…¥ã€‚ã€‚ã€‚");
         }
-        System.out.println("Ïß³Ì "+currentThread().getName()+" ½áÊø...");
+        System.out.println("çº¿ç¨‹ "+currentThread().getName()+" ç»“æŸ...");
 
     }
 }

@@ -2,7 +2,7 @@ package studay.Draw_01.DrawTank;
 
 /**
  * @author hxz
- * //Ã¿500ºÁÃë Ö´ĞĞÒ»´Î ActionListener ÀïµÄ·½·¨
+ * //æ¯500æ¯«ç§’ æ‰§è¡Œä¸€æ¬¡ ActionListener é‡Œçš„æ–¹æ³•
  *             Timer timer = new Timer(1000, new ActionListener() {
  *                 @Override
  *                 public void actionPerformed(ActionEvent e) {
@@ -18,10 +18,10 @@ import java.awt.event.*;
 import java.util.Random;
 
 public class EnemyTankGa extends JPanel implements KeyListener {
-    private int playerTankX = 200; // Íæ¼ÒÌ¹¿ËÎ»ÖÃ
+    private int playerTankX = 200; // ç©å®¶å¦å…‹ä½ç½®
     private int playerTankY = 200;
-    private int playerTankDirection = 0; // Íæ¼ÒÌ¹¿Ë³õÊ¼·½Ïò (0:ÉÏ, 1:ÓÒ, 2:ÏÂ, 3:×ó)
-    private final int TANK_SPEED = 5; // Ì¹¿ËÒÆ¶¯ËÙ¶È
+    private int playerTankDirection = 0; // ç©å®¶å¦å…‹åˆå§‹æ–¹å‘ (0:ä¸Š, 1:å³, 2:ä¸‹, 3:å·¦)
+    private final int TANK_SPEED = 5; // å¦å…‹ç§»åŠ¨é€Ÿåº¦
 
     private EnemyTank enemyTank;
 
@@ -31,7 +31,7 @@ public class EnemyTankGa extends JPanel implements KeyListener {
         setFocusable(true);
         addKeyListener(this);
 
-        // ´´½¨µĞÈËÌ¹¿Ë
+        // åˆ›å»ºæ•Œäººå¦å…‹
         enemyTank = new EnemyTank();
         enemyTank.startMoving();
     }
@@ -46,21 +46,21 @@ public class EnemyTankGa extends JPanel implements KeyListener {
     private void drawPlayerTank(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(Color.RED);
-        // ¸ù¾İµ±Ç°·½Ïò»æÖÆÌ¹¿Ë
+        // æ ¹æ®å½“å‰æ–¹å‘ç»˜åˆ¶å¦å…‹
         switch (playerTankDirection) {
-            case 0: // ÏòÉÏ
+            case 0: // å‘ä¸Š
                 g2d.fillRect(playerTankX, playerTankY, 30, 50);
                 g2d.fillRect(playerTankX + 10, playerTankY - 10, 10, 10);
                 break;
-            case 1: // ÏòÓÒ
+            case 1: // å‘å³
                 g2d.fillRect(playerTankX, playerTankY, 50, 30);
                 g2d.fillRect(playerTankX + 50, playerTankY + 10, 10, 10);
                 break;
-            case 2: // ÏòÏÂ
+            case 2: // å‘ä¸‹
                 g2d.fillRect(playerTankX, playerTankY, 30, 50);
                 g2d.fillRect(playerTankX + 10, playerTankY + 50, 10, 10);
                 break;
-            case 3: // Ïò×ó
+            case 3: // å‘å·¦
                 g2d.fillRect(playerTankX, playerTankY, 50, 30);
                 g2d.fillRect(playerTankX - 10, playerTankY + 10, 10, 10);
                 break;
@@ -116,11 +116,11 @@ public class EnemyTankGa extends JPanel implements KeyListener {
     public void keyReleased(KeyEvent e) {
     }
 
-    // µĞÈËÌ¹¿ËÀà
+    // æ•Œäººå¦å…‹ç±»
     class EnemyTank {
-        private int enemyTankX = 50; // ³õÊ¼Î»ÖÃ
+        private int enemyTankX = 50; // åˆå§‹ä½ç½®
         private int enemyTankY = 50;
-        private int enemyTankDirection; // Ëæ»ú·½Ïò
+        private int enemyTankDirection; // éšæœºæ–¹å‘
 
         public void startMoving() {
             Timer timer = new Timer(1000, new ActionListener() {
@@ -141,7 +141,7 @@ public class EnemyTankGa extends JPanel implements KeyListener {
 
         private void moveEnemyTank() {
             Random random = new Random();
-            enemyTankDirection = random.nextInt(4); // Ëæ»ú·½Ïò
+            enemyTankDirection = random.nextInt(4); // éšæœºæ–¹å‘
             switch (enemyTankDirection) {
                 case 0:
                     enemyTankY -= TANK_SPEED;
