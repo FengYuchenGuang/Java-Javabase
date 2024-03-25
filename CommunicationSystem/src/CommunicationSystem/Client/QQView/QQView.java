@@ -48,7 +48,6 @@ public class QQView {
                     loop = false;
                     break;
 
-
             }
         }
     }

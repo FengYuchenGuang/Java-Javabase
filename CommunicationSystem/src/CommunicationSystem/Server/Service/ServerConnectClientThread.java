@@ -22,7 +22,7 @@ public class ServerConnectClientThread extends Thread {
     @Override
     public void run() { //线程处于 run 状态，可以发送/接收消息
         while (true) {
-            System.out.println("服务端 和 客户端(" + userId + ")保存通讯，读取数据...");
+            System.out.println("服务端 和 客户端(" + userId + ")保持通讯，读取数据...");
             try {
                 ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
                 Message ms = (Message) ois.readObject();
