@@ -9,6 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -24,6 +25,8 @@ public class QQServer {
     //这里我们也可以使用 ConcurrentHashMap，可以处理并发的集合，没有线程安全问题
     // HashMap 没有处理线程安全问题，因此在多线程情况下是不安全的
     private static ConcurrentHashMap<String,User> validUsers = new ConcurrentHashMap<>();
+    //离线留言/文件 ，用户登录后可以请求读取，查找一边是否有离线消息
+    private static ConcurrentHashMap<String, ArrayList<Message>> offLineDb = new ConcurrentHashMap<>();
 
     static {//在静态代码块中，初始化 validUsers
         validUsers.put("hxz",new User("hxz","123456"));
@@ -37,9 +40,13 @@ public class QQServer {
     }
 
     public QQServer() {
-        //注意：端口可以写在配置文件中
-        System.out.println("服务器，在9999端口监听...");
+
         try {
+            //注意：端口可以写在配置文件中
+            System.out.println("服务器，在9999端口监听...");
+            //启动推送新闻的线程
+            new Thread(new SendNewsToAllService()).start();
+
             ss = new ServerSocket(9999);
 
             //监听是循环的，一直监听
@@ -103,4 +110,9 @@ public class QQServer {
 
         return true;
     }
+
+    public static ConcurrentHashMap<String, ArrayList<Message>> getOffLineDb() {
+        return offLineDb;
+    }
+
 }

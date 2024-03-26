@@ -15,6 +15,12 @@ public class Message implements Serializable {
     private String mesType;//消息类型可以在 接口 定义
     private String content;
 
+    //文件传输 扩展
+    private byte[] fileBytes;
+    private int fileLen = 0;
+    private String dest;//文件传输到哪里
+    private String src;//源文件路径
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
@@ -57,5 +63,37 @@ public class Message implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public byte[] getFileBytes() {
+        return fileBytes;
+    }
+
+    public void setFileBytes(byte[] fileBytes) {
+        this.fileBytes = fileBytes;
+    }
+
+    public int getFileLen() {
+        return fileLen;
+    }
+
+    public void setFileLen(int fileLen) {
+        this.fileLen = fileLen;
+    }
+
+    public String getDest() {
+        return dest;
+    }
+
+    public void setDest(String dest) {
+        this.dest = dest;
+    }
+
+    public String getSrc() {
+        return src;
+    }
+
+    public void setSrc(String src) {
+        this.src = src;
     }
 }

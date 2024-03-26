@@ -62,6 +62,62 @@ public class UserClientService {
         return b;
     }
 
+    //向服务器请求在线用户列表
+    public void getOnlineFriend(){
+        //发送一个 Message,类型 MESSAGE_GET_ONLINE_FRIEND
+        Message message = new Message();
+        message.setMesType(MessageType.MESSAGE_GET_ONLINE_FRIEND);
+        message.setSender(u.getUserId());//说明要求者，只返回该要求者当前在线的好友
+
+        //发送给服务器
+        try {
+            //应该得到当前线程的 socket 对应的 ObjectOutputStream
+            ObjectOutputStream oos =
+                    new ObjectOutputStream(ManageClientConnectServerThread.getClientConnectServerThread(u.getUserId()).getSocket().getOutputStream());
+            oos.writeObject(message);//发送一个Message对象，向服务器要求获取在线列表
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //编写方法退出客户端，并给服务端发送一个退出系统的 Message对象
+    public void loginExit(){
+        //发送一个 Message,类型 MESSAGE_GET_ONLINE_FRIEND
+        Message message = new Message();
+        message.setMesType(MessageType.MESSAGE_CLIENT_EXIT);
+        message.setSender(u.getUserId());//说明发送者是哪个客户端
+
+        //发送 message
+        try {
+            ObjectOutputStream oos =
+                    new ObjectOutputStream(ManageClientConnectServerThread.getClientConnectServerThread(u.getUserId()).getSocket().getOutputStream());
+            oos.writeObject(message);
+            System.out.println(u.getUserId()+" 退出系统");
+            System.exit(0);//结束进程
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //向服务器询问是否有离线消息
+    public void getOfflineContent(){
+        //发送一个 Message,类型 MESSAGE_OFFLINE_CONTENT
+        Message message = new Message();
+        message.setMesType(MessageType.MESSAGE_OFFLINE_CONTENT);
+        message.setSender(u.getUserId());//说明发送者是哪个客户端
+
+        //发送 message
+        try {
+            ObjectOutputStream oos =
+                    new ObjectOutputStream(ManageClientConnectServerThread.getClientConnectServerThread(u.getUserId()).getSocket().getOutputStream());
+            oos.writeObject(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
     public User getU() {
         return u;
     }
