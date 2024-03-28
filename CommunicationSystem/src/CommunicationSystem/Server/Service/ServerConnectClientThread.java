@@ -127,6 +127,8 @@ public class ServerConnectClientThread extends Thread {
                                 oos.writeObject(offlineContent);
                             }
                         }
+                        //删除该用户在服务器端的留言消息
+                        QQServer.getOffLineDb().remove(ms.getSender());
                     }
                 } else{
                     System.out.println("是其他类型 暂时不处理...");
