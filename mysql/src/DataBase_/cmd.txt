@@ -1,0 +1,6 @@
+mysqldump -u root -p -B hsp_db03 > D:\\RJ\\IDEA\\IdeaProjects\\javaBase\\mysql\\src\\DataBase_\\bak.sql
+
+
+mysql -u root -p
+
+source D:\\RJ\\IDEA\\IdeaProjects\\javaBase\\mysql\\src\\DataBase_\\bak.sql
