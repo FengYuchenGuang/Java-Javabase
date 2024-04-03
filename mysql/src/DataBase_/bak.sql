@@ -187,6 +187,54 @@ INSERT INTO `goods` VALUES (10,'华为手机',2000),(11,'苹果手机',7000),(12
 UNLOCK TABLES;
 
 --
+-- Table structure for table `hsp_user`
+--
+
+DROP TABLE IF EXISTS `hsp_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `hsp_user` (
+  `id` int(11) DEFAULT NULL,
+  `name` varchar(32) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `pwd` char(32) COLLATE utf8_bin NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hsp_user`
+--
+
+LOCK TABLES `hsp_user` WRITE;
+/*!40000 ALTER TABLE `hsp_user` DISABLE KEYS */;
+INSERT INTO `hsp_user` VALUES (100,'韩顺平','c435a9810009800cafef7dce3b7844a6'),(200,'黄叙臻','9f653e2b24ed7563f519c394636c33c6');
+/*!40000 ALTER TABLE `hsp_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mes`
+--
+
+DROP TABLE IF EXISTS `mes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mes` (
+  `id` int(11) DEFAULT NULL,
+  `content` varchar(30) COLLATE utf8_bin DEFAULT NULL,
+  `send_time` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mes`
+--
+
+LOCK TABLES `mes` WRITE;
+/*!40000 ALTER TABLE `mes` DISABLE KEYS */;
+INSERT INTO `mes` VALUES (1,'北京新闻','2024-04-02 20:27:20'),(2,'上海新闻','2024-04-02 20:27:20'),(3,'广州新闻','2024-04-02 20:27:20');
+/*!40000 ALTER TABLE `mes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `salgrade`
 --
 
@@ -605,4 +653,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-02 16:42:41
+-- Dump completed on 2024-04-03 13:49:46
