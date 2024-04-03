@@ -31,9 +31,15 @@ SELECT MAX(sal) - MIN(sal)
 SELECT * FROM emp05;
 SELECT * FROM dept;
 
+##########################################################
 -- 应用案例：请统计各个部门 group by 的平均工资 avg，
 -- 并且是大于 1000 的 having，并且按照平均工资从高到低排序， order by
 -- 取出前两行记录 limit 0, 2
+-- 依次的顺序为 
+-- 1、group by
+-- 2、having
+-- 3、order by
+-- 4、limit
 SELECT deptno, AVG(sal) AS avg_sal
 	FROM emp05
 	GROUP BY deptno
