@@ -2,7 +2,7 @@
 -- 员工表 emp 的上增加一个 image 列，varchar 类型(要求在 resume 后面)。
 ALTER TABLE emp
 	ADD image VARCHAR(32) NOT NULL DEFAULT '' 
-	AFTER RESUME;
+	AFTER `RESUME`;
 	
 DESC emp; -- 显示表结构，可以查看表的所有列
 
