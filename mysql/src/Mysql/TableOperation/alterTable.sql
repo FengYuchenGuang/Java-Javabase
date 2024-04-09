@@ -1,4 +1,5 @@
 #修改表的操作练习
+
 -- 员工表 emp 的上增加一个 image 列，varchar 类型(要求在 resume 后面)。
 ALTER TABLE emp
 	ADD image VARCHAR(32) NOT NULL DEFAULT '' 

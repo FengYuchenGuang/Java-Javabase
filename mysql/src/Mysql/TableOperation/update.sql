@@ -13,7 +13,7 @@ INSERT INTO employee VALUES(200, '老妖怪', '1990-11-11', '2000-11-11 10:10:10
 
 UPDATE employee
 	SET salary = salary + 1000
-	WHERE user_name = '老妖怪' -- 可以修改多个列的值
+	WHERE user_name = '老妖怪'; -- 可以修改多个列的值
 
 UPDATE employee
 	SET salary = salary + 1000 , job = '出主意的' 
