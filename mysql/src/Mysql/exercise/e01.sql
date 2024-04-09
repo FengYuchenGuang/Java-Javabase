@@ -28,3 +28,5 @@ INSERT INTO `emp` VALUES(101,'hxz','男','2001-04-26',
 	'2024-11-11 11:11:11','学习java',9000,'sjsjsjsjs');
 
 SELECT * FROM `emp`;
+
+

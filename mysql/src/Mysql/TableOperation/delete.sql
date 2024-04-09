@@ -43,3 +43,6 @@ ALTER TABLE `employee`
 INSERT INTO employee VALUES(200, '老妖怪', '1990-11-11', '2000-11-11 10:10:10', 
 	'捶背的', 5000, '给大王捶背', 'd:\\a.jpg');
 	
+
+
+	

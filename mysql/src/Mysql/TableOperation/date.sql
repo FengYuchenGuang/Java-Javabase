@@ -13,7 +13,7 @@ SELECT CURRENT_TIMESTAMP() FROM DUAL;
 CREATE TABLE mes(
 	id INT ,
 	content VARCHAR(30),
-	 send_time DATETIME);
+	send_time DATETIME);
 	 
 -- 添加一条记录
 INSERT INTO mes VALUES(1, '北京新闻', CURRENT_TIMESTAMP());
