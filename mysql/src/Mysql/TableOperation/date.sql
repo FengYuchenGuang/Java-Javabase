@@ -9,6 +9,9 @@ SELECT CURRENT_TIME() FROM DUAL;
 -- CURRENT_TIMESTAMP ( ) 当前时间戳
 SELECT CURRENT_TIMESTAMP() FROM DUAL; 
 
+-- now ( ) 当前时间戳
+SELECT NOW() FROM DUAL; 
+
 -- 创建测试表 信息表
 CREATE TABLE mes(
 	id INT ,
