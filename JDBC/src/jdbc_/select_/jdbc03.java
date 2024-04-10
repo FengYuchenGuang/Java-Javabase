@@ -1,5 +1,7 @@
 package jdbc_.select_;
 
+import org.junit.jupiter.api.Test;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,6 +30,7 @@ public class jdbc03 {
         //3. 得到 Statement
         Statement statement = connection.createStatement();
         //4. 组织 SqL
+//        String sql = "select id, name , sex, borndate from actor";
         String sql = "select id, name , sex, borndate from actor";
         //执行给定的 SQL 语句，该语句返回单个 ResultSet 对象
         /*
