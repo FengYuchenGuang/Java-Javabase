@@ -54,6 +54,7 @@ public class jdbc03 {
             int id = resultSet.getInt("id"); //通过列名来获取值, 推荐
             String name = resultSet.getString("name"); //通过列名来获取值, 推荐
             String sex = resultSet.getString("sex"); //通过列名来获取值, 推荐
+            //这里 Date 是 java.sql.Date
             Date date = resultSet.getDate("borndate"); //通过列名来获取值, 推荐
             System.out.println(id + "\t" + name + "\t" + sex + "\t" + date);
         }
