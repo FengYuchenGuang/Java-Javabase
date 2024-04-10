@@ -23,13 +23,13 @@ public class JDBCUtils {
             Properties properties = new Properties();
             properties.load(new FileInputStream("src\\mysql.properties"));
 
-            Class.forName(driver);//建议写上
-
             //读取相关的属性值
             user = properties.getProperty("user");
             password = properties.getProperty("password");
             url = properties.getProperty("url");
             driver = properties.getProperty("driver");
+
+            Class.forName(driver);//建议写上
         } catch (IOException | ClassNotFoundException e) {
             //在实际开发中，我们可以这样处理
             //1. 将编译异常转成 运行异常
