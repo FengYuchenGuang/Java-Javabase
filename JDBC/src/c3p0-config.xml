@@ -24,8 +24,12 @@
             <property name="password">hxz</property>
 
             <!-- 连接池参数 -->
+            <!--每次增长的连接数量-->
+            <property name="acquireIncrement">5</property>
             <!--初始化申请的连接数量-->
             <property name="initialPoolSize">10</property>
+            <!--最小的连接数量-->
+            <property name="minPoolSize">5</property>
             <!--最大的连接数量-->
             <property name="maxPoolSize">50</property>
             <!--超时时间-->
