@@ -21,7 +21,7 @@ public class JDBCUtils_Use {
             connection = JDBCUtils.getConnection();
             System.out.println(connection.getClass()); //com.mysql.jdbc.JDBC4Connection
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, 5);//给?号赋值
+            preparedStatement.setInt(1, 4);//给?号赋值
             //执行, 得到结果集
             set = preparedStatement.executeQuery();
             //遍历该结果集
