@@ -45,8 +45,8 @@ public class jdbc01 {
         Connection connect = driver.connect(url, properties);
 
         //3. 执行 sql
-//        String sql = "insert into actor values(null, '刘德华', '男', '1970-11-11', '110')";
-        String sql = "update actor set name='周星驰' where id = 1";
+        String sql = "insert into actor values(null, '刘德华', '男', '1970-11-11', '110')";
+//        String sql = "update actor set name='周星驰' where id = 1";
 //        String sql = "delete from actor where id = 1";
         //statement 用于执行静态 SQL 语句并返回其生成的结果的对象
         Statement statement = connect.createStatement();

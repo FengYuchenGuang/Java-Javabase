@@ -9,6 +9,10 @@ CREATE TABLE actor (
 	)
 	
 INSERT INTO actor VALUES(NULL, 'cmx', '女', '2001-11-11', '456');
+
+INSERT INTO actor VALUES(4, 'ddc', '女', '2061-11-11', 'aaa'),
+		(NULL, 'ddf', '女', '2501-11-11', 'sss'),
+		(NULL, 'ffg', '女', '2041-11-11', 'ddd');
 	
 SELECT * FROM actor;
 
@@ -22,8 +26,6 @@ CREATE TABLE admin ( -- 管理员表
 -- 添加数据
 INSERT INTO admin VALUES('tom', '123'); 
 
-INSERT INTO admin VALUES('jack', '123'),('hxz', '566'),('aaa', '25ss'); 
-
 -- 查找某个管理是否存在
 SELECT *
 	FROM admin
@@ -34,8 +36,8 @@ SELECT *
 -- 输入万能密码 为 or '1'= '1
 SELECT *
 	FROM admin
-	WHERE NAME = '1' OR' AND pwd = 'OR '1'= '1' ;
-
+	WHERE NAME = '1' OR' AND pwd = 'OR '1'= '1';
+	
 SELECT * FROM admin;
 
 
