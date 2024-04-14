@@ -1,6 +1,7 @@
 package Generic_.CustomGenerics;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author hxz
@@ -38,6 +39,19 @@ class Car {//普通类
     public <T, R> void fly(T t, R r) {//泛型方法
         System.out.println(t.getClass());//String
         System.out.println(r.getClass());//Integer
+    }
+
+    //说明 返回指定泛型的泛型方法
+    //1. <T,R> 就是泛型
+    //2. 是提供给 fly 使用的
+    //
+    //3. List<T> 返回 List类型，里面指定 T 类型数据
+    public <T, R> List<T> flyss(T t, R r) {//泛型方法
+        List<T> list = new ArrayList<>();
+        System.out.println(t.getClass());//String
+        System.out.println(r.getClass());//Integer
+
+        return list;
     }
 }
 
