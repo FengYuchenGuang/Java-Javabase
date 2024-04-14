@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author hxz
  */
-public class ApDBUtils {
+public class ApDBUtils14 {
 
     //使用 apache-DBUtils 工具类 + druid 完成对表的 crud 操作
     @Test
