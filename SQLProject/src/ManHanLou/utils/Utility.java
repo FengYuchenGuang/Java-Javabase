@@ -35,6 +35,23 @@ public class Utility {
         return c;
     }
 
+    /**
+     * 功能：读取键盘输入的一个菜单选项，值：1——9的范围
+     * @return 1——9
+     */
+    public static char readPay() {
+        char c;
+        for (; ; ) {
+            String str = readKeyBoard(1, false);//包含一个字符的字符串
+            c = str.charAt(0);//将字符串转换成字符char类型
+            if (c != '1' && c != '2' && c != '3' &&
+                    c != '4' && c != '5' && c != '6') {
+                System.out.print("选择错误，请重新输入：");
+            } else break;
+        }
+        return c;
+    }
+
 	/**
 	 * 功能：读取键盘输入的一个字符
 	 * @return 一个字符
@@ -207,7 +224,7 @@ public class Utility {
 	 * @return Y或N
 	 */
     public static char readConfirmSelection() {
-        System.out.println("请输入你的选择(Y/N)");
+//        System.out.println("请输入你的选择(Y/N)");
         char c;
         for (; ; ) {//无限循环
         	//在这里，将接受到字符，转成了大写字母
