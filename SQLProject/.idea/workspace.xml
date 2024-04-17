@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f93f2b69-b06e-4fba-9256-ee3f789d971b" name="Default Changelist" comment="2024/4/17" />
+    <list default="true" id="f93f2b69-b06e-4fba-9256-ee3f789d971b" name="Default Changelist" comment="2024/4/17">
+      <change afterPath="$PROJECT_DIR$/../chapter15正则表达式细节/pic/01.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,17 +102,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestUtils.TestUUID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SQLProject" />
       <extension name="coverage">
@@ -164,6 +155,7 @@
       <workItem from="1713178591359" duration="1888000" />
       <workItem from="1713229083066" duration="24514000" />
       <workItem from="1713332068301" duration="6799000" />
+      <workItem from="1713348256479" duration="74000" />
     </task>
     <task id="LOCAL-00001" summary="2024/4/15">
       <created>1713181562281</created>
@@ -200,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713342127828</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2024/4/17">
+      <created>1713348305719</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713348305719</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,10 +233,10 @@
       <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="32" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.912@0.0.1536.912" timestamp="1713335935661" />
-    <state x="549" y="211" key="FileChooserDialogImpl" timestamp="1713332769197">
+    <state x="549" y="211" key="FileChooserDialogImpl" timestamp="1713348327927">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
-    <state x="549" y="211" key="FileChooserDialogImpl/0.0.1536.912@0.0.1536.912" timestamp="1713332769197" />
+    <state x="549" y="211" key="FileChooserDialogImpl/0.0.1536.912@0.0.1536.912" timestamp="1713348327927" />
     <state width="1493" height="296" key="GridCell.Tab.0.bottom" timestamp="1713342142566">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
@@ -278,6 +277,10 @@
       <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="485" y="348" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.912@0.0.1536.912" timestamp="1713182397086" />
+    <state x="178" y="66" key="new project wizard" timestamp="1713348329801">
+      <screen x="0" y="0" width="1536" height="912" />
+    </state>
+    <state x="178" y="66" key="new project wizard/0.0.1536.912@0.0.1536.912" timestamp="1713348329801" />
     <state x="431" y="193" width="672" height="678" key="search.everywhere.popup" timestamp="1713334196448">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
