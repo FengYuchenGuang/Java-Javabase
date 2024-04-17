@@ -54,6 +54,8 @@ SELECT id,state FROM diningTable;
 	
 UPDATE diningTable SET state = '已预订',orderName = '黄叙臻',orderPhone = '1228989' WHERE id = 1;
 
+UPDATE diningTable SET state = '空' ,orderName = '', orderPhone = '' WHERE id = 1;
+
 
 -- =======菜单=======
 CREATE TABLE `menu`(
@@ -113,13 +115,16 @@ UPDATE bill SET state = '未结账';
 
 SELECT DISTINCT billId FROM bill WHERE tableId = 1;
 
-DELETE FROM bill;
+DELETE FROM bill WHERE id = 15 OR id = 16;
 
 SELECT * FROM bill WHERE state = '未结账' AND tableId = 1;
 
-SELECT DISTINCT billId FROM bill WHERE tableId = 2 ORDER BY DESC;
+SELECT billId,billDate FROM bill WHERE tableId = 2 ORDER BY billDate DESC;
 
 
 
-
+-- 多表查询
+SELECT bill.*, `name`
+	FROM bill,menu
+	WHERE bill.menuId = menu.id;
 

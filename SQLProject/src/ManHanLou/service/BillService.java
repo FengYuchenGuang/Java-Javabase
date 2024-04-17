@@ -1,10 +1,10 @@
 package ManHanLou.service;
 
 import ManHanLou.DAO.BillDAO;
+import ManHanLou.DAO.MultiTableBillDAO;
 import ManHanLou.domain.Bill;
-import ManHanLou.domain.Menu;
+import ManHanLou.domain.MultiTableBill;
 
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,6 +14,8 @@ import java.util.UUID;
  */
 public class BillService {
     private BillDAO billDAO = new BillDAO();
+    private MultiTableBillDAO multiTableBill = new MultiTableBillDAO();
+
 
     /**
      * 创建新订单 订单号是 该餐桌当前餐的唯一识别标记
@@ -35,14 +37,14 @@ public class BillService {
      */
     public Object getBillId(Integer tableId,String state) {
 
-        String sqlStr = "select distinct billId from bill where tableId = ? and state = ?";
+        String sqlStr = "select distinct billId from bill where tableId = ? and state = ? limit 0,1";
 
         return billDAO.queryScalar(sqlStr, tableId,state);
     }
 
     public Object getBillIdLast(Integer tableId) {
 
-        String sqlStr = "SELECT billId,billDate FROM bill WHERE tableId = ? ORDER BY billDate DESC";
+        String sqlStr = "SELECT billId,billDate FROM bill WHERE tableId = ? ORDER BY billDate DESC limit 0,1";
 
         return billDAO.queryScalar(sqlStr, tableId);
     }
@@ -110,6 +112,20 @@ public class BillService {
         billDAO.update(sqlStr,state,billId,BillState.STATE1);
     }
 
+    /**
+     * 多表查询，有菜名
+     */
+    public List<MultiTableBill> queryAllOrdersHasName() {
+        List<MultiTableBill> list = null;
+
+        String sqlStr = "select bill.*, `name`\n" +
+                "\tfrom bill,menu\n" +
+                "\twhere bill.menuId = menu.id";
+
+        list = multiTableBill.queryMulti(sqlStr, MultiTableBill.class);
+
+        return list;
+    }
 
 
 }

@@ -1,9 +1,7 @@
 package ManHanLou.View;
 
-import ManHanLou.domain.Bill;
-import ManHanLou.domain.DiningTable;
-import ManHanLou.domain.Employee;
-import ManHanLou.domain.Menu;
+import ManHanLou.DAO.MultiTableBillDAO;
+import ManHanLou.domain.*;
 import ManHanLou.service.*;
 import ManHanLou.utils.Utility;
 
@@ -30,7 +28,6 @@ public class MHLView {
     private DiningTableService diningTableService = new DiningTableService();
     private MenuService menuService = new MenuService();
     private BillService billService = new BillService();
-//    private MultiTableService multiTableService = new MultiTableService();
 //    private EmployeeInfoService employeeInfoService = new EmployeeInfoService();
 
     public void showFirstMenu() {
@@ -94,6 +91,7 @@ public class MHLView {
                                 break;
                             case "7":
                                 System.out.println("====7.多表联合查询====");
+                                MultiQuery();
                                 break;
                             case "8":
                                 System.out.println("====7.人事管理====");
@@ -297,6 +295,8 @@ public class MHLView {
             //检测餐桌状态 "用餐中"
 
             //查看账单
+            System.out.println("订单编号\t\t\t账单编号\t\t\t\t\t\t\t\t菜品编号\t\t\t数量" +
+                    "\t\t价格\t\t\t餐桌编号\t\t\t订单日期\t\t\t\t账单状态");
             String billId = (String) billService.getBillId(tableId, BillState.STATE1);
             List<Bill> bills = billService.queryTableUnpaidOrders(billId, tableId);
             for (Bill bill : bills) {
@@ -309,12 +309,16 @@ public class MHLView {
             //检测餐桌状态 "用餐中"
 
             //查看账单
+            System.out.println("订单编号\t\t\t账单编号\t\t\t\t\t\t\t\t菜品编号\t\t\t数量" +
+                    "\t\t价格\t\t\t餐桌编号\t\t\t订单日期\t\t\t\t账单状态");
             List<Bill> bills = billService.queryTableAllOrders(tableId);
             for (Bill bill : bills) {
                 System.out.println(bill);
             }
         } else if (i == 3) {
             System.out.println("=====查看所有账单：=====");
+            System.out.println("订单编号\t\t\t账单编号\t\t\t\t\t\t\t\t菜品编号\t\t\t数量" +
+                    "\t\t价格\t\t\t餐桌编号\t\t\t订单日期\t\t\t\t账单状态");
             List<Bill> bills = billService.queryAllOrders();
             for (Bill bill : bills) {
                 System.out.println(bill);
@@ -371,6 +375,13 @@ public class MHLView {
                     break;
             }
             System.out.println("账单支付完成，一共支付 " + payMoney + " 元~~~");
+            //结账完毕，询问是否结束就餐，是的话清理餐桌
+            System.out.println("是否结束就餐(Y/N)：");
+            char selection = Utility.readConfirmSelection();
+            if ('Y' == selection){
+                diningTableService.returnTableState(tableId);
+            }
+
         }
     }
 
@@ -383,6 +394,18 @@ public class MHLView {
             money += bill.getMoney();
         }
         return money;
+    }
+
+    /**
+     * 多表联合查询 账单
+     */
+    public void MultiQuery(){
+        System.out.println("订单编号\t\t\t账单编号\t\t\t\t\t\t\t\t菜品编号\t\t菜名\t\t\t数量" +
+                "\t\t价格\t\t\t餐桌编号\t\t\t订单日期\t\t\t\t账单状态");
+        List<MultiTableBill> multiTableBills = billService.queryAllOrdersHasName();
+        for (MultiTableBill multiTableBill : multiTableBills) {
+            System.out.println(multiTableBill);
+        }
     }
 
 

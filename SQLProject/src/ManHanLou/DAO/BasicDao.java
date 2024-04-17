@@ -12,6 +12,18 @@ import java.util.List;
 /**
  * @author hxz
  * 开发 BasicDAO , 是其他 DAO 的父类, 使用到 apache-dbutils -- ApDBUtils.java
+ * 如果要添加事务，就在这里使用一个新方法 使用事务来进行与 mysql 连接
+ *   connection.setAutoCommit(false); //开启了事务
+ *   connection.commit(); //这里提交事务
+ *
+ *   //这里我们可以进行回滚，即撤销执行的 SQL
+ *             //默认回滚到事务开始的状态.
+ *             System.out.println("执行发生了异常，撤销执行的 sql");
+ *             try {
+ *                 connection.rollback();
+ *             } catch (SQLException throwables) {
+ *                 throwables.printStackTrace();
+ *             }
  */
 public class BasicDao<T> {
     private QueryRunner qr = new QueryRunner();

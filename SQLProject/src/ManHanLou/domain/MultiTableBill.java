@@ -4,16 +4,8 @@ import java.util.Date;
 
 /**
  * @author hxz
- * 	id int primary key auto_increment, -- 自增 作为账单编号
- * 	billId varchar(50) not null default '',
- * 	menuId int not null, -- 菜谱编号
- * 	nums int not null DEFAULT 0, -- 菜品数量
- * 	money double not null default 0, -- 价格
- * 	tableId int not null default 0, -- 桌号
- * 	billDate datetime not null, -- 账单日期
- * 	state varchar(50) not null default '' -- 账单状态 未结账 已结账 挂单
  */
-public class Bill {
+public class MultiTableBill {
     private Integer id;
     private String billId;
     private Integer menuId;
@@ -22,12 +14,15 @@ public class Bill {
     private Integer tableId;
     private Date billDate;
     private String state;
+    //多表查询，菜单表的菜名
+    private String name;
 
-    public Bill() {
+    public MultiTableBill() {
     }
 
-    public Bill(Integer id, String billId, Integer menuId, Integer nums,
-                Double money, Integer tableId, Date billDate, String state) {
+    public MultiTableBill(Integer id, String billId, Integer menuId, Integer nums,
+                          Double money, Integer tableId, Date billDate,
+                          String state, String name) {
         this.id = id;
         this.billId = billId;
         this.menuId = menuId;
@@ -36,6 +31,15 @@ public class Bill {
         this.tableId = tableId;
         this.billDate = billDate;
         this.state = state;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getId() {
@@ -107,7 +111,8 @@ public class Bill {
         return  id +
                 "\t\t" + billId +
                 "\t\t" + menuId +
-                "\t\t\t\t" + nums +
+                "\t\t\t" + name +
+                "\t\t" + nums +
                 "\t\t" + money +
                 "\t\t" + tableId +
                 "\t\t" + billDate +

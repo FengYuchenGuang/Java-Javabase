@@ -66,4 +66,16 @@ public class DiningTableService {
     }
 
 
+    /**
+     * 清理桌面:修改 diningTable 表 的状态 回 "空"
+     *
+     * @return boolean
+     * @param: id
+     * @param: orderName
+     * @param: orderPhone
+     **/
+    public void returnTableState(Integer id) {
+        String sqlStr = "update diningTable set state = ? ,orderName = '', orderPhone = '' where id = ?";
+        diningTableDAO.update(sqlStr, TableState.STATE1, id);
+    }
 }
