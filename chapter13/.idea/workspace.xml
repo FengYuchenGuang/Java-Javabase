@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="2024/4/14" />
+    <list default="true" id="b34a95fa-9383-4e06-b940-9bff6151bfda" name="Default Changelist" comment="2024/4/14">
+      <change afterPath="$PROJECT_DIR$/../chapter15/src/AlgorithmOptimization/HorseChessBoard.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +54,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chapter12" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -155,6 +157,7 @@
       <updated>1710143989065</updated>
       <workItem from="1710143990106" duration="9220000" />
       <workItem from="1713080544359" duration="345000" />
+      <workItem from="1713591326103" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="2024/3/11">
       <created>1710153723102</created>
@@ -237,11 +240,11 @@
       <screen x="0" y="0" width="1536" height="912" />
     </state>
     <state x="574" y="140" key="#com.intellij.ide.util.MemberChooser/0.0.1536.912@0.0.1536.912" timestamp="1710213729337" />
-    <state x="686" y="241" key="FileChooserDialogImpl" timestamp="1710234225150">
+    <state x="686" y="241" key="FileChooserDialogImpl" timestamp="1713591341097">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="549" y="211" key="FileChooserDialogImpl/0.0.1536.912@0.0.1536.912" timestamp="1710214025216" />
-    <state x="686" y="241" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1710234225150" />
+    <state x="686" y="241" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1713591341097" />
     <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1710214030936">
       <screen x="0" y="0" width="1536" height="912" />
     </state>
