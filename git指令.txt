@@ -31,6 +31,7 @@ git remote add origin https://github.com/FengYuchenGuang/javaWeb.git
 
 6、开始上传
 git push -u origin master
+git push -u origin main//推送
 
 //取消http代理
 git config --global --unset http.proxy
@@ -52,5 +53,7 @@ Move or commit them before merge
 //强制覆盖本地代码
 git fetch --all && git reset --hard origin/master && git pull
 
+
+git branch -M main//构建分支
 
 
