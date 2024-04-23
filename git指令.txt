@@ -11,6 +11,14 @@ name=FengYuchenGuang
 3、添加文件 
 git add *    //添加所有文件
 
+方法一 git add 添加多个文件，文件之间以空格隔开
+git add file1 file2 file3
+
+方法三 添加指定目录下的文件
+config目录下及子目录下所有文件，home目录下的所有.php文件
+git config/*
+git home/*.php
+
 
 4、创建提交内容 提交到本地仓库
 git commit -m "first commit"
@@ -19,6 +27,7 @@ git commit -m "first commit"
 git remote add origin 自己的github网址
 
 git remote add origin https://github.com/FengYuchenGuang/Java-Javabase.git
+git remote add origin https://github.com/FengYuchenGuang/javaWeb.git
 
 6、开始上传
 git push -u origin master
