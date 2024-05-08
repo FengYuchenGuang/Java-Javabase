@@ -9,6 +9,7 @@ import java.sql.SQLException;
 /**
  * @author hxz
  * 演示 jdbc 中如何使用事务
+ * 使用 JDBCUtils 工具类进行 Mysql 连接
  */
 public class jdbc08 {
     //没有使用事务.

@@ -8,6 +8,8 @@ CREATE TABLE actor (
 	phone VARCHAR(12)
 	)
 	
+DROP TABLE actor;
+
 INSERT INTO actor VALUES(NULL, 'cmx', '女', '2001-11-11', '456');
 
 INSERT INTO actor VALUES(4, 'ddc', '女', '2061-11-11', 'aaa'),
